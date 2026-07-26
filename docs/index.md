@@ -16,11 +16,12 @@ Or a combined calendar:
 * [Code Maven](https://luma.com/code-maven)
 
 
+<!--
 ## Schedule:
 
 | When       | Language   | Title | Who | Register |
 | ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- | -------- |
-
+-->
 
 
 * Separate pages for [Rust](https://rust.code-maven.com/live), [Python](https://python.code-maven.com/live), and [Perl](https://perlmaven.com/live) events.
