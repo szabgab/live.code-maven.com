@@ -4,14 +4,24 @@
 
 Organizer: [Gabor Szabo](https://szabgab.com/)
 
+## Calendars
+
+* [Python](https://luma.com/python-maven)
+* [Rust](https://luma.com/rust-maven)
+* [Git / GitHub / GitLab](https://luma.com/git-maven)
+* [Perl](https://luma.com/perl-maven)
+
+Or a combined calendar:
+
+* [Code Maven](https://luma.com/code-maven)
+
+
 ## Schedule:
 
 | When       | Language   | Title | Who | Register |
 | ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- | -------- |
-| 2025.06.11 | Rust       | [Rust at Work at Ardan Labs & LibreQoS](https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos)                             | Herbert Wolverson | [register](https://www.meetup.com/code-mavens/events/308234298/) |
 
 
-* Check out the [Meetup page](https://www.meetup.com/code-mavens/)
 
 * Separate pages for [Rust](https://rust.code-maven.com/live), [Python](https://python.code-maven.com/live), and [Perl](https://perlmaven.com/live) events.
 
@@ -61,6 +71,7 @@ Organizer: [Gabor Szabo](https://szabgab.com/)
 | 2025.05.06 | Python     | [How to build a microservice with Python + FastAPI to switch from RDS to DynamoDB](https://python.code-maven.com/how-to-build-a-microservice-with-python-and-fastapi) | Nikita Baryshev |
 | 2025.05.20 | Rust       | [Rust at Work at Flarion](https://rust.code-maven.com/rust-at-work-flarion)                                                                      | Ran Reichman   |
 | 2025.05.27 | Rust       | [Rust at Work at Eureka Labs](https://rust.code-maven.com/rust-at-work-eureka-labs)                                                              | Eli Shalom & Igal Tabachnik |
+| 2025.06.11 | Rust       | [Rust at Work at Ardan Labs & LibreQoS](https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos)                                            | Herbert Wolverson |
 
 
 
