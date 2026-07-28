@@ -1,20 +1,33 @@
 # About the Code-Maven Live events
 
-At the Code Maven live events hosted by [Gabor Szabo](https://szabgab.com/) you will learn how to use various programming libraries. We focus on Rust, Python, and Perl projects as well as Git/GitHub/GitLab, Docker and Linux in general.
+At the Code Maven live events hosted by [Gabor Szabo](https://szabgab.com/) you will learn how to use various programming libraries. We focus on Rust, Python, and Perl projects as well as Git/GitHub/GitLab, Docker and Linux in general. We also cover various aspects of AI. e.g. AI aided programming.
+
+## Format
 
 There are various types of events.
 
-* A guest presents a lecture s/he has prepared. (Maybe even given at an in-person event or in some other language.)
-* A guest shows us her/his project. (e.g. the guest wrote a crate in Rust and shows us how to use it and maybe also how to contribute to it.) (This can be ad-hoc, after all the guest knows this stuff rather well.)
-* A guest teaches us some technique in a rather ad-hoc manner using the pair-programming technique. e.g. How to use Tauri to build a small application.
-* Gabor Szabo, the host presents some topic. (All the old presentations are like this.)
+* The guest presents a lecture s/he has prepared. (Maybe even given at an in-person event or in some other language.)
+* The guest shows us her/his project. (e.g. the guest wrote a crate in Rust or a library in Python and shows us how to use it and maybe also how to contribute to it.) (This can be ad-hoc, after all the guest knows this stuff rather well.)
+* The guest teaches us some technique in a rather ad-hoc manner using the pair-programming technique. e.g. How to use Tauri to build a small application.
 
 ---
 
 * Each event has one presentation and thus usually one guest speaker.
-* Presentations are usually somewhere between 30-60 long thoght if the topic requires more time we can have a longer session and/or we can have multiple sessions.
+* Presentations are recorded and published on [YouTube](https://www.youtube.com/@CodeMaven)
+* Presentations are usually somewhere between 20-60 min long thogh if the topic requires more time we can have a longer session and/or we can have multiple sessions.
 * The audience can comment and ask questions via chat.
 * After the main session is over and we turn off the recording some people usually stay around and have further discussion. Off the record.
+
+## Schedule
+
+We don't have a fixed schedule of events. Whenever you (the guest) and me (Gabor, the host) can agree on a date and time, that's when we'll have the meeting.
+
+I prefer to schedule at least 2 weaks ahead, but 1-2 months is also fine. That allows for the promotion of the event and for people to save the date.
+
+* Time-wise we usually have our sessions between 8:00 (8 am) UTC and 18:00 (6 pm) UTC.
+* Starting at 8:00 UTC allows people from New Zealand, Australia, Japan, etc. all of Asia, the Middle-East, Europe, and Africa to attend.
+* Starting at 16:00-18:00 UTC allows people from the the Middle-East, Europe, Africa, and all of the Americas to attend.
+
 
 ## Introducing your project
 
