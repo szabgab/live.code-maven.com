@@ -3,7 +3,7 @@ lang: en
 url: https://live.code-maven.com
 baseurl: ""
 title: "Code-Maven Live events"
-description: Virtual presentations, Zoominars
+description: Virtual presentations, workshops, Zoominars
 show_downloads: false
 
 plugins:

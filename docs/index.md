@@ -1,13 +1,10 @@
 # Code-Maven Live events
 
-[About Code-Mavens live events](/about)
-
 Organizer: [Gabor Szabo](https://szabgab.com/)
 
 ## Calendars
 
 Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics.
-
 
 ## Code Maven on Telegram
 
