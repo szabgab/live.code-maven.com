@@ -43,17 +43,19 @@
           {% endif %}
 
           {% if site.quick_links %}
+            <p class="link-row-label">Calendars</p>
             <div class="quick-links" aria-label="Quick links">
               {% for item in site.quick_links %}
-                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">📅 {{ item.label }}</a>
               {% endfor %}
             </div>
           {% endif %}
 
           {% if site.telegram_links %}
+            <p class="link-row-label">Telegram Channels</p>
             <div class="quick-links" aria-label="Telegram links">
               {% for item in site.telegram_links %}
-                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 {{ item.label }}</a>
               {% endfor %}
             </div>
           {% endif %}

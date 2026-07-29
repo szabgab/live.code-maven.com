@@ -146,6 +146,15 @@ body {
     flex-wrap: wrap;
 }
 
+.link-row-label {
+    margin: 1rem 0 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #d6eef9;
+}
+
 .pill {
     display: inline-block;
     background: #f9fcff;
