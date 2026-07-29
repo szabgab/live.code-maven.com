@@ -10,12 +10,15 @@ Since we moved the registration process to Luma we have a number of calendars. T
 
 We have a number of channels on Telegram to the specific topics we cover. Join us using the Telegram buttons in the header.
 
-<!--
 ## Schedule:
 
-| When       | Language   | Title | Who | Register |
+| When       | Language   | Title                                                                                                                             | Who | Register |
 | ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- | -------- |
--->
+| 2026.07.29 | Perl       | [Perl development using AI + Open Source](https://luma.com/cy0xt6qp)                                                              | Gabor Szabo |  |
+| 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://luma.com/2ea8kyka)                                                   | Gabor Szabo |  |
+| 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |  |
+| 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |  |
+
 
 
 * Separate pages for [Rust](https://rust.code-maven.com/live), [Python](https://python.code-maven.com/live), and [Perl](https://perlmaven.com/live) events.
