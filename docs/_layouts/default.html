@@ -15,26 +15,62 @@
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
+    <meta name="theme-color" content="#0f766e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <header class="page-header" role="banner">
-      <h1 class="project-name"><a href="/">{{ page.title | default: site.title | default: site.github.repository_name }}</a></h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-    </header>
+    <a class="skip-link" href="#content">Skip to content</a>
 
-    <main id="content" class="main-content" role="main">
-      {{ content }}
+    <div class="site-shell">
+      <header class="site-header" role="banner">
+        <div class="header-inner">
+          <div class="brand-wrap">
+            <p class="eyebrow">Live Coding Community</p>
+            <h1 class="project-name"><a href="{{ '/' | relative_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            <p class="project-tagline">{{ site.description | default: site.github.project_tagline }}</p>
+          </div>
+
+          {% if site.nav_links %}
+            <nav class="site-nav" aria-label="Primary navigation">
+              {% for item in site.nav_links %}
+                <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
+              {% endfor %}
+            </nav>
+          {% endif %}
+
+          {% if site.quick_links %}
+            <div class="quick-links" aria-label="Quick links">
+              {% for item in site.quick_links %}
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </header>
+
+      <main id="content" class="main-content" role="main">
+        {{ content }}
+      </main>
 
       <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
-        <span class="site-footer-credits">Virtual live events</span>
+        <p>
+          <strong>{{ site.title }}</strong> · {{ site.description }}
+        </p>
+        <p>
+          {% if site.github.is_project_page %}
+            <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
+          {% endif %}
+          Virtual live events.
+        </p>
       </footer>
-    </main>
+    </div>
+
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
   </body>
 </html>
 
