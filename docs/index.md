@@ -6,7 +6,7 @@ Organizer: [Gabor Szabo](https://szabgab.com/)
 
 ## Calendars
 
-Since we moved the registration process to Luma we have a number of calendars. Thi allows you to follow the specific topics:
+Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics:
 
 * [Python](https://luma.com/python-maven)
 * [Rust](https://luma.com/rust-maven)
