@@ -6,15 +6,26 @@ Organizer: [Gabor Szabo](https://szabgab.com/)
 
 ## Calendars
 
+Since we moved the registration process to Luma we have a number of calendars. Thi allows you to follow the specific topics:
+
 * [Python](https://luma.com/python-maven)
 * [Rust](https://luma.com/rust-maven)
-* [Git / GitHub / GitLab](https://luma.com/git-maven)
 * [Perl](https://luma.com/perl-maven)
+* [Git / GitHub / GitLab](https://luma.com/git-maven)
 
-Or a combined calendar:
+You can also follow our combined calendar:
 
 * [Code Maven](https://luma.com/code-maven)
 
+## Code Maven on Telegram
+
+We have a number of channels on Telegram to the specific topics we cover. Join us!
+
+* [Python Maven](https://t.me/PythonMaven)
+* [Rust Maven](https://t.me/RustMaven)
+* [Perl Maven](https://t.me/PerlMaven)
+
+and the generic  [Code Maven community](https://t.me/Code_Mavens).
 
 <!--
 ## Schedule:
