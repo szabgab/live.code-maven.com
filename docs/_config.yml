@@ -2,8 +2,8 @@ theme: jekyll-theme-cayman
 lang: en
 url: https://live.code-maven.com
 baseurl: ""
-title: "Code-Maven Live events"
-description: Virtual presentations, workshops, Zoominars
+title: "Code-Maven community online events"
+description: Virtual presentations, workshops, Zoominars, chat
 show_downloads: false
 
 plugins:
