@@ -18,13 +18,17 @@ nav_links:
      url: /old
 
 quick_links:
-   - label: Python Calendar
+   - label: Python
      url: https://luma.com/python-maven
-   - label: Rust Calendar
+   - label: Rust
      url: https://luma.com/rust-maven
-   - label: Perl Calendar
+   - label: Perl
      url: https://luma.com/perl-maven
-   - label: Code Maven Calendar
+   - label: Git[Hub|Lab]
+     url: https://luma.com/git-maven
+   - label: Databases
+     url: https://luma.com/db-maven
+   - label: Code Maven
      url: https://luma.com/code-maven
 
 github:

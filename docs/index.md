@@ -6,17 +6,8 @@ Organizer: [Gabor Szabo](https://szabgab.com/)
 
 ## Calendars
 
-Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics:
+Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics.
 
-* [Python](https://luma.com/python-maven)
-* [Rust](https://luma.com/rust-maven)
-* [Perl](https://luma.com/perl-maven)
-* [Git / GitHub / GitLab](https://luma.com/git-maven)
-* [Databases](https://luma.com/db-maven)
-
-You can also follow our combined calendar:
-
-* [Code Maven](https://luma.com/code-maven)
 
 ## Code Maven on Telegram
 
