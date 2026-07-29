@@ -8,13 +8,7 @@ Since we moved the registration process to Luma we have a number of calendars. T
 
 ## Code Maven on Telegram
 
-We have a number of channels on Telegram to the specific topics we cover. Join us!
-
-* [Python Maven](https://t.me/PythonMaven)
-* [Rust Maven](https://t.me/RustMaven)
-* [Perl Maven](https://t.me/PerlMaven)
-
-and the generic  [Code Maven community](https://t.me/Code_Mavens).
+We have a number of channels on Telegram to the specific topics we cover. Join us using the Telegram buttons in the header.
 
 <!--
 ## Schedule:

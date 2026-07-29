@@ -49,6 +49,14 @@
               {% endfor %}
             </div>
           {% endif %}
+
+          {% if site.telegram_links %}
+            <div class="quick-links" aria-label="Telegram links">
+              {% for item in site.telegram_links %}
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </header>
 

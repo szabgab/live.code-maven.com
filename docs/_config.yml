@@ -31,5 +31,15 @@ quick_links:
    - label: Code Maven
      url: https://luma.com/code-maven
 
+telegram_links:
+   - label: Python Maven
+     url: https://t.me/PythonMaven
+   - label: Rust Maven
+     url: https://t.me/RustMaven
+   - label: Perl Maven
+     url: https://t.me/PerlMaven
+   - label: Code Maven community
+     url: https://t.me/Code_Mavens
+
 github:
    is_project_page: false
