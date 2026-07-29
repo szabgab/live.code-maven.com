@@ -17,7 +17,7 @@ nav_links:
    - label: Earlier Events
      url: /old
 
-quick_links:
+calendars:
    - label: Python
      url: https://luma.com/python-maven
    - label: Rust

@@ -42,10 +42,10 @@
             </nav>
           {% endif %}
 
-          {% if site.quick_links %}
+          {% if site.calendars %}
             <p class="link-row-label">Calendars</p>
-            <div class="quick-links" aria-label="Quick links">
-              {% for item in site.quick_links %}
+            <div class="quick-links" aria-label="Calendar links">
+              {% for item in site.calendars %}
                 <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">📅 {{ item.label }}</a>
               {% endfor %}
             </div>
