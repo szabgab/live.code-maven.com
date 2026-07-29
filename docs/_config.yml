@@ -11,21 +11,21 @@ plugins:
 
 nav_links:
    - label: Upcoming and Recordings
-      url: /
+     url: /
    - label: About
-      url: /about
+     url: /about
    - label: Earlier Events
-      url: /old
+     url: /old
 
 quick_links:
    - label: Python Calendar
-      url: https://luma.com/python-maven
+     url: https://luma.com/python-maven
    - label: Rust Calendar
-      url: https://luma.com/rust-maven
+     url: https://luma.com/rust-maven
    - label: Perl Calendar
-      url: https://luma.com/perl-maven
+     url: https://luma.com/perl-maven
    - label: Code Maven Calendar
-      url: https://luma.com/code-maven
+     url: https://luma.com/code-maven
 
 github:
    is_project_page: false
