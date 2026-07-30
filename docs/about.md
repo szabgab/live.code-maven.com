@@ -29,6 +29,7 @@ There are various types of events.
 * Starting at 8:00 UTC allows people from New Zealand, Australia, Japan, etc. all of Asia, the Middle-East, Europe, and Africa to attend.
 * Starting at 16:00-18:00 UTC allows people from the the Middle-East, Europe, Africa, and all of the Americas to attend.
 
+---
 
 ## Teasers
 
