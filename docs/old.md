@@ -45,5 +45,6 @@
 | 2025.05.06 | Python     | [How to build a microservice with Python + FastAPI to switch from RDS to DynamoDB](https://python.code-maven.com/how-to-build-a-microservice-with-python-and-fastapi) | Nikita Baryshev | [register](https://www.meetup.com/code-mavens/events/307228860/) |
 | 2025.05.20 | Rust       | [Rust at Work at Flarion](https://rust.code-maven.com/rust-at-work-flarion)                                                       | Ran Reichman   | [register](https://www.meetup.com/code-mavens/events/307635734/) |
 | 2025.05.27 | Rust       | [Rust at Work at Eureka Labs](https://rust.code-maven.com/rust-at-work-eureka-labs)                                               | Eli Shalom & Igal Tabachnik | [register](https://www.meetup.com/code-mavens/events/307673680/) |
+| 2026.06.07 | Python     | [ Growing Pains: Scaling AI Coding across Team and Repo Boundaries](https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries) | Graham Knapp | [register](https://www.meetup.com/code-mavens/events/314974095/)
 | 2026.07.20 | Python     | [Lazing for Impact, Python in 2026](https://python.code-maven.com/lazing-for-impact-python-in-2026)                               | Aekasitt (Sitt) Guruvanich | [register](https://www.meetup.com/code-mavens/events/315613823/) |
 

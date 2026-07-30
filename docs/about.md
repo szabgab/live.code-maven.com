@@ -31,7 +31,7 @@ There are various types of events.
 
 ---
 
-## Teasers
+## Subject
 
 In order to promote the event we'll need a
 
