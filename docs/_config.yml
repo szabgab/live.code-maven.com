@@ -14,8 +14,6 @@ nav_links:
      url: /
    - label: About
      url: /about
-   - label: Earlier Events
-     url: /old
 
 calendars:
    - label: Python
