@@ -14,10 +14,10 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 
 | When       | Language   | Title                                                                                                                             | Who | Register |
 | ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- | -------- |
-| 2026.07.29 | Perl       | [Perl development using AI + Open Source](https://luma.com/cy0xt6qp)                                                              | Gabor Szabo |  |
 | 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://luma.com/2ea8kyka)                                                   | Gabor Szabo |  |
 | 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |  |
 | 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |  |
+| 2026.08.24 | Python     | [My journey of fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://luma.com/exyszwcp) | Gracjan Adamus |
 
 
 
@@ -72,4 +72,5 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 | 2025.06.11 | Rust       | [Rust at Work at Ardan Labs & LibreQoS](https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos)                                            | Herbert Wolverson |
 | 2026.06.07 | Python     | [ Growing Pains: Scaling AI Coding across Team and Repo Boundaries](https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries) | Graham Knapp |
 | 2026.07.20 | Python     | [Lazing for Impact, Python in 2026](https://python.code-maven.com/lazing-for-impact-python-in-2026)                                              | Aekasitt (Sitt) Guruvanich |
+| 2026.07.29 | Perl       | [Perl development using AI + Open Source](https://luma.com/cy0xt6qp)                                                              | Gabor Szabo |  |
 
