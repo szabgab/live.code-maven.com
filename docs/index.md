@@ -12,12 +12,12 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 
 ## Schedule:
 
-| When       | Language   | Title                                                                                                                             | Who | Register |
-| ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- | -------- |
-| 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://luma.com/2ea8kyka)                                                   | Gabor Szabo |  |
-| 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |  |
-| 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |  |
-| 2026.08.24 | Python     | [My journey of fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://luma.com/exyszwcp) | Gracjan Adamus |
+| When       | Language   | Title                                                                                                                             | Who |
+| ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- |
+| 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://luma.com/2ea8kyka)                                                   | Gabor Szabo |
+| 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |
+| 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |
+| 2026.08.24 | Python     | [Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://luma.com/exyszwcp) | Gracjan Adamus |
 
 
 
