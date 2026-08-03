@@ -18,6 +18,7 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 | 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |
 | 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |
 | 2026.08.24 | Python     | [Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://luma.com/exyszwcp) | Gracjan Adamus |
+| 2026.10.21 | Perl       | [MCP - Model Context Protocol in Perl: From Web App to AI Tools](https://luma.com/6qqyscbm) | Dave Cross |
 
 
 
