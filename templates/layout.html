@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default('en-US') }}">
+  <head>
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+    <title>{{ page.title | default(site.title) }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f766e">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl or '' }}/assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <div class="site-shell">
+      <header class="site-header" role="banner">
+        <div class="header-inner">
+          <div class="brand-wrap">
+            <h1 class="project-name"><a href="{{ site.baseurl or '' }}/">{{ site.title }}</a></h1>
+            <p class="project-tagline">{{ site.description }}</p>
+          </div>
+
+          {% if site.nav_links %}
+            <nav class="site-nav" aria-label="Primary navigation">
+              {% for item in site.nav_links %}
+                <a href="{{ site.baseurl or '' }}{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
+              {% endfor %}
+            </nav>
+          {% endif %}
+
+          {% if site.calendars %}
+            <p class="link-row-label">Calendars</p>
+            <div class="quick-links" aria-label="Calendar links">
+              {% for item in site.calendars %}
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">📅 {{ item.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if site.telegram_links %}
+            <p class="link-row-label">Telegram Channels</p>
+            <div class="quick-links" aria-label="Telegram links">
+              {% for item in site.telegram_links %}
+                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 {{ item.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </header>
+
+      <main id="content" class="main-content" role="main">
+        {{ content | safe }}
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          <strong>{{ site.title }}</strong> · {{ site.description }}
+        </p>
+        <p>
+          Virtual live events.
+        </p>
+      </footer>
+    </div>
+
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  </body>
+</html>
