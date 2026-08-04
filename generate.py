@@ -1,6 +1,7 @@
 import os
 from datetime import datetime, date
 import yaml
+from markdown_it import MarkdownIt
 
 def format_table(headers, rows):
     """
@@ -42,7 +43,7 @@ def rebuild():
         events = yaml.safe_load(f)
         
     # Load template
-    template_path = 'templates/index.md'
+    template_path = 'pages/index.md'
     if not os.path.exists(template_path):
         raise FileNotFoundError(f"Template file not found at {template_path}")
         
@@ -101,12 +102,33 @@ def rebuild():
     output = template.replace('{{ SCHEDULE_TABLE }}', schedule_table_md)
     output = output.replace('{{ EARLIER_TABLE }}', earlier_table_md)
     
-    # Write back to docs/index.md
-    output_path = 'docs/index.md'
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(output)
+    # Convert markdown to HTML
+    md = MarkdownIt('gfm-like')
+    html_content = md.render(output)
+    
+    # Ensure site/ directory exists
+    os.makedirs('site', exist_ok=True)
+    
+    # Write back to site/index.html with Jekyll front matter
+    index_html_path = 'site/index.html'
+    with open(index_html_path, 'w', encoding='utf-8') as f:
+        f.write("---\nlayout: default\n---\n")
+        f.write(html_content)
         
-    print(f"Successfully rebuilt {output_path}")
+    # Generate site/about.md from pages/about.md with Jekyll front matter
+    about_path = 'pages/about.md'
+    if not os.path.exists(about_path):
+        raise FileNotFoundError(f"About file not found at {about_path}")
+        
+    with open(about_path, 'r', encoding='utf-8') as f:
+        about_content = f.read()
+        
+    about_output_path = 'site/about.md'
+    with open(about_output_path, 'w', encoding='utf-8') as f:
+        f.write("---\nlayout: default\n---\n")
+        f.write(about_content)
+        
+    print(f"Successfully rebuilt {index_html_path} and {about_output_path}")
 
 if __name__ == '__main__':
     rebuild()
