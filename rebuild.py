@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, date
 import yaml
 
 def format_table(headers, rows):
@@ -52,8 +53,16 @@ def rebuild():
     schedule_rows = []
     earlier_rows = []
     
+    current_date = date.today()
+    
     for event in events:
-        date = event.get('date', '')
+        date_val = event.get('date', '')
+        try:
+            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+        except ValueError:
+            # Fallback for malformed dates: classify as past
+            event_date = date.min
+            
         language = event.get('language', '')
         title = event.get('title', '')
         link = event.get('link')
@@ -66,17 +75,20 @@ def rebuild():
         else:
             title_cell = title
             
-        if register:
-            # Schedule event
+        if event_date >= current_date:
+            # Schedule event (future or today)
             # Format register link
-            if register.startswith('http://') or register.startswith('https://'):
-                register_cell = f"[register]({register})"
+            if register:
+                if register.startswith('http://') or register.startswith('https://'):
+                    register_cell = f"[register]({register})"
+                else:
+                    register_cell = register
             else:
-                register_cell = register
-            schedule_rows.append([date, language, title_cell, speakers, register_cell])
+                register_cell = ""
+            schedule_rows.append([str(date_val), language, title_cell, speakers, register_cell])
         else:
-            # Earlier event
-            earlier_rows.append([date, language, title_cell, speakers])
+            # Earlier event (past)
+            earlier_rows.append([str(date_val), language, title_cell, speakers])
             
     # Format tables
     schedule_headers = ['When', 'Language', 'Title', 'Who', 'Register']
