@@ -12,15 +12,13 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 
 ## Schedule:
 
-| When       | Language   | Title                                                                                                                             | Who |
-| ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | --- |
-| 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://luma.com/2ea8kyka)                                                   | Gabor Szabo |
-| 2026.08.03 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo |
-| 2026.08.05 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo |
-| 2026.08.24 | Python     | [Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://luma.com/exyszwcp) | Gracjan Adamus |
-| 2026.10.21 | Perl       | [MCP - Model Context Protocol in Perl: From Web App to AI Tools](https://luma.com/6qqyscbm) | Dave Cross |
-
-
+| When       | Language   | Title                                                                                                                             | Who            | Register  |
+| ---------- | ---------- | -----------------------------------------------------------------------------------------------------------------------------     | -------------- | --------- |
+| 2026.08.24 | Python     | [Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions](https://python.code-maven.com/fixing-an-unmaintained-package-with-gracjan-adamus)            | Gracjan Adamus | [register](https://luma.com/exyszwcp) |
+| 2026.08.26 | Python     | [Everything you need to know about docstrings, but never wanted to ask](https://python.code-maven.com/everything-you-need-to-know-about-docstrings) | Maria Lowas-Rzechonek | [register](https://luma.com/a1xtcmqi) |
+| 2026.08.31 | Rust       | [Workshop: Add tests to an open source Rust project](https://luma.com/nwfmsdtf)                                                   | Gabor Szabo    | [register](https://luma.com/nwfmsdtf) |
+| 2026.09.02 | Python     | [Workshop: Add tests to an open source Python project](https://luma.com/wlguizbs)                                                 | Gabor Szabo    | [register](https://luma.com/wlguizbs) |
+| 2026.10.21 | Perl       | [MCP - Model Context Protocol in Perl: From Web App to AI Tools](https://luma.com/6qqyscbm)                                       | Dave Cross     | [register](https://luma.com/6qqyscbm) |
 
 * Separate pages for [Rust](https://rust.code-maven.com/live), [Python](https://python.code-maven.com/live), and [Perl](https://perlmaven.com/live) events.
 
@@ -71,7 +69,8 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 | 2025.05.20 | Rust       | [Rust at Work at Flarion](https://rust.code-maven.com/rust-at-work-flarion)                                                                                                            | Ran Reichman                      |
 | 2025.05.27 | Rust       | [Rust at Work at Eureka Labs](https://rust.code-maven.com/rust-at-work-eureka-labs)                                                                                                    | Eli Shalom & Igal Tabachnik       |
 | 2025.06.11 | Rust       | [Rust at Work at Ardan Labs & LibreQoS](https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos)                                                                                  | Herbert Wolverson                 |
-| 2026.06.07 | Python     | [ Growing Pains: Scaling AI Coding across Team and Repo Boundaries](https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries)                     | Graham Knapp                      |
+| 2026.06.07 | Python     | [Growing Pains: Scaling AI Coding across Team and Repo Boundaries](https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries)                      | Graham Knapp                      |
 | 2026.07.20 | Python     | [Lazing for Impact, Python in 2026](https://python.code-maven.com/lazing-for-impact-python-in-2026)                                                                                    | Aekasitt (Sitt) Guruvanich        |
 | 2026.07.29 | Perl       | [Perl development using AI + Open Source](https://perlmaven.com/perl-development-using-codex-by-emmanuel)                                                                              | Emmanuel Thouraud                 |
+| 2026.08.02 | GitHub     | [Workshop: Create your own web site on GitHub pages](https://git.code-maven.com/workshop-2026-08-02)                                                                                   | Gabor Szabo |
 
