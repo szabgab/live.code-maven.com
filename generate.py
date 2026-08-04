@@ -191,12 +191,6 @@ def rebuild():
         with open(css_path, 'w', encoding='utf-8') as f:
             f.writelines(css_lines)
             
-    # Copy CNAME if it exists
-    cname_src = 'static/CNAME'
-    if os.path.exists(cname_src):
-        import shutil
-        shutil.copy(cname_src, 'site/CNAME')
-            
     # Create .nojekyll in site/ directory to bypass Jekyll
     with open('site/.nojekyll', 'w', encoding='utf-8') as f:
         f.write('')
