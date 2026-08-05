@@ -134,7 +134,7 @@ def rebuild():
     
     # Render index.html with Jinja2
     index_page_meta = {
-        'title': 'Upcoming and Recordings',
+        'title': 'Code-Maven community online events',
         'url': '/'
     }
     index_html = layout_template.render(site=site_config, page=index_page_meta, content=index_html_content)
