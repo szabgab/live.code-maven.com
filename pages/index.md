@@ -14,7 +14,9 @@ We have a number of channels on Telegram to the specific topics we cover. Join u
 
 {{ SCHEDULE_TABLE }}
 
+<!--
 * Separate pages for [Rust](https://rust.code-maven.com/live), [Python](https://python.code-maven.com/live), and [Perl](https://perlmaven.com/live) events.
+-->
 
 ## Earlier events and video recordings
 
