@@ -445,6 +445,92 @@
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
+- date: 2026.07.29
+  language: Perl
+  title: 'Perl development using AI + Open Source'
+  link: null
+  speakers: "?"
+  register: https://luma.com/cy0xt6qp
+
+- date: 2026.07.08
+  language: Perl
+  title: 'Perl development using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/lsi130vn
+
+
+- date: 2026.06.24
+  language: Perl
+  title: 'Perl development using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/snqksm8j
+
+- date: 2026.06.03
+  language: Perl
+  title: 'Exploring Perl modules + using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/l7kv2e9t
+
+- date: 2026.05.20
+  language: Perl
+  title: 'Exploring Perl modules'
+  link: null
+  speakers: "?"
+  register: https://luma.com/0c847vp2
+
+- date: 2026.05.07
+  language: Perl
+  title: 'Exploring Perl modules'
+  link: null
+  speakers: "?"
+  register: https://luma.com/cd1mu4az
+
+- date: 2026.04.30
+  language: Perl
+  title: 'Testing in Perl - part 5'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/0zinzm9e
+
+- date: 2026.04.23
+  language: Perl
+  title: 'Testing in Perl - part 4'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/iw4zczo3
+
+- date: 2026.04.09
+  language: Perl
+  title: 'Testing in Perl - part 3'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/pdlmzj3x
+
+- date: 2026.04.02
+  language: Perl
+  title: 'Testing in Perl - part 2'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/hlnwa9qo
+
+- date: 2026.04.30
+  language: Perl
+  title: 'Testing in Perl - part 1'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/8bgybgfi
+
+- date: 2026.03.10
+  language: Perl
+  title: 'Online Perl code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/ayq1vx5u
+
+
 # - date:
 #   language:
 #   title: ''
