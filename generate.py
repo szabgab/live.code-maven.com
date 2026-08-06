@@ -51,6 +51,26 @@ def rebuild():
         
     with open(yaml_path, 'r', encoding='utf-8') as f:
         events = yaml.safe_load(f)
+
+    if not events:
+        events = []
+
+    # Verify chronological order of event dates
+    prev_date = None
+    for idx, event in enumerate(events):
+        if not event:
+            continue
+        date_val = event.get('date')
+        if not date_val:
+            raise ValueError(f"Event at index {idx} is missing a date field")
+        try:
+            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+        except ValueError as e:
+            raise ValueError(f"Event at index {idx} has an invalid date format: '{date_val}'") from e
+            
+        if prev_date is not None and event_date < prev_date:
+            raise ValueError(f"Events are not in chronological order: event at index {idx} with date {date_val} comes after a later date {prev_date.strftime('%Y.%m.%d')}")
+        prev_date = event_date
         
     # Load config from static/_config.yml
     config_path = 'static/_config.yml'
