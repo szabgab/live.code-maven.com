@@ -257,6 +257,13 @@
   link: https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos
   speakers: Herbert Wolverson
   register: null
+- date: 2026.06.04
+  language: FalkorDB
+  # Rust
+  title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314979560/
 - date: 2026.06.07
   language: Python
   title: 'Growing Pains: Scaling AI Coding across Team and Repo Boundaries'
@@ -312,4 +319,11 @@
   link: https://luma.com/6qqyscbm
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
+
+# - date:
+#   language:
+#   title: ''
+#   link:
+#   speakers:
+#   register:
 
