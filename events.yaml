@@ -257,9 +257,92 @@
   link: https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos
   speakers: Herbert Wolverson
   register: null
+- date: 2026.02.03
+  language: Python
+  title: 'Python code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312985180/
+- date: 2926.02.09
+  language: Rust
+  title: 'Rust code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312985189/
+- date: 2026.03.16
+  language: Git
+  title: 'Introduction to Git - part 1'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313724584/
+- date: 2026.03.27
+  language: Git
+  title: 'Introduction to Git - part 2'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313724761/
+- date: 2026.03.18
+  language: Git
+  title: 'Introduction to Git - part 3'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313742674/
+- date: 2026.03.23
+  language: Git
+  title: 'Introduction to Git - part 4'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313840245/
+- date: 2026.03.27
+  language: Git
+  title: 'Introduction to Git - part 5'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313922574/
+- date: 2026.03.31
+  language: Rust
+  title: 'Web development using axum in Rust - part 1'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/313944077/
+- date: 2026.04.07
+  language: Rust
+  title: 'Web development using axum in Rust - part 2'
+  link: null
+  speakers: Gabor Szabp
+  register: https://www.meetup.com/code-mavens/events/313944233/
+- date: 2026.04.14
+  language: Rust
+  title: 'Web development using axum in Rust - part 3'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314072969/
+- date: 2026.04.28
+  language: Rust
+  title: 'Web development using axum in Rust - part 4'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314401473/
+- date: 2026.05.05
+  language: Rust
+  title: 'Rust code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314538967/
+- date: 2026.05.12
+  language: Rust
+  title: 'Introduction to database access using Rust SQLx'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314642118/
+- date: 2026.05.18
+  language: FalkorDB
+  title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/314763927/
 - date: 2026.06.04
   language: FalkorDB
-  # Rust
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
