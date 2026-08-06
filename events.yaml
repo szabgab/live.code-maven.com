@@ -499,13 +499,13 @@
   register: https://luma.com/lsi130vn
 - date: 2026.07.20
   language: Python
-  title: Lazing for Impact, Python in 2026
+  title: 'Lazing for Impact, Python in 2026'
   link: https://python.code-maven.com/lazing-for-impact-python-in-2026
   speakers: Aekasitt (Sitt) Guruvanich
   register: https://www.meetup.com/code-mavens/events/315613823/
 - date: 2026.07.29
   language: Perl
-  title: Perl development using AI + Open Source
+  title: 'Perl development using AI + Open Source'
   link: https://perlmaven.com/perl-development-using-codex-by-emmanuel
   speakers: Emmanuel Thouraud
   register: https://luma.com/cy0xt6qp
@@ -517,14 +517,13 @@
   register: https://luma.com/2ea8kyka
 - date: 2026.08.24
   language: Python
-  title: Fixing an unmaintained package, spanning Python, C++, nanobind and Github
-    Actions
+  title: 'Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions'
   link: https://python.code-maven.com/fixing-an-unmaintained-package-with-gracjan-adamus
   speakers: Gracjan Adamus
   register: https://luma.com/exyszwcp
 - date: 2026.08.26
   language: Python
-  title: Everything you need to know about docstrings, but never wanted to ask
+  title: 'Everything you need to know about docstrings, but never wanted to ask'
   link: https://python.code-maven.com/everything-you-need-to-know-about-docstrings
   speakers: Maria Lowas-Rzechonek
   register: https://luma.com/a1xtcmqi
@@ -540,10 +539,16 @@
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/wlguizbs
+- date: 2026.09.07
+  language: Perl
+  title: "Async, Type-Safe, and Secure: Perl's Answer to FastAPI"
+  link: https://perlmaven.com/async-type-safe-and-secure-perls-answer-to-fastapi
+  speakers: Mohammad Sajid Anwar
+  register: https://luma.com/obzvoiii
 - date: 2026.10.21
   language: Perl
   title: 'MCP - Model Context Protocol in Perl: From Web App to AI Tools'
-  link: null
+  link: https://perlmaven.com/mcp-model-context-protocol-in-perl-from-web-app-to-ai-tools
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
