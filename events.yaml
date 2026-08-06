@@ -179,6 +179,7 @@
   speakers: Gábor Szabó
   register: https://www.meetup.com/code-mavens/events/306048290/
 - date: 2025.03.04
+  # cancelled?
   language: Rust
   title: Parsing with Winnow in Rust
   link: https://rust.code-maven.com/parsing-with-winnow
@@ -204,8 +205,7 @@
   register: https://www.meetup.com/code-mavens/events/305587087/
 - date: 2025.03.11
   language: Python
-  title: Using Streamlit to create interactive web apps & deploy machine learning
-    models
+  title: Using Streamlit to create interactive web apps & deploy machine learning models
   link: https://python.code-maven.com/using-streamlit
   speakers: Leah Levy
   register: https://www.meetup.com/code-mavens/events/305584832/
@@ -256,7 +256,25 @@
   title: Rust at Work at Ardan Labs & LibreQoS
   link: https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos
   speakers: Herbert Wolverson
-  register: null
+  register: https://www.meetup.com/code-mavens/events/308234298/
+- date: 2025.11.11
+  language: Perl
+  title: 'Adding tests to legacy Perl code'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/fo0d3ccl
+- date: 2025.12.01
+  language: Perl
+  title: 'Perl Code-reading and testing'
+  link:  null
+  speakers: Gabor Szabo
+  register: https://luma.com/3zran9xx
+- date: 2025.12.26
+  language: Perl
+  title: 'Live Open Source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/tlggjbrp
 - date: 2025.12.27
   language: Python
   title: 'Live Open Source Python project contribution'
@@ -269,6 +287,12 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312554028/
+- date: 2026.01.08
+  language: Perl
+  title: 'Online Perl code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/9o4jn1fk
 - date: 2026.01.11
   language: Python
   title: 'Python code reading and open source contribution '
@@ -293,6 +317,12 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312710314/
+- date: 2026.01.24
+  language: Perl
+  title: 'Online Perl code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/3fxkbcay
 - date: 2026.01.26
   language: Rust
   title: 'Rust code reading and open source contribution'
@@ -311,13 +341,25 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312985189/
+- date: 2026.02.10
+  language: Perl
+  title: 'Online Perl code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/3vlpqn8g
+- date: 2026.03.10
+  language: Perl
+  title: 'Online Perl code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/ayq1vx5u
 - date: 2026.03.16
   language: Git
   title: 'Introduction to Git - part 1'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313724584/
-- date: 2026.03.27
+- date: 2026.03.17
   language: Git
   title: 'Introduction to Git - part 2'
   link: null
@@ -335,6 +377,12 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313840245/
+- date: 2026.03.26
+  language: Perl
+  title: 'Testing in Perl - part 1'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/8bgybgfi
 - date: 2026.03.27
   language: Git
   title: 'Introduction to Git - part 5'
@@ -347,30 +395,60 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313944077/
+- date: 2026.04.02
+  language: Perl
+  title: 'Testing in Perl - part 2'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/hlnwa9qo
 - date: 2026.04.07
   language: Rust
   title: 'Web development using axum in Rust - part 2'
   link: null
   speakers: Gabor Szabp
   register: https://www.meetup.com/code-mavens/events/313944233/
+- date: 2026.04.09
+  language: Perl
+  title: 'Testing in Perl - part 3'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/pdlmzj3x
 - date: 2026.04.14
   language: Rust
   title: 'Web development using axum in Rust - part 3'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314072969/
+- date: 2026.04.23
+  language: Perl
+  title: 'Testing in Perl - part 4'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/iw4zczo3
 - date: 2026.04.28
   language: Rust
   title: 'Web development using axum in Rust - part 4'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314401473/
+- date: 2026.04.30
+  language: Perl
+  title: 'Testing in Perl - part 5'
+  link: null
+  speakers: Gabor Szabo
+  register: https://luma.com/0zinzm9e
 - date: 2026.05.05
   language: Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314538967/
+- date: 2026.05.07
+  language: Perl
+  title: 'Exploring Perl modules'
+  link: null
+  speakers: "?"
+  register: https://luma.com/cd1mu4az
 - date: 2026.05.12
   language: Rust
   title: 'Introduction to database access using Rust SQLx'
@@ -383,6 +461,18 @@
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314763927/
+- date: 2026.05.20
+  language: Perl
+  title: 'Exploring Perl modules'
+  link: null
+  speakers: "?"
+  register: https://luma.com/0c847vp2
+- date: 2026.06.03
+  language: Perl
+  title: 'Exploring Perl modules + using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/l7kv2e9t
 - date: 2026.06.04
   language: FalkorDB
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
@@ -395,6 +485,18 @@
   link: https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries
   speakers: Graham Knapp
   register: https://www.meetup.com/code-mavens/events/314974095/
+- date: 2026.06.24
+  language: Perl
+  title: 'Perl development using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/snqksm8j
+- date: 2026.07.08
+  language: Perl
+  title: 'Perl development using AI'
+  link: null
+  speakers: "?"
+  register: https://luma.com/lsi130vn
 - date: 2026.07.20
   language: Python
   title: Lazing for Impact, Python in 2026
@@ -406,13 +508,13 @@
   title: Perl development using AI + Open Source
   link: https://perlmaven.com/perl-development-using-codex-by-emmanuel
   speakers: Emmanuel Thouraud
-  register: null
+  register: https://luma.com/cy0xt6qp
 - date: 2026.08.02
   language: GitHub
   title: 'Workshop: Create your own web site on GitHub pages'
   link: https://git.code-maven.com/workshop-2026-08-02
   speakers: Gabor Szabo
-  register: null
+  register: https://luma.com/2ea8kyka
 - date: 2026.08.24
   language: Python
   title: Fixing an unmaintained package, spanning Python, C++, nanobind and Github
@@ -429,107 +531,21 @@
 - date: 2026.08.31
   language: Rust
   title: 'Workshop: Add tests to an open source Rust project'
-  link: https://luma.com/nwfmsdtf
+  link: null
   speakers: Gabor Szabo
   register: https://luma.com/nwfmsdtf
 - date: 2026.09.02
   language: Python
   title: 'Workshop: Add tests to an open source Python project'
-  link: https://luma.com/wlguizbs
+  link: null
   speakers: Gabor Szabo
   register: https://luma.com/wlguizbs
 - date: 2026.10.21
   language: Perl
   title: 'MCP - Model Context Protocol in Perl: From Web App to AI Tools'
-  link: https://luma.com/6qqyscbm
+  link: null
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
-
-- date: 2026.07.29
-  language: Perl
-  title: 'Perl development using AI + Open Source'
-  link: null
-  speakers: "?"
-  register: https://luma.com/cy0xt6qp
-
-- date: 2026.07.08
-  language: Perl
-  title: 'Perl development using AI'
-  link: null
-  speakers: "?"
-  register: https://luma.com/lsi130vn
-
-
-- date: 2026.06.24
-  language: Perl
-  title: 'Perl development using AI'
-  link: null
-  speakers: "?"
-  register: https://luma.com/snqksm8j
-
-- date: 2026.06.03
-  language: Perl
-  title: 'Exploring Perl modules + using AI'
-  link: null
-  speakers: "?"
-  register: https://luma.com/l7kv2e9t
-
-- date: 2026.05.20
-  language: Perl
-  title: 'Exploring Perl modules'
-  link: null
-  speakers: "?"
-  register: https://luma.com/0c847vp2
-
-- date: 2026.05.07
-  language: Perl
-  title: 'Exploring Perl modules'
-  link: null
-  speakers: "?"
-  register: https://luma.com/cd1mu4az
-
-- date: 2026.04.30
-  language: Perl
-  title: 'Testing in Perl - part 5'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/0zinzm9e
-
-- date: 2026.04.23
-  language: Perl
-  title: 'Testing in Perl - part 4'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/iw4zczo3
-
-- date: 2026.04.09
-  language: Perl
-  title: 'Testing in Perl - part 3'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/pdlmzj3x
-
-- date: 2026.04.02
-  language: Perl
-  title: 'Testing in Perl - part 2'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/hlnwa9qo
-
-- date: 2026.04.30
-  language: Perl
-  title: 'Testing in Perl - part 1'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/8bgybgfi
-
-- date: 2026.03.10
-  language: Perl
-  title: 'Online Perl code reading and open source contribution'
-  link: null
-  speakers: Gabor Szabo
-  register: https://luma.com/ayq1vx5u
-
 
 # - date:
 #   language:
