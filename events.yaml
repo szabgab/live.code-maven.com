@@ -257,6 +257,48 @@
   link: https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos
   speakers: Herbert Wolverson
   register: null
+- date: 2025.12.27
+  language: Python
+  title: 'Live Open Source Python project contribution'
+  link:  null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312543543/
+- date: 2025.12.30
+  language: Rust
+  title: 'Live Open Source Rust project contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312554028/
+- date: 2026.01.11
+  language: Python
+  title: 'Python code reading and open source contribution '
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312641428/
+- date: 2026.01.13
+  language: Rust
+  title: 'Rust code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312641560/
+- date: 2026.01.18
+  language: Rust
+  title: 'Rust code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312710291/
+- date: 2026.01.20
+  language: Python
+  title: 'Python code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312710314/
+- date: 2026.01.26
+  language: Rust
+  title: 'Rust code reading and open source contribution'
+  link: null
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312782592/
 - date: 2026.02.03
   language: Python
   title: 'Python code reading and open source contribution'
