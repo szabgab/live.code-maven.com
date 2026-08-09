@@ -16,7 +16,8 @@
 
 <h2 class="title is-4 mt-5">Schedule:</h2>
 
-<div class="table-container">
+<!-- Desktop/Tablet Table view -->
+<div class="table-container is-hidden-mobile">
   <table class="table is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
@@ -59,9 +60,46 @@
   </table>
 </div>
 
+<!-- Mobile Card list view (No horizontal scrolling) -->
+<div class="is-hidden-tablet mb-5">
+  {% if not schedule_events %}
+    <p class="has-text-grey-light">No upcoming events scheduled.</p>
+  {% endif %}
+  {% for event in schedule_events %}
+    <div class="box mb-4 p-4" style="border: 1px solid #e2edf5; box-shadow: 0 4px 10px rgba(11, 34, 53, 0.04); background-color: #fafcfe;">
+      <div class="is-flex is-justify-content-between is-align-items-center mb-3">
+        <span class="tag is-primary is-light has-text-weight-bold">{{ event.date }}</span>
+        <div class="tags">
+          {% for t in event.topics %}
+            <span class="tag is-info is-light">{{ t }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <h3 class="title is-6 mb-3">
+        {% if event.link %}
+          <a href="{{ event.link }}" class="has-text-link-dark">{{ event.title }}</a>
+        {% else %}
+          {{ event.title }}
+        {% endif %}
+      </h3>
+      <div class="is-flex is-justify-content-between is-align-items-center mt-4">
+        <span class="is-size-7 has-text-grey">By <strong>{{ event.speakers }}</strong></span>
+        {% if event.register %}
+          {% if event.register.startswith('http://') or event.register.startswith('https://') %}
+            <a class="button is-small is-primary is-rounded px-3 has-text-weight-bold" href="{{ event.register }}">Register</a>
+          {% else %}
+            <span class="is-size-7 tag is-light">{{ event.register }}</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
 <h2 class="title is-4 mt-6">Earlier events and video recordings</h2>
 
-<div class="table-container">
+<!-- Desktop/Tablet Table view -->
+<div class="table-container is-hidden-mobile">
   <table class="table is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
@@ -92,4 +130,33 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
+
+<!-- Mobile Card list view (No horizontal scrolling) -->
+<div class="is-hidden-tablet">
+  {% if not earlier_events %}
+    <p class="has-text-grey-light">No earlier events.</p>
+  {% endif %}
+  {% for event in earlier_events %}
+    <div class="box mb-4 p-4" style="border: 1px solid #e2edf5; box-shadow: 0 4px 10px rgba(11, 34, 53, 0.04); background-color: #fafcfe;">
+      <div class="is-flex is-justify-content-between is-align-items-center mb-3">
+        <span class="tag is-grey is-light has-text-weight-bold">{{ event.date }}</span>
+        <div class="tags">
+          {% for t in event.topics %}
+            <span class="tag is-info is-light">{{ t }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <h3 class="title is-6 mb-3">
+        {% if event.link %}
+          <a href="{{ event.link }}" class="has-text-link-dark">{{ event.title }}</a>
+        {% else %}
+          {{ event.title }}
+        {% endif %}
+      </h3>
+      <div>
+        <span class="is-size-7 has-text-grey">By <strong>{{ event.speakers }}</strong></span>
+      </div>
+    </div>
+  {% endfor %}
 </div>
