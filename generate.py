@@ -13,6 +13,20 @@ import yaml
 from markdown_it import MarkdownIt
 from jinja2 import FileSystemLoader, Environment
 
+VALID_TOPICS = {
+    "AI",
+    "Databases",
+    "FalkorDB",
+    "Git",
+    "GitHub",
+    "JavaScript",
+    "MCP",
+    "Open Source",
+    "Perl",
+    "Python",
+    "Rust",
+}
+
 
 def format_table(headers, rows):
     """
@@ -87,6 +101,30 @@ def rebuild():
                 f"Events are not in chronological order: event at index {idx} with date {date_val} comes after a later date {prev_date.strftime('%Y.%m.%d')}"
             )
         prev_date = event_date
+
+        # Verify topics and their casing
+        topics_val = event.get("topics")
+        if isinstance(topics_val, list):
+            topics_list = topics_val
+        elif isinstance(topics_val, str):
+            topics_list = [topics_val] if topics_val else []
+        elif topics_val is None:
+            topics_list = []
+        else:
+            topics_list = [str(topics_val)]
+
+        for topic in topics_list:
+            if topic not in VALID_TOPICS:
+                # Check case-insensitively
+                matching = [t for t in VALID_TOPICS if t.lower() == topic.lower()]
+                if matching:
+                    raise ValueError(
+                        f"Topic '{topic}' at index {idx} has incorrect casing. Expected '{matching[0]}'"
+                    )
+                else:
+                    raise ValueError(
+                        f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(VALID_TOPICS))}"
+                    )
 
     # Load config from static/_config.yml
     config_path = "static/_config.yml"
