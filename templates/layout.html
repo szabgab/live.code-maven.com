@@ -19,62 +19,80 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="{{ site.baseurl or '' }}/assets/css/style.css">
   </head>
   <body>
-    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="site-wrapper py-6 px-3">
+      <div class="container" style="max-width: 960px;">
+        
+        <!-- Header Hero Box -->
+        <header class="box p-6 mb-5" style="background: linear-gradient(135deg, #084c57 0%, #0f766e 45%, #1366b0 100%); color: #f8fcff; border-radius: 1.25rem; box-shadow: 0 14px 44px rgba(11, 34, 53, 0.12); position: relative; overflow: hidden; border: none;">
+          <div style="position: relative; z-index: 2;">
+            <div class="brand-wrap">
+              <h1 class="title is-1 has-text-white mb-2" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+                <a href="{{ site.baseurl or '' }}/" class="has-text-white" style="text-decoration: none;">{{ site.title }}</a>
+              </h1>
+              <p class="subtitle is-5 has-text-grey-lighter mb-5" style="font-family: 'Source Sans 3', sans-serif;">
+                {{ site.description }}
+              </p>
+            </div>
 
-    <div class="site-shell">
-      <header class="site-header" role="banner">
-        <div class="header-inner">
-          <div class="brand-wrap">
-            <h1 class="project-name"><a href="{{ site.baseurl or '' }}/">{{ site.title }}</a></h1>
-            <p class="project-tagline">{{ site.description }}</p>
+            {% if site.nav_links %}
+              <nav class="buttons mb-5" aria-label="Primary navigation">
+                {% for item in site.nav_links %}
+                  <a href="{{ site.baseurl or '' }}{{ item.url }}" class="button is-rounded is-white is-outlined {% if page.url == item.url %}is-active{% endif %}" {% if page.url == item.url %}aria-current="page"{% endif %} style="font-weight: 700;">
+                    {{ item.label }}
+                  </a>
+                {% endfor %}
+              </nav>
+            {% endif %}
+
+            {% if site.calendars %}
+              <div class="mb-4">
+                <p class="is-size-7 has-text-weight-bold has-text-grey-lighter is-uppercase mb-2" style="letter-spacing: 0.05em;">Calendars</p>
+                <div class="buttons">
+                  {% for item in site.calendars %}
+                    <a class="button is-rounded is-white is-light py-1 px-3" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 700; color: #063c65;">
+                      📅 {{ item.label }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if site.telegram_links %}
+              <div>
+                <p class="is-size-7 has-text-weight-bold has-text-grey-lighter is-uppercase mb-2" style="letter-spacing: 0.05em;">Telegram Channels</p>
+                <div class="buttons">
+                  {% for item in site.telegram_links %}
+                    <a class="button is-rounded is-white is-light py-1 px-3" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 700; color: #063c65;">
+                      💬 {{ item.label }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
           </div>
+          <!-- Decorative glow effect -->
+          <div style="content: ''; position: absolute; inset: auto -10% -20% auto; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); z-index: 1;"></div>
+        </header>
 
-          {% if site.nav_links %}
-            <nav class="site-nav" aria-label="Primary navigation">
-              {% for item in site.nav_links %}
-                <a href="{{ site.baseurl or '' }}{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
-              {% endfor %}
-            </nav>
-          {% endif %}
+        <!-- Main Content Box -->
+        <main id="content" class="box p-5 md:p-6 mb-5" style="border: 1px solid #d6e2ea; border-radius: 1.1rem; box-shadow: 0 14px 44px rgba(11, 34, 53, 0.12);">
+          <div class="content">
+            {{ content | safe }}
+          </div>
+        </main>
 
-          {% if site.calendars %}
-            <p class="link-row-label">Calendars</p>
-            <div class="quick-links" aria-label="Calendar links">
-              {% for item in site.calendars %}
-                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">📅 {{ item.label }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
+        <!-- Footer -->
+        <footer class="footer has-text-centered py-5" style="background: transparent; color: #4e6575;">
+          <p class="has-text-weight-bold">{{ site.title }}</p>
+          <p class="is-size-7">{{ site.description }}</p>
+          <p class="is-size-7 mt-2">Virtual live events.</p>
+        </footer>
 
-          {% if site.telegram_links %}
-            <p class="link-row-label">Telegram Channels</p>
-            <div class="quick-links" aria-label="Telegram links">
-              {% for item in site.telegram_links %}
-                <a class="pill" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 {{ item.label }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-      </header>
-
-      <main id="content" class="main-content" role="main">
-        {{ content | safe }}
-      </main>
-
-      <footer class="site-footer">
-        <p>
-          <strong>{{ site.title }}</strong> · {{ site.description }}
-        </p>
-        <p>
-          Virtual live events.
-        </p>
-      </footer>
+      </div>
     </div>
-
-    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
   </body>
 </html>

@@ -208,7 +208,14 @@ def rebuild():
 
     # Convert index markdown to HTML
     md = MarkdownIt("gfm-like")
-    index_html_content = md.render(output)
+
+    def format_html_tables(html):
+        return html.replace(
+            "<table>",
+            '<div class="table-container"><table class="table is-striped is-hoverable is-fullwidth">',
+        ).replace("</table>", "</table></div>")
+
+    index_html_content = format_html_tables(md.render(output))
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
@@ -241,7 +248,7 @@ def rebuild():
         f.write(about_content)
 
     # Also render site/about.html (using the Jinja2 template)
-    about_html_content = md.render(about_content)
+    about_html_content = format_html_tables(md.render(about_content))
     about_page_meta = {"title": "About the Code-Maven Live events", "url": "/about"}
     about_html = layout_template.render(
         site=site_config, page=about_page_meta, content=about_html_content
