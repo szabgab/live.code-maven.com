@@ -532,6 +532,7 @@
 - date: 2026.05.18
   topics:
     - FalkorDB
+    - Databases
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
@@ -553,6 +554,7 @@
 - date: 2026.06.04
   topics:
     - FalkorDB
+    - Databases
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
@@ -588,7 +590,7 @@
 - date: 2026.07.29
   topics:
     - Perl
-  title: 'Perl development using AI + Open Source'
+  title: 'Perl development using Codex'
   link: https://perlmaven.com/perl-development-using-codex-by-emmanuel
   speakers: Emmanuel Thouraud
   register: https://luma.com/cy0xt6qp
@@ -616,6 +618,7 @@
 - date: 2026.08.31
   topics:
     - Rust
+    - Open Source
   title: 'Workshop: Add tests to an open source Rust project'
   link: null
   speakers: Gabor Szabo
@@ -623,6 +626,7 @@
 - date: 2026.09.02
   topics:
     - Python
+    - Open Source
   title: 'Workshop: Add tests to an open source Python project'
   link: null
   speakers: Gabor Szabo
