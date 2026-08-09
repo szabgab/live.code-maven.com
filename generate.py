@@ -81,13 +81,12 @@ def build_page(
     events,
     template,
     layout_template,
-    md,
     site_config,
     topic_filter=None,
 ):
     # Separate events into schedule and earlier
-    schedule_rows = []
-    earlier_rows = []
+    schedule_events = []
+    earlier_events = []
 
     current_date = date.today()
 
@@ -116,54 +115,30 @@ def build_page(
             # Fallback for malformed dates: classify as past
             event_date = date.min
 
-        topics_cell = "<br>".join(str(t) for t in topics)
         title = event.get("title", "")
         link = event.get("link")
         speakers = event.get("speakers", "")
         register = event.get("register")
 
-        # Format title cell
-        if link:
-            title_cell = f"[{title}]({link})"
-        else:
-            title_cell = title
+        event_data = {
+            "date": str(date_val),
+            "topics": topics,
+            "title": title,
+            "link": link,
+            "speakers": speakers,
+            "register": register,
+        }
 
         if event_date >= current_date:
-            # Schedule event (future or today)
-            # Format register link
-            if register:
-                if register.startswith("http://") or register.startswith("https://"):
-                    register_cell = f"[register]({register})"
-                else:
-                    register_cell = register
-            else:
-                register_cell = ""
-            schedule_rows.append(
-                [str(date_val), topics_cell, title_cell, speakers, register_cell]
-            )
+            schedule_events.append(event_data)
         else:
-            # Earlier event (past)
-            earlier_rows.append([str(date_val), topics_cell, title_cell, speakers])
+            earlier_events.append(event_data)
 
-    # Format tables
-    schedule_headers = ["When", "Topics", "Title", "Who", "Register"]
-    schedule_table_md = format_table(schedule_headers, schedule_rows)
-
-    earlier_headers = ["When", "Topics", "Video recordings and notes", "Who"]
-    earlier_table_md = format_table(earlier_headers, earlier_rows)
-
-    # Replace placeholders
-    page_md = template
-    if topic_filter:
-        page_md = page_md.replace(
-            "# Code-Maven Live events",
-            f"# Code-Maven Live {topic_filter} events",
-        )
-
-    output_content = page_md.replace("{{ SCHEDULE_TABLE }}", schedule_table_md)
-    output_content = output_content.replace("{{ EARLIER_TABLE }}", earlier_table_md)
-
-    html_content = format_html_tables(md.render(output_content))
+    html_content = template.render(
+        schedule_events=schedule_events,
+        earlier_events=earlier_events,
+        topic_filter=topic_filter,
+    )
 
     if topic_filter:
         page_title = f"Code-Maven community online {topic_filter} events"
@@ -248,18 +223,11 @@ def rebuild():
     else:
         site_config = {}
 
-    # Load index template
-    template_path = "pages/index.md"
-    if not os.path.exists(template_path):
-        raise FileNotFoundError(f"Template file not found at {template_path}")
-
-    with open(template_path, "r", encoding="utf-8") as f:
-        template = f.read()
-
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
     env = Environment(loader=loader)
     layout_template = env.get_template("layout.html")
+    index_template = env.get_template("index.html")
 
     md = MarkdownIt("gfm-like")
 
@@ -269,9 +237,8 @@ def rebuild():
     # Render main index.html page
     build_page(
         events=events,
-        template=template,
+        template=index_template,
         layout_template=layout_template,
-        md=md,
         site_config=site_config,
         topic_filter=None,
     )
@@ -280,9 +247,8 @@ def rebuild():
     for topic in ["Perl", "Python", "Rust"]:
         build_page(
             events=events,
-            template=template,
+            template=index_template,
             layout_template=layout_template,
-            md=md,
             site_config=site_config,
             topic_filter=topic,
         )

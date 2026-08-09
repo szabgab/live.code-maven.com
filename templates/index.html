@@ -1,0 +1,95 @@
+<h1 class="title">
+  {% if topic_filter %}
+    Code-Maven Live {{ topic_filter }} events
+  {% else %}
+    Code-Maven Live events
+  {% endif %}
+</h1>
+
+<p>Organizer: <a href="https://szabgab.com/">Gabor Szabo</a></p>
+
+<h2 class="title is-4 mt-5">Calendars</h2>
+<p>Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics.</p>
+
+<h2 class="title is-4 mt-5">Code Maven on Telegram</h2>
+<p>We have a number of channels on Telegram to the specific topics we cover. Join us using the Telegram buttons in the header.</p>
+
+<h2 class="title is-4 mt-5">Schedule:</h2>
+
+<div class="table-container">
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Topics</th>
+        <th>Title</th>
+        <th>Who</th>
+        <th>Register</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in schedule_events %}
+        <tr>
+          <td style="white-space: nowrap;">{{ event.date }}</td>
+          <td>
+            {% for t in event.topics %}
+              {{ t }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% if event.link %}
+              <a href="{{ event.link }}">{{ event.title }}</a>
+            {% else %}
+              {{ event.title }}
+            {% endif %}
+          </td>
+          <td>{{ event.speakers }}</td>
+          <td>
+            {% if event.register %}
+              {% if event.register.startswith('http://') or event.register.startswith('https://') %}
+                <a href="{{ event.register }}">register</a>
+              {% else %}
+                {{ event.register }}
+              {% endif %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2 class="title is-4 mt-6">Earlier events and video recordings</h2>
+
+<div class="table-container">
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Topics</th>
+        <th>Video recordings and notes</th>
+        <th>Who</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in earlier_events %}
+        <tr>
+          <td style="white-space: nowrap;">{{ event.date }}</td>
+          <td>
+            {% for t in event.topics %}
+              {{ t }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% if event.link %}
+              <a href="{{ event.link }}">{{ event.title }}</a>
+            {% else %}
+              {{ event.title }}
+            {% endif %}
+          </td>
+          <td>{{ event.speakers }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
