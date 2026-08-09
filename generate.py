@@ -339,6 +339,14 @@ def rebuild():
     if os.path.exists(static_img_dir):
         shutil.copytree(static_img_dir, "site/img", dirs_exist_ok=True)
 
+    # Copy static/favicon directory contents to site/ root
+    static_favicon_dir = "static/favicon"
+    if os.path.exists(static_favicon_dir):
+        for filename in os.listdir(static_favicon_dir):
+            src_file = os.path.join(static_favicon_dir, filename)
+            if os.path.isfile(src_file):
+                shutil.copy(src_file, os.path.join("site", filename))
+
     # Create .nojekyll in site/ directory to bypass Jekyll
     with open("site/.nojekyll", "w", encoding="utf-8") as f:
         f.write("")
