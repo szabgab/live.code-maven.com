@@ -287,17 +287,13 @@ def rebuild():
             topic_filter=topic,
         )
 
-    # Generate site/about.md from pages/about.md (literally as markdown)
+    # Load pages/about.md to render site/about.html
     about_path = "pages/about.md"
     if not os.path.exists(about_path):
         raise FileNotFoundError(f"About file not found at {about_path}")
 
     with open(about_path, "r", encoding="utf-8") as f:
         about_content = f.read()
-
-    about_output_path = "site/about.md"
-    with open(about_output_path, "w", encoding="utf-8") as f:
-        f.write(about_content)
 
     # Also render site/about.html (using the Jinja2 template)
     about_html_content = format_html_tables(md.render(about_content))
@@ -352,7 +348,7 @@ def rebuild():
         f.write("")
 
     print(
-        f"Successfully rebuilt site/index.html, site/about.html, site/about.md, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, site/about.html, and site/assets/css/style.css"
     )
 
 
