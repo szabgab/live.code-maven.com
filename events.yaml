@@ -638,6 +638,12 @@
   link: https://perlmaven.com/async-type-safe-and-secure-perls-answer-to-fastapi
   speakers: Mohammad Sajid Anwar
   register: https://luma.com/obzvoiii
+- date: 2026.09.10
+  topics: Rust
+  title: 'Solving Real-World Planning Problems in Rust with SolverForge'
+  link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
+  speakers: Vittorio Distefano
+  register: https://luma.com/rfbzk3ae
 - date: 2026.10.21
   topics:
     - Perl
