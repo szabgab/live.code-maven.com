@@ -2,6 +2,9 @@
 
 At the Code Maven live events hosted by [Gabor Szabo](https://szabgab.com/) you will learn how to use various programming libraries. We cover projects in a number of pogramming languages: Rust, Python, and Perl. We cover Git/GitHub/GitLab, Docker and Linux in general. We also cover various aspects of AI. e.g. AI aided programming.
 
+## Organizer
+
+[Gabor Szabo](https://szabgab.com/)
 
 ## Format
 
