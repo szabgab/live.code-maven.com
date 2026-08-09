@@ -118,7 +118,17 @@ def rebuild():
             # Fallback for malformed dates: classify as past
             event_date = date.min
 
-        language = event.get("language", "")
+        topics_val = event.get("topics")
+        if isinstance(topics_val, list):
+            topics = topics_val
+        elif isinstance(topics_val, str):
+            topics = [topics_val] if topics_val else []
+        elif topics_val is None:
+            topics = []
+        else:
+            topics = [str(topics_val)]
+
+        topics_cell = "<br>".join(str(t) for t in topics)
         title = event.get("title", "")
         link = event.get("link")
         speakers = event.get("speakers", "")
@@ -141,17 +151,17 @@ def rebuild():
             else:
                 register_cell = ""
             schedule_rows.append(
-                [str(date_val), language, title_cell, speakers, register_cell]
+                [str(date_val), topics_cell, title_cell, speakers, register_cell]
             )
         else:
             # Earlier event (past)
-            earlier_rows.append([str(date_val), language, title_cell, speakers])
+            earlier_rows.append([str(date_val), topics_cell, title_cell, speakers])
 
     # Format tables
-    schedule_headers = ["When", "Language", "Title", "Who", "Register"]
+    schedule_headers = ["When", "Topics", "Title", "Who", "Register"]
     schedule_table_md = format_table(schedule_headers, schedule_rows)
 
-    earlier_headers = ["When", "Language", "Video recordings and notes", "Who"]
+    earlier_headers = ["When", "Topics", "Video recordings and notes", "Who"]
     earlier_table_md = format_table(earlier_headers, earlier_rows)
 
     # Replace placeholders

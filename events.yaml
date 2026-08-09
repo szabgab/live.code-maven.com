@@ -1,559 +1,651 @@
 - date: 2024.06.06
-  language: Rust
+  topics:
+    - Rust
   title: Your first contribution to an Open Source Rust project
   link: https://rust.code-maven.com/your-first-contribution-to-an-open-source-rust-project
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301156302/
 - date: 2024.06.09
-  language: Rust
+  topics:
+    - Rust
   title: GitHub pages for Rust developers
   link: https://rust.code-maven.com/github-pages-for-rust-developers
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301215326/
 - date: 2024.06.13
-  language: Perl
+  topics:
+    - Perl
   title: Getting started with Docker for Perl developers
   link: https://perlmaven.com/getting-started-with-docker-for-perl-developers
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301268306/
 - date: 2024.06.16
-  language: Rust
+  topics:
+    - Rust
   title: Web development in Rust using Rocket
   link: https://rust.code-maven.com/web-development-in-rust-using-rocket
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301294669/
 - date: 2024.06.18
-  language: Python
+  topics:
+    - Python
   title: Testing Python code using Pytest
   link: https://python.code-maven.com/testing-python-code-with-pytest
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301363070/
 - date: 2024.06.20
-  language: Python
+  topics:
+    - Python
   title: Functional programming in Python
   link: https://python.code-maven.com/functional-programming-in-python
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301395323/
 - date: 2024.06.25
-  language: Rust
+  topics:
+    - Rust
   title: Using the Liquid template system in Rust
   link: https://rust.code-maven.com/using-the-liquid-template-system-in-rust
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301487547/
 - date: 2024.06.27
-  language: Rust
+  topics:
+    - Rust
   title: Accepting parameters on the command line using Rust Clap
   link: https://rust.code-maven.com/accepting-parameters-on-the-command-line-using-rust-clap
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301506015/
 - date: 2024.07.07
-  language: Python
+  topics:
+    - Python
   title: Getting started with web development using Python Flask
   link: https://python.code-maven.com/getting-started-with-web-development-using-python-flask
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301574483/
 - date: 2024.07.09
-  language: ''
+  topics: []
   title: Getting started with Linux on Linode in the cloud for less than 1 cent
   link: https://python.code-maven.com/getting-started-with-linux-on-linode
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301812560/
 - date: 2024.07.11
-  language: Rust
+  topics:
+    - Rust
   title: Reading JSON files in Rust
   link: https://rust.code-maven.com/reading-json-files-in-rust
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301636580/
 - date: 2024.07.25
-  language: Python
+  topics:
+    - Python
   title: 'Testing Python with Pytest: The magic of fixtures'
   link: https://python.code-maven.com/testing-python-with-pytest-the-magic-of-fixtures
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301810834/
 - date: 2024.08.04
-  language: Perl
+  topics:
+    - Perl
   title: 'Continuous Integration (CI): GitHub Actions for Perl Projects'
   link: https://perlmaven.com/github-actions-for-perl-projects
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301413566/
 - date: 2024.08.06
-  language: Rust
+  topics:
+    - Rust
   title: Web development in Rust using Rocket - part 2
   link: https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301736709/
 - date: 2024.08.15
-  language: Perl
+  topics:
+    - Perl
   title: GitHub Pages for Perl developers
   link: https://perlmaven.com/github-pages-for-perl-developers
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/301871765/
 - date: 2024.08.28
-  language: Rust
+  topics:
+    - Rust
   title: 'Command Line Tools: Implementing wc in Rust'
   link: https://rust.code-maven.com/implementing-wc-in-rust
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/302151487/
 - date: 2024.12.17
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust Source Code Reading: The thousands crate'
   link: https://rust.code-maven.com/the-thousands-crate
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/304824684/
 - date: 2025.01.06
-  language: Python
+  topics:
+    - Python
   title: logger.info(f"Don't Give all your {secrets} away")
   link: https://python.code-maven.com/logger-info-with-tamar-galer
   speakers: Tamar Galer
   register: https://www.meetup.com/code-mavens/events/305045436/
 - date: 2025.01.08
-  language: Rust
+  topics:
+    - Rust
   title: BlockMesh Network implemented in Rust
   link: https://rust.code-maven.com/block-mesh-network
   speakers: Ohad Dahan
   register: https://www.meetup.com/code-mavens/events/304951805/
 - date: 2025.01.15
-  language: Rust
+  topics:
+    - Rust
   title: An introduction to WASM in Rust
   link: https://rust.code-maven.com/an-introduction-to-wasm-in-rust
   speakers: Márk Tolmács
   register: https://www.meetup.com/code-mavens/events/305064546/
 - date: 2025.01.20
-  language: Perl
+  topics:
+    - Perl
   title: GitLab pipelines and CI for Perl developers
   link: https://perlmaven.com/gitlab-pipelines-and-ci-for-perl-developers
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/304874972/
 - date: 2025.01.27
-  language: Python
+  topics:
+    - Python
   title: The Reference Model for COVID-19 attempts to explain USA data
   link: https://python.code-maven.com/covid-19-with-jacob-barhak
   speakers: Jacob Barhak
   register: https://www.meetup.com/code-mavens/events/305357268/
 - date: 2025.01.30
-  language: Rust
+  topics:
+    - Rust
   title: Are We Embedded Yet? - Implementing tiny HTTP server on a microcontroller
   link: https://rust.code-maven.com//are-we-embedded-yet
   speakers: Maor Malka
   register: https://www.meetup.com/code-mavens/events/305382647/
 - date: 2025.02.03
-  language: Python
+  topics:
+    - Python
   title: How to Make Your Backend Roar
   link: https://python.code-maven.com/how-to-make-your-backend-roar
   speakers: Haki Benita
   register: https://www.meetup.com/code-mavens/events/305374633/
 - date: 2025.02.05
-  language: Python
+  topics:
+    - Python
   title: The Evolution of Python Monitoring
   link: https://python.code-maven.com/the-evolution-of-python-monitoring
   speakers: May Walter
   register: https://www.meetup.com/code-mavens/events/305453203/
 - date: 2025.02.11
-  language: Rust
+  topics:
+    - Rust
   title: 'Meet Elusion: New DataFrame Library powered by Rust 🦀'
   link: https://rust.code-maven.com/meet-elusion-mew-dataframe-library
   speakers: Borivoj Grujicic
   register: https://www.meetup.com/code-mavens/events/305513416/
 - date: 2025.02.12
-  language: Python
+  topics:
+    - Python
   title: Python async.io - From zero to hero
   link: https://python.code-maven.com/async-io-from-zero-to-hero
   speakers: Eyal Balla
   register: https://www.meetup.com/code-mavens/events/305479458/
 - date: 2025.02.20
-  language: Python
+  topics:
+    - Python
   title: Simulations for the Mathematically Challenged
   link: https://python.code-maven.com/simulations-for-the-mathematically-challenged
   speakers: Miki Tebeka
   register: https://www.meetup.com/code-mavens/events/305223619/
 - date: 2025.02.25
-  language: Python
+  topics:
+    - Python
   title: Reducing your memory footprint by 75% with 6 lines
   link: https://python.code-maven.com/reducing-your-memory-footprint
   speakers: Tomer Brisker
   register: https://www.meetup.com/code-mavens/events/305492369/
 - date: 2025.03.02
-  language: Git
+  topics:
+    - Git
   title: Creating a website on GitHub Pages using Markdown
   link: https://git.code-maven.com/creating-a-website-on-github-pages-using-markdown
   speakers: Gábor Szabó
   register: https://www.meetup.com/code-mavens/events/306048290/
 - date: 2025.03.04
   # cancelled?
-  language: Rust
+  topics:
+    - Rust
   title: Parsing with Winnow in Rust
   link: https://rust.code-maven.com/parsing-with-winnow
   speakers: Kenny Flegal
   register: https://www.meetup.com/code-mavens/events/305793122/
 - date: 2025.03.05
-  language: Python
+  topics:
+    - Python
   title: daffodil, data frames for optimized data inspection and logical processing
   link: https://python.code-maven.com/daffodil-data-frames-for-optimized-data-inspection-and-logical-processing
   speakers: Ray Lutz
   register: https://www.meetup.com/code-mavens/events/305731787/
 - date: 2025.03.06
-  language: Rust
+  topics:
+    - Rust
   title: Ratatui - Terminal User Interfaces in Rust
   link: https://rust.code-maven.com/ratatui-tui-in-rust
   speakers: Orhun Parmaksız
   register: https://www.meetup.com/code-mavens/events/305750365/
 - date: 2025.03.09
-  language: Rust
+  topics:
+    - Rust
   title: Creating A Mock Blockchain in Rust
   link: https://rust.code-maven.com//creating-a-mock-blockchain-in-rust
   speakers: Sourav Mishra
   register: https://www.meetup.com/code-mavens/events/305587087/
 - date: 2025.03.11
-  language: Python
+  topics:
+    - Python
   title: Using Streamlit to create interactive web apps & deploy machine learning models
   link: https://python.code-maven.com/using-streamlit
   speakers: Leah Levy
   register: https://www.meetup.com/code-mavens/events/305584832/
 - date: 2025.03.12
-  language: JavaScript
+  topics:
+    - JavaScript
   title: Vanilla Boot - Developing reusable UI components with Vanilla JavaScript
   link: https://code-maven.com/vanilla-boot
   speakers: Eyal Lior
   register: https://www.meetup.com/code-mavens/events/306509530/
 - date: 2025.03.18
-  language: Rust
+  topics:
+    - Rust
   title: 'crum: Complex Numbers and Complex Matrices in Rust'
   link: https://rust.code-maven.com/crum
   speakers: Frans Slabber
   register: https://www.meetup.com/code-mavens/events/305823397/
 - date: 2025.03.20
-  language: Rust
+  topics:
+    - Rust
   title: Rust and embedded programming
   link: https://rust.code-maven.com/rust-and-embedded-programming-with-leon-vak
   speakers: Leon Vak
   register: https://www.meetup.com/code-mavens/events/306357728/
 - date: 2025.04.27
-  language: ''
+  topics: []
   title: 'When Al Needs a Human Assistant: How to Build Data Annotation Operations'
   link: null
   speakers: Liz Polansky and Danielle Menuhin
   register: https://www.meetup.com/code-mavens/events/306911498/
 - date: 2025.05.06
-  language: Python
+  topics:
+    - Python
   title: How to build a microservice with Python + FastAPI to switch from RDS to DynamoDB
   link: https://python.code-maven.com/how-to-build-a-microservice-with-python-and-fastapi
   speakers: Nikita Baryshev
   register: https://www.meetup.com/code-mavens/events/307228860/
 - date: 2025.05.20
-  language: Rust
+  topics:
+    - Rust
   title: Rust at Work at Flarion
   link: https://rust.code-maven.com/rust-at-work-flarion
   speakers: Ran Reichman
   register: https://www.meetup.com/code-mavens/events/307635734/
 - date: 2025.05.27
-  language: Rust
+  topics:
+    - Rust
   title: Rust at Work at Eureka Labs
   link: https://rust.code-maven.com/rust-at-work-eureka-labs
   speakers: Eli Shalom & Igal Tabachnik
   register: https://www.meetup.com/code-mavens/events/307673680/
 - date: 2025.06.11
-  language: Rust
+  topics:
+    - Rust
   title: Rust at Work at Ardan Labs & LibreQoS
   link: https://rust.code-maven.com/rust-at-work-ardan-labs-libreqos
   speakers: Herbert Wolverson
   register: https://www.meetup.com/code-mavens/events/308234298/
 - date: 2025.11.11
-  language: Perl
+  topics:
+    - Perl
   title: 'Adding tests to legacy Perl code'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/fo0d3ccl
 - date: 2025.12.01
-  language: Perl
+  topics:
+    - Perl
   title: 'Perl Code-reading and testing'
   link:  null
   speakers: Gabor Szabo
   register: https://luma.com/3zran9xx
 - date: 2025.12.26
-  language: Perl
+  topics:
+    - Perl
   title: 'Live Open Source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/tlggjbrp
 - date: 2025.12.27
-  language: Python
+  topics:
+    - Python
   title: 'Live Open Source Python project contribution'
   link:  null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312543543/
 - date: 2025.12.30
-  language: Rust
+  topics:
+    - Rust
   title: 'Live Open Source Rust project contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312554028/
 - date: 2026.01.08
-  language: Perl
+  topics:
+    - Perl
   title: 'Online Perl code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/9o4jn1fk
 - date: 2026.01.11
-  language: Python
+  topics:
+    - Python
   title: 'Python code reading and open source contribution '
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312641428/
 - date: 2026.01.13
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312641560/
 - date: 2026.01.18
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312710291/
 - date: 2026.01.20
-  language: Python
+  topics:
+    - Python
   title: 'Python code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312710314/
 - date: 2026.01.24
-  language: Perl
+  topics:
+    - Perl
   title: 'Online Perl code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/3fxkbcay
 - date: 2026.01.26
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312782592/
 - date: 2026.02.03
-  language: Python
+  topics:
+    - Python
   title: 'Python code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312985180/
 - date: 2026.02.09
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312985189/
 - date: 2026.02.10
-  language: Perl
+  topics:
+    - Perl
   title: 'Online Perl code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/3vlpqn8g
 - date: 2026.03.10
-  language: Perl
+  topics:
+    - Perl
   title: 'Online Perl code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/ayq1vx5u
 - date: 2026.03.16
-  language: Git
+  topics:
+    - Git
   title: 'Introduction to Git - part 1'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313724584/
 - date: 2026.03.17
-  language: Git
+  topics:
+    - Git
   title: 'Introduction to Git - part 2'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313724761/
 - date: 2026.03.18
-  language: Git
+  topics:
+    - Git
   title: 'Introduction to Git - part 3'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313742674/
 - date: 2026.03.23
-  language: Git
+  topics:
+    - Git
   title: 'Introduction to Git - part 4'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313840245/
 - date: 2026.03.26
-  language: Perl
+  topics:
+    - Perl
   title: 'Testing in Perl - part 1'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/8bgybgfi
 - date: 2026.03.27
-  language: Git
+  topics:
+    - Git
   title: 'Introduction to Git - part 5'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313922574/
 - date: 2026.03.31
-  language: Rust
+  topics:
+    - Rust
   title: 'Web development using axum in Rust - part 1'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/313944077/
 - date: 2026.04.02
-  language: Perl
+  topics:
+    - Perl
   title: 'Testing in Perl - part 2'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/hlnwa9qo
 - date: 2026.04.07
-  language: Rust
+  topics:
+    - Rust
   title: 'Web development using axum in Rust - part 2'
   link: null
   speakers: Gabor Szabp
   register: https://www.meetup.com/code-mavens/events/313944233/
 - date: 2026.04.09
-  language: Perl
+  topics:
+    - Perl
   title: 'Testing in Perl - part 3'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/pdlmzj3x
 - date: 2026.04.14
-  language: Rust
+  topics:
+    - Rust
   title: 'Web development using axum in Rust - part 3'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314072969/
 - date: 2026.04.23
-  language: Perl
+  topics:
+    - Perl
   title: 'Testing in Perl - part 4'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/iw4zczo3
 - date: 2026.04.28
-  language: Rust
+  topics:
+    - Rust
   title: 'Web development using axum in Rust - part 4'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314401473/
 - date: 2026.04.30
-  language: Perl
+  topics:
+    - Perl
   title: 'Testing in Perl - part 5'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/0zinzm9e
 - date: 2026.05.05
-  language: Rust
+  topics:
+    - Rust
   title: 'Rust code reading and open source contribution'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314538967/
 - date: 2026.05.07
-  language: Perl
+  topics:
+    - Perl
   title: 'Exploring Perl modules'
   link: null
   speakers: "?"
   register: https://luma.com/cd1mu4az
 - date: 2026.05.12
-  language: Rust
+  topics:
+    - Rust
   title: 'Introduction to database access using Rust SQLx'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314642118/
 - date: 2026.05.18
-  language: FalkorDB
+  topics:
+    - FalkorDB
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314763927/
 - date: 2026.05.20
-  language: Perl
+  topics:
+    - Perl
   title: 'Exploring Perl modules'
   link: null
   speakers: "?"
   register: https://luma.com/0c847vp2
 - date: 2026.06.03
-  language: Perl
+  topics:
+    - Perl
   title: 'Exploring Perl modules + using AI'
   link: null
   speakers: "?"
   register: https://luma.com/l7kv2e9t
 - date: 2026.06.04
-  language: FalkorDB
+  topics:
+    - FalkorDB
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/314979560/
 - date: 2026.06.07
-  language: Python
+  topics:
+    - Python
   title: 'Growing Pains: Scaling AI Coding across Team and Repo Boundaries'
   link: https://python.code-maven.com/growing-pains-scaling-ai-coding-across-team-and-repo-boundaries
   speakers: Graham Knapp
   register: https://www.meetup.com/code-mavens/events/314974095/
 - date: 2026.06.24
-  language: Perl
+  topics:
+    - Perl
   title: 'Perl development using AI'
   link: null
   speakers: "?"
   register: https://luma.com/snqksm8j
 - date: 2026.07.08
-  language: Perl
+  topics:
+    - Perl
   title: 'Perl development using AI'
   link: null
   speakers: "?"
   register: https://luma.com/lsi130vn
 - date: 2026.07.20
-  language: Python
+  topics:
+    - Python
   title: 'Lazing for Impact, Python in 2026'
   link: https://python.code-maven.com/lazing-for-impact-python-in-2026
   speakers: Aekasitt (Sitt) Guruvanich
   register: https://www.meetup.com/code-mavens/events/315613823/
 - date: 2026.07.29
-  language: Perl
+  topics:
+    - Perl
   title: 'Perl development using AI + Open Source'
   link: https://perlmaven.com/perl-development-using-codex-by-emmanuel
   speakers: Emmanuel Thouraud
   register: https://luma.com/cy0xt6qp
 - date: 2026.08.02
-  language: GitHub
+  topics:
+    - GitHub
   title: 'Workshop: Create your own web site on GitHub pages'
   link: https://git.code-maven.com/workshop-2026-08-02
   speakers: Gabor Szabo
   register: https://luma.com/2ea8kyka
 - date: 2026.08.24
-  language: Python
+  topics:
+    - Python
   title: 'Fixing an unmaintained package, spanning Python, C++, nanobind and Github Actions'
   link: https://python.code-maven.com/fixing-an-unmaintained-package-with-gracjan-adamus
   speakers: Gracjan Adamus
   register: https://luma.com/exyszwcp
 - date: 2026.08.26
-  language: Python
+  topics:
+    - Python
   title: 'Everything you need to know about docstrings, but never wanted to ask'
   link: https://python.code-maven.com/everything-you-need-to-know-about-docstrings
   speakers: Maria Lowas-Rzechonek
   register: https://luma.com/a1xtcmqi
 - date: 2026.08.31
-  language: Rust
+  topics:
+    - Rust
   title: 'Workshop: Add tests to an open source Rust project'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/nwfmsdtf
 - date: 2026.09.02
-  language: Python
+  topics:
+    - Python
   title: 'Workshop: Add tests to an open source Python project'
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/wlguizbs
 - date: 2026.09.07
-  language: Perl
+  topics:
+    - Perl
   title: "Async, Type-Safe, and Secure: Perl's Answer to FastAPI"
   link: https://perlmaven.com/async-type-safe-and-secure-perls-answer-to-fastapi
   speakers: Mohammad Sajid Anwar
   register: https://luma.com/obzvoiii
 - date: 2026.10.21
-  language: Perl
+  topics:
+    - Perl
+    - MCP
+    - AI
   title: 'MCP - Model Context Protocol in Perl: From Web App to AI Tools'
   link: https://perlmaven.com/mcp-model-context-protocol-in-perl-from-web-app-to-ai-tools
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
 # - date:
-#   language:
+#   topics:
 #   title: ''
 #   link:
 #   speakers:
