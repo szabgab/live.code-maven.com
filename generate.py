@@ -69,6 +69,119 @@ def format_table(headers, rows):
     return "\n".join([header_str, sep_str] + row_strs)
 
 
+def format_html_tables(html):
+    return html.replace(
+        "<table>",
+        '<div class="table-container"><table class="table is-striped is-hoverable is-fullwidth">',
+    ).replace("</table>", "</table></div>")
+
+
+def build_page(
+    events,
+    template,
+    layout_template,
+    md,
+    site_config,
+    topic_filter=None,
+):
+    # Separate events into schedule and earlier
+    schedule_rows = []
+    earlier_rows = []
+
+    current_date = date.today()
+
+    for event in events:
+        if not event:
+            continue
+
+        topics_val = event.get("topics")
+        if isinstance(topics_val, list):
+            topics = topics_val
+        elif isinstance(topics_val, str):
+            topics = [topics_val] if topics_val else []
+        elif topics_val is None:
+            topics = []
+        else:
+            topics = [str(topics_val)]
+
+        if topic_filter:
+            if topic_filter.lower() not in [t.lower() for t in topics]:
+                continue
+
+        date_val = event.get("date", "")
+        try:
+            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+        except ValueError:
+            # Fallback for malformed dates: classify as past
+            event_date = date.min
+
+        topics_cell = "<br>".join(str(t) for t in topics)
+        title = event.get("title", "")
+        link = event.get("link")
+        speakers = event.get("speakers", "")
+        register = event.get("register")
+
+        # Format title cell
+        if link:
+            title_cell = f"[{title}]({link})"
+        else:
+            title_cell = title
+
+        if event_date >= current_date:
+            # Schedule event (future or today)
+            # Format register link
+            if register:
+                if register.startswith("http://") or register.startswith("https://"):
+                    register_cell = f"[register]({register})"
+                else:
+                    register_cell = register
+            else:
+                register_cell = ""
+            schedule_rows.append(
+                [str(date_val), topics_cell, title_cell, speakers, register_cell]
+            )
+        else:
+            # Earlier event (past)
+            earlier_rows.append([str(date_val), topics_cell, title_cell, speakers])
+
+    # Format tables
+    schedule_headers = ["When", "Topics", "Title", "Who", "Register"]
+    schedule_table_md = format_table(schedule_headers, schedule_rows)
+
+    earlier_headers = ["When", "Topics", "Video recordings and notes", "Who"]
+    earlier_table_md = format_table(earlier_headers, earlier_rows)
+
+    # Replace placeholders
+    page_md = template
+    if topic_filter:
+        page_md = page_md.replace(
+            "# Code-Maven Live events",
+            f"# Code-Maven Live {topic_filter} events",
+        )
+
+    output_content = page_md.replace("{{ SCHEDULE_TABLE }}", schedule_table_md)
+    output_content = output_content.replace("{{ EARLIER_TABLE }}", earlier_table_md)
+
+    html_content = format_html_tables(md.render(output_content))
+
+    if topic_filter:
+        page_title = f"Code-Maven community online {topic_filter} events"
+        page_url = f"/{topic_filter.lower()}.html"
+        out_filename = f"site/{topic_filter.lower()}.html"
+    else:
+        page_title = "Code-Maven community online events"
+        page_url = "/"
+        out_filename = "site/index.html"
+
+    page_meta = {"title": page_title, "url": page_url}
+    html_output = layout_template.render(
+        site=site_config, page=page_meta, content=html_content
+    )
+
+    with open(out_filename, "w", encoding="utf-8") as f:
+        f.write(html_output)
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -149,121 +262,29 @@ def rebuild():
 
     md = MarkdownIt("gfm-like")
 
-    def format_html_tables(html):
-        return html.replace(
-            "<table>",
-            '<div class="table-container"><table class="table is-striped is-hoverable is-fullwidth">',
-        ).replace("</table>", "</table></div>")
-
-    def build_page(topic_filter=None):
-        # Separate events into schedule and earlier
-        schedule_rows = []
-        earlier_rows = []
-
-        current_date = date.today()
-
-        for event in events:
-            if not event:
-                continue
-
-            topics_val = event.get("topics")
-            if isinstance(topics_val, list):
-                topics = topics_val
-            elif isinstance(topics_val, str):
-                topics = [topics_val] if topics_val else []
-            elif topics_val is None:
-                topics = []
-            else:
-                topics = [str(topics_val)]
-
-            if topic_filter:
-                if topic_filter.lower() not in [t.lower() for t in topics]:
-                    continue
-
-            date_val = event.get("date", "")
-            try:
-                event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
-            except ValueError:
-                # Fallback for malformed dates: classify as past
-                event_date = date.min
-
-            topics_cell = "<br>".join(str(t) for t in topics)
-            title = event.get("title", "")
-            link = event.get("link")
-            speakers = event.get("speakers", "")
-            register = event.get("register")
-
-            # Format title cell
-            if link:
-                title_cell = f"[{title}]({link})"
-            else:
-                title_cell = title
-
-            if event_date >= current_date:
-                # Schedule event (future or today)
-                # Format register link
-                if register:
-                    if register.startswith("http://") or register.startswith(
-                        "https://"
-                    ):
-                        register_cell = f"[register]({register})"
-                    else:
-                        register_cell = register
-                else:
-                    register_cell = ""
-                schedule_rows.append(
-                    [str(date_val), topics_cell, title_cell, speakers, register_cell]
-                )
-            else:
-                # Earlier event (past)
-                earlier_rows.append([str(date_val), topics_cell, title_cell, speakers])
-
-        # Format tables
-        schedule_headers = ["When", "Topics", "Title", "Who", "Register"]
-        schedule_table_md = format_table(schedule_headers, schedule_rows)
-
-        earlier_headers = ["When", "Topics", "Video recordings and notes", "Who"]
-        earlier_table_md = format_table(earlier_headers, earlier_rows)
-
-        # Replace placeholders
-        page_md = template
-        if topic_filter:
-            page_md = page_md.replace(
-                "# Code-Maven Live events",
-                f"# Code-Maven Live {topic_filter} events",
-            )
-
-        output_content = page_md.replace("{{ SCHEDULE_TABLE }}", schedule_table_md)
-        output_content = output_content.replace("{{ EARLIER_TABLE }}", earlier_table_md)
-
-        html_content = format_html_tables(md.render(output_content))
-
-        if topic_filter:
-            page_title = f"Code-Maven community online {topic_filter} events"
-            page_url = f"/{topic_filter.lower()}.html"
-            out_filename = f"site/{topic_filter.lower()}.html"
-        else:
-            page_title = "Code-Maven community online events"
-            page_url = "/"
-            out_filename = "site/index.html"
-
-        page_meta = {"title": page_title, "url": page_url}
-        html_output = layout_template.render(
-            site=site_config, page=page_meta, content=html_content
-        )
-
-        with open(out_filename, "w", encoding="utf-8") as f:
-            f.write(html_output)
-
     # Ensure site/ directory exists
     os.makedirs("site", exist_ok=True)
 
     # Render main index.html page
-    build_page(None)
+    build_page(
+        events=events,
+        template=template,
+        layout_template=layout_template,
+        md=md,
+        site_config=site_config,
+        topic_filter=None,
+    )
 
     # Render topic-specific pages
     for topic in ["Perl", "Python", "Rust"]:
-        build_page(topic)
+        build_page(
+            events=events,
+            template=template,
+            layout_template=layout_template,
+            md=md,
+            site_config=site_config,
+            topic_filter=topic,
+        )
 
     # Generate site/about.md from pages/about.md (literally as markdown)
     about_path = "pages/about.md"
