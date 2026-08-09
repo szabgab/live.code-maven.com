@@ -8,6 +8,7 @@
 # ///
 
 import os
+import shutil
 from datetime import datetime, date
 import yaml
 from markdown_it import MarkdownIt
@@ -332,6 +333,11 @@ def rebuild():
         css_path = "site/assets/css/style.css"
         with open(css_path, "w", encoding="utf-8") as f:
             f.writelines(css_lines)
+
+    # Copy static/img directory to site/img
+    static_img_dir = "static/img"
+    if os.path.exists(static_img_dir):
+        shutil.copytree(static_img_dir, "site/img", dirs_exist_ok=True)
 
     # Create .nojekyll in site/ directory to bypass Jekyll
     with open("site/.nojekyll", "w", encoding="utf-8") as f:
