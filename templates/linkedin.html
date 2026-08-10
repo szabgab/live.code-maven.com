@@ -1,0 +1,52 @@
+<h1 class="title is-2 has-text-centered mb-5" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #0f766e;">
+  LinkedIn Channels & Pages
+</h1>
+<p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="font-family: 'Source Sans 3', sans-serif;">
+  Stay updated with the Code-Maven community. Follow our pages and showcases on LinkedIn for upcoming events, recordings, and articles.
+</p>
+
+<div class="columns is-multiline">
+  {% for item in linkedin_links %}
+    <div class="column is-12 is-6-tablet is-4-desktop">
+      <div class="box linkedin-card p-5" style="height: 100%; border: 1px solid #e2edf5; border-radius: 1rem; box-shadow: 0 6px 16px rgba(11, 34, 53, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #fbfdfe 100%);">
+        <!-- Accent top border with LinkedIn blue -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0077b5 0%, #00a0dc 100%);"></div>
+        
+        <div class="mb-4">
+          <div class="is-flex is-align-items-center mb-3">
+            <span class="image is-32x32 mr-3" style="display: flex; align-items: center; justify-content: center; background: #e8f3f9; border-radius: 50%; width: 36px; height: 36px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077b5" width="20" height="20">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </span>
+            <h3 class="title is-5 mb-0" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1e293b;">
+              {{ item.label }}
+            </h3>
+          </div>
+          <p class="is-size-6 has-text-grey" style="font-family: 'Source Sans 3', sans-serif;">
+            Official LinkedIn channel for {{ item.label }}.
+          </p>
+        </div>
+        
+        <div class="mt-auto">
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="button is-link is-outlined is-fullwidth is-rounded has-text-weight-bold" style="border-color: #0077b5; color: #0077b5; transition: all 0.2s ease;">
+            Visit Page
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .linkedin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(11, 34, 53, 0.12) !important;
+    border-color: #bcd0e0 !important;
+  }
+  .linkedin-card:hover .button.is-link {
+    background-color: #0077b5 !important;
+    color: #ffffff !important;
+    border-color: #0077b5 !important;
+  }
+</style>

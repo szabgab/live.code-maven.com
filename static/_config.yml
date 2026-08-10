@@ -12,6 +12,8 @@ plugins:
 nav_links:
    - label: Upcoming and Recordings
      url: /
+   - label: LinkedIn
+     url: /linkedin
    - label: About
      url: /about
 

@@ -228,6 +228,7 @@ def rebuild():
     env = Environment(loader=loader)
     layout_template = env.get_template("layout.html")
     index_template = env.get_template("index.html")
+    linkedin_template = env.get_template("linkedin.html")
 
     md = MarkdownIt("gfm-like")
 
@@ -272,6 +273,18 @@ def rebuild():
     with open(about_html_path, "w", encoding="utf-8") as f:
         f.write(about_html)
 
+    # Render site/linkedin.html
+    linkedin_links = site_config.get("linkedin", [])
+    linkedin_html_content = linkedin_template.render(linkedin_links=linkedin_links)
+    linkedin_page_meta = {"title": "Code-Maven LinkedIn Channels", "url": "/linkedin"}
+    linkedin_html = layout_template.render(
+        site=site_config, page=linkedin_page_meta, content=linkedin_html_content
+    )
+
+    linkedin_html_path = "site/linkedin.html"
+    with open(linkedin_html_path, "w", encoding="utf-8") as f:
+        f.write(linkedin_html)
+
     # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
     scss_path = "static/assets/css/style.scss"
     if os.path.exists(scss_path):
@@ -314,7 +327,7 @@ def rebuild():
         f.write("")
 
     print(
-        f"Successfully rebuilt site/index.html, site/about.html, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, site/about.html, site/linkedin.html, and site/assets/css/style.css"
     )
 
 
