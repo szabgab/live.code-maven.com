@@ -4,7 +4,8 @@ At the Code Maven live events hosted by [Gabor Szabo](https://szabgab.com/) you 
 
 ## Organizer
 
-[Gabor Szabo](https://szabgab.com/)
+[Gabor Szabo](https://szabgab.com/) has been sharing knowledge and organizing communities for 25+ years. His current quest is to build an online community to
+allow opportunities for people who do not necessarily live in high-density areas. People who might have no opportunities to connect with other developers.
 
 ## Format
 
