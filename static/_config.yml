@@ -39,5 +39,21 @@ telegram_links:
    - label: Code Maven community
      url: https://t.me/Code_Mavens
 
+linkedin:
+    - label: Gabor Szabo
+      url: https://www.linkedin.com/in/szabgab/
+    - label: Python Maven
+      url: https://www.linkedin.com/showcase/python-maven/?viewAsMember=true
+    - label: Perl Maven
+      url: https://www.linkedin.com/showcase/perl-maven/?viewAsMember=true
+    - label: Code Maven
+      url: https://www.linkedin.com/company/code-maven-world/?viewAsMember=true
+    - label: DevOps Maven
+      url: https://www.linkedin.com/showcase/devops-maven/?viewAsMember=true
+    - label: Go Maven
+      url: https://www.linkedin.com/showcase/go-maven/about/?viewAsMember=true
+    - label: Rust Maven
+      url: https://www.linkedin.com/showcase/rust-maven/?viewAsMember=true
+
 github:
    is_project_page: false
