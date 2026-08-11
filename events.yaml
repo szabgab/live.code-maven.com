@@ -623,6 +623,13 @@
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/nwfmsdtf
+- date: 2026.09.01
+  topics:
+    - Rust
+  title: 'Tauri: Cross-Platform desktop applications with Rust and web technologies'
+  link: https://rust.code-maven.com/tauri-cross-platform-desktop-applications-with-rust-and-web-technologies
+  speakers: Liel Friedman
+  register: https://luma.com/d9w26vav
 - date: 2026.09.02
   topics:
     - Python
