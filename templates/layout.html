@@ -76,18 +76,7 @@
               </div>
             {% endif %}
 
-            {% if site.telegram_links %}
-              <div>
-                <p class="is-size-7 has-text-weight-bold has-text-grey-lighter is-uppercase mb-2" style="letter-spacing: 0.05em;">Telegram Channels</p>
-                <div class="buttons">
-                  {% for item in site.telegram_links %}
-                    <a class="button is-rounded is-white is-light py-1 px-3" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 700; color: #063c65;">
-                      💬 {{ item.label }}
-                    </a>
-                  {% endfor %}
-                </div>
-              </div>
-            {% endif %}
+
           </div>
           <!-- Decorative glow effect -->
           <div style="content: ''; position: absolute; inset: auto -10% -20% auto; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); z-index: 1;"></div>

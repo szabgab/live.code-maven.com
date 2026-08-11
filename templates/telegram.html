@@ -1,0 +1,52 @@
+<h1 class="title is-2 has-text-centered mb-5" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #0f766e;">
+  Telegram Groups & Channels
+</h1>
+<p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="font-family: 'Source Sans 3', sans-serif;">
+  Join our Telegram communities to discuss, share, and stay updated with the latest topics in the Code-Maven community.
+</p>
+
+<div class="columns is-multiline">
+  {% for item in telegram_links %}
+    <div class="column is-12 is-6-tablet is-4-desktop">
+      <div class="box telegram-card p-5" style="height: 100%; border: 1px solid #e2edf5; border-radius: 1rem; box-shadow: 0 6px 16px rgba(11, 34, 53, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #fbfdfe 100%);">
+        <!-- Accent top border with Telegram blue -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0088cc 0%, #24a1de 100%);"></div>
+        
+        <div class="mb-4">
+          <div class="is-flex is-align-items-center mb-3">
+            <span class="image is-32x32 mr-3" style="display: flex; align-items: center; justify-content: center; background: #e1f3fc; border-radius: 50%; width: 36px; height: 36px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0088cc" width="20" height="20">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
+              </svg>
+            </span>
+            <h3 class="title is-5 mb-0" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1e293b;">
+              {{ item.label }}
+            </h3>
+          </div>
+          <p class="is-size-6 has-text-grey" style="font-family: 'Source Sans 3', sans-serif;">
+            Official Telegram community for {{ item.label }}.
+          </p>
+        </div>
+        
+        <div class="mt-auto">
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="button is-link is-outlined is-fullwidth is-rounded has-text-weight-bold" style="border-color: #0088cc; color: #0088cc; transition: all 0.2s ease;">
+            Join Group
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .telegram-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(11, 34, 53, 0.12) !important;
+    border-color: #bcd0e0 !important;
+  }
+  .telegram-card:hover .button.is-link {
+    background-color: #0088cc !important;
+    color: #ffffff !important;
+    border-color: #0088cc !important;
+  }
+</style>
