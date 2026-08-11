@@ -30,6 +30,8 @@ calendars:
      url: https://luma.com/git-maven
    - label: Databases
      url: https://luma.com/db-maven
+   - label: AI Maven
+     url: https://luma.com/ai-maven
    - label: Code Maven
      url: https://luma.com/code-maven
 
