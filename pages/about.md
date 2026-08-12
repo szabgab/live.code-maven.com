@@ -7,6 +7,12 @@ At the Code Maven live events hosted by [Gabor Szabo](https://szabgab.com/) you 
 [Gabor Szabo](https://szabgab.com/) has been sharing knowledge and organizing communities for 25+ years. His current quest is to build an online community to
 allow opportunities for people who do not necessarily live in high-density areas. People who might have no opportunities to connect with other developers.
 
+## Why?
+
+* For people who already gave the presentation once, we provide another opportunity to reuse the material. Some people like to iterate and improve their presentations.
+* Provide another opportunity to reach a global audience that can ask questions and challenge the speaker.
+* Potentially create conversation around the topic.
+
 ## Format
 
 There are various types of events.
@@ -18,7 +24,7 @@ There are various types of events.
 ## Overview for the speakers
 
 * Each event has one presentation and thus usually one guest speaker.
-* Presentations are usually somewhere between 20-60 min long thogh if the topic requires more time we can have a longer session and/or we can have multiple sessions.
+* Presentations are usually somewhere between 20-60 min long thogh if the topic requires more time we can have a longer session up to 2 hours or we can have multiple sessions.
 * Workshops are usually 1-2 hours long.
 * The audience can comment and ask questions via chat.
 * Presentations are recorded and published on [YouTube](https://www.youtube.com/@CodeMaven).
