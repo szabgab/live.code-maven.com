@@ -649,7 +649,7 @@
 - date: 2026.09.09
   topics:
     - Postgres
-    - Database
+    - Databases
     - AI
   title: 'Agents and MCP for Postgres'
   link: https://db.code-maven.com/agents-and-mcp-for-postgres

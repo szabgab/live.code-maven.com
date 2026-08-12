@@ -24,6 +24,7 @@ VALID_TOPICS = {
     "MCP",
     "Open Source",
     "Perl",
+    "Postgres",
     "Python",
     "Rust",
 }
