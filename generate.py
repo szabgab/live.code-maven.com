@@ -255,24 +255,38 @@ def rebuild():
             topic_filter=topic,
         )
 
-    # Load pages/about.md to render site/about.html
-    about_path = "pages/about.md"
-    if not os.path.exists(about_path):
-        raise FileNotFoundError(f"About file not found at {about_path}")
+    # Render all markdown files in pages/
+    pages_dir = "pages"
+    generated_pages = []
+    if os.path.exists(pages_dir):
+        for filename in os.listdir(pages_dir):
+            if filename.endswith(".md"):
+                md_path = os.path.join(pages_dir, filename)
+                name_without_ext = os.path.splitext(filename)[0]
 
-    with open(about_path, "r", encoding="utf-8") as f:
-        about_content = f.read()
+                with open(md_path, "r", encoding="utf-8") as f:
+                    content = f.read()
 
-    # Also render site/about.html (using the Jinja2 template)
-    about_html_content = format_html_tables(md.render(about_content))
-    about_page_meta = {"title": "About the Code-Maven Live events", "url": "/about"}
-    about_html = layout_template.render(
-        site=site_config, page=about_page_meta, content=about_html_content
-    )
+                # Extract the title from the first '# ' header
+                title = ""
+                for line in content.splitlines():
+                    if line.startswith("# "):
+                        title = line[2:].strip()
+                        break
 
-    about_html_path = "site/about.html"
-    with open(about_html_path, "w", encoding="utf-8") as f:
-        f.write(about_html)
+                if not title:
+                    title = name_without_ext.replace("-", " ").replace("_", " ").title()
+
+                html_content = format_html_tables(md.render(content))
+                page_meta = {"title": title, "url": f"/{name_without_ext}"}
+                page_html = layout_template.render(
+                    site=site_config, page=page_meta, content=html_content
+                )
+
+                html_path = os.path.join("site", f"{name_without_ext}.html")
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(page_html)
+                generated_pages.append(html_path)
 
     # Render site/linkedin.html
     linkedin_links = site_config.get("linkedin", [])
@@ -340,7 +354,7 @@ def rebuild():
         f.write("")
 
     print(
-        f"Successfully rebuilt site/index.html, site/about.html, site/linkedin.html, site/telegram.html, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, and site/assets/css/style.css"
     )
 
 
