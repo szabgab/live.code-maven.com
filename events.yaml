@@ -601,6 +601,7 @@
   link: https://git.code-maven.com/workshop-2026-08-02
   speakers: Gabor Szabo
   register: https://luma.com/2ea8kyka
+
 - date: 2026.08.24
   topics:
     - Python
@@ -669,6 +670,14 @@
   link: https://perlmaven.com/mcp-model-context-protocol-in-perl-from-web-app-to-ai-tools
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
+- date: 2026.11.16
+  topics:
+    - Perl
+  title: 'Punk: Perl MVC, compiled at boot'
+  link: https://perlmaven.com/punk-perl-mvc-compiled-at-boot
+  speakers: Robert Acock (LNATION)
+  register: https://luma.com/o4k2uute
+
 
 # - date:
 #   topics:
