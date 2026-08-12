@@ -645,6 +645,15 @@
   link: https://perlmaven.com/async-type-safe-and-secure-perls-answer-to-fastapi
   speakers: Mohammad Sajid Anwar
   register: https://luma.com/obzvoiii
+- date: 2026.09.09
+  topics:
+    - Postgres
+    - Database
+    - AI
+  title: 'Agents and MCP for Postgres'
+  link: https://db.code-maven.com/agents-and-mcp-for-postgres
+  speakers:  Gleb Otochkin
+  register: https://luma.com/adurpjg0
 - date: 2026.09.10
   topics: Rust
   title: 'Solving Real-World Planning Problems in Rust with SolverForge'
