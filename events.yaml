@@ -385,8 +385,16 @@
 - date: 2026.02.03
   topics:
     - Python
-  title: 'Python code reading and open source contribution'
-  link: null
+  #title: 'Python code reading and open source contribution'
+  title: 'Exploring qrcode-pretty and adding tests to it'
+  link: https://python.code-maven.com/adding-tests-to-qrcode-pretty-video
+  speakers: Gabor Szabo
+  register: https://www.meetup.com/code-mavens/events/312985180/
+- date: 2026.02.03
+  topics:
+    - Python
+  title: 'Adding GitHub Actions to qrcode-pretty '
+  link: https://python.code-maven.com/adding-github-action-to-qrcode-pretty-video
   speakers: Gabor Szabo
   register: https://www.meetup.com/code-mavens/events/312985180/
 - date: 2026.02.09
