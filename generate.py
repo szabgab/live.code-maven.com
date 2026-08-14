@@ -29,6 +29,8 @@ VALID_TOPICS = {
     "Rust",
 }
 
+TOPIC_SPECIFIC_PAGES = {"Perl", "Python", "Rust"}
+
 
 def format_table(headers, rows):
     """
@@ -247,7 +249,7 @@ def rebuild():
     )
 
     # Render topic-specific pages
-    for topic in ["Perl", "Python", "Rust"]:
+    for topic in TOPIC_SPECIFIC_PAGES:
         build_page(
             events=events,
             template=index_template,
