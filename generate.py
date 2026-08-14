@@ -161,6 +161,37 @@ def build_page(
         f.write(html_output)
 
 
+def generate_future_events(events):
+    current_date = date.today()
+    future_lines = []
+    for event in events:
+        if not event:
+            continue
+        date_val = event.get("date", "")
+        try:
+            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+        except ValueError:
+            event_date = date.min
+        if event_date >= current_date:
+            topics_val = event.get("topics")
+            if isinstance(topics_val, list):
+                topics = topics_val
+            elif isinstance(topics_val, str):
+                topics = [topics_val] if topics_val else []
+            elif topics_val is None:
+                topics = []
+            else:
+                topics = [str(topics_val)]
+            topics_str = ", ".join(topics)
+            title = event.get("title", "")
+            register = event.get("register", "")
+            line = f"* {date_val} ({topics_str}) [{title}]({register})"
+            future_lines.append(line)
+
+    with open("site/future.md", "w", encoding="utf-8") as f:
+        f.write("\n".join(future_lines) + "\n")
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -356,8 +387,11 @@ def rebuild():
     with open("site/.nojekyll", "w", encoding="utf-8") as f:
         f.write("")
 
+    # Generate site/future.md
+    generate_future_events(events)
+
     print(
-        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, site/future.md, and site/assets/css/style.css"
     )
 
 
