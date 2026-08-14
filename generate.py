@@ -186,9 +186,18 @@ def generate_future_events(events):
             topics_str = ", ".join(topics)
             title = event.get("title", "")
             register = event.get("register", "")
-            line = f"* {date_val} ({topics_str}) [{title}]({register})"
+            speakers = event.get("speakers", "")
+            if isinstance(speakers, str):
+                speakers = speakers.strip()
+            elif speakers is None:
+                speakers = ""
+            else:
+                speakers = str(speakers).strip()
+            by_speakers = f" by {speakers}" if speakers else ""
+
+            line = f"* {date_val} ({topics_str}) [{title}]({register}){by_speakers}"
             future_md_lines.append(line)
-            line = f"* {date_val} ({topics_str}) {title} {register}"
+            line = f"* {date_val} ({topics_str}) {title}{by_speakers} {register}"
             future_text_lines.append(line)
 
     with open("site/future.md", "w", encoding="utf-8") as fh:
