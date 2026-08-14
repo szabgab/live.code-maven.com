@@ -163,7 +163,8 @@ def build_page(
 
 def generate_future_events(events):
     current_date = date.today()
-    future_lines = []
+    future_md_lines = []
+    future_text_lines = []
     for event in events:
         if not event:
             continue
@@ -186,10 +187,15 @@ def generate_future_events(events):
             title = event.get("title", "")
             register = event.get("register", "")
             line = f"* {date_val} ({topics_str}) [{title}]({register})"
-            future_lines.append(line)
+            future_md_lines.append(line)
+            line = f"* {date_val} ({topics_str}) {title} {register}"
+            future_text_lines.append(line)
 
-    with open("site/future.md", "w", encoding="utf-8") as f:
-        f.write("\n".join(future_lines) + "\n")
+    with open("site/future.md", "w", encoding="utf-8") as fh:
+        fh.write("\n".join(future_md_lines) + "\n")
+
+    with open("site/future.txt", "w", encoding="utf-8") as fh:
+        fh.write("\n".join(future_text_lines) + "\n")
 
 
 def rebuild():
