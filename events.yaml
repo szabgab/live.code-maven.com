@@ -624,6 +624,13 @@
   link: https://python.code-maven.com/everything-you-need-to-know-about-docstrings
   speakers: Maria Lowas-Rzechonek
   register: https://luma.com/a1xtcmqi
+- date: 2026.08.30
+  topics:
+    - Python
+  title: 'How Python and FFmpeg Let Us Handle Conference Video Post-Production at Zero Cost'
+  link: https://python.code-maven.com/how-python-and-ffmpeg-let-us-handle-conference-video-post-production-at-zero-cost
+  speakers: Suren Poghosyan
+  register: https://luma.com/bld24hjj
 - date: 2026.08.31
   topics:
     - Rust
