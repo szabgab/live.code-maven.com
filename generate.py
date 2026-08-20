@@ -22,6 +22,7 @@ VALID_TOPICS = {
     "FalkorDB",
     "Git",
     "GitHub",
+    "Go",
     "JavaScript",
     "MCP",
     "Open Source",
