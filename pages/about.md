@@ -36,8 +36,8 @@ There are various types of events.
 * I prefer to schedule at least 2 weaks ahead, but 1-2 months is also fine. That allows for the promotion of the event and for people to save the date.
 
 * Time-wise we usually have our sessions between 8:00 (8 am) UTC and 18:00 (6 pm) UTC.
-* Starting at 8:00 UTC allows people from New Zealand, Australia, Japan, etc. all of Asia, the Middle-East, Europe, and Africa to attend.
-* Starting at 16:00-18:00 UTC allows people from the the Middle-East, Europe, Africa, and all of the Americas to attend.
+* The eastern session should start at a time that is no later that 20:00 in New Zealand. Starting at 8:00 UTC allows people from New Zealand, Australia, Japan, etc. all of Asia, the Middle-East, Europe, and Africa to attend.
+* The western session should start at a time that is 8:00 am (or later) in California. Starting at 16:00-18:00 UTC allows people from the the Middle-East, Europe, Africa, and all of the Americas to attend.
 
 ---
 
