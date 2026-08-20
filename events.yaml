@@ -1,7 +1,16 @@
+- date: 2016.10.25
+  topics:
+    - CMOS
+    - Ruby
+  title: "CMOS #18: Client Manager, Resque, Friendly ID and other Rails gems "
+  link: https://code-maven.com/cmos-18-timi-ajiboye
+  speakers: Timi Ajiboye
+  register: none
+
 - date: 2016.10.28
   topics:
     - CMOS
-  title: CMOS #19 - Inclusive design
+  title: "CMOS #19 - Inclusive design"
   link: https://code-maven.com/cmos-19-job-van-achterberg
   speakers: Job van Achterberg
   register: none
