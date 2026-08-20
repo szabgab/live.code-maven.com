@@ -16,6 +16,7 @@ from jinja2 import FileSystemLoader, Environment
 
 VALID_TOPICS = {
     "AI",
+    "Android",
     "CMOS",
     "Databases",
     "FalkorDB",
@@ -25,6 +26,7 @@ VALID_TOPICS = {
     "MCP",
     "Open Source",
     "Perl",
+    "PHP",
     "Postgres",
     "Python",
     "Ruby",
