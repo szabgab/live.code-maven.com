@@ -27,6 +27,7 @@ VALID_TOPICS = {
     "Perl",
     "Postgres",
     "Python",
+    "Ruby",
     "Rust",
 }
 
