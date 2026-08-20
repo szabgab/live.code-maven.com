@@ -807,6 +807,14 @@
   link: null
   speakers: Gabor Szabo
   register: https://luma.com/wlguizbs
+- date: 2026.09.06
+  topics:
+   - Rust
+   - AI
+  title: 'Facts: Curated Knowledge for Humans and Agents'
+  link: https://rust.code-maven.com/facts-curated-knowledge-for-humans-and-agents
+  speakers: Al Newkirk
+  register: https://luma.com/9lte7a58
 - date: 2026.09.07
   topics:
     - Perl
@@ -849,6 +857,9 @@
 
 # - date:
 #   topics:
+#    - Perl
+#    - Python
+#    - Rust
 #   title: ''
 #   link:
 #   speakers:
