@@ -16,6 +16,7 @@ from jinja2 import FileSystemLoader, Environment
 
 VALID_TOPICS = {
     "AI",
+    "CMOS",
     "Databases",
     "FalkorDB",
     "Git",
