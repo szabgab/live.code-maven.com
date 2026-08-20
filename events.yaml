@@ -32,6 +32,7 @@
 - date: 2016.09.06
   topics:
     - CMOS
+    - Go
   title: "CMOS #4: gron for making JSON greppable"
   link: https://code-maven.com/cmos-4-tom-hudson-gron
   speakers: Tom Hudson
