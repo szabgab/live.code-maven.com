@@ -1,3 +1,11 @@
+- date: 2016.10.28
+  topics:
+    - CMOS
+  title: CMOS #19 - Inclusive design
+  link: https://code-maven.com/cmos-19-job-van-achterberg
+  speakers: Job van Achterberg
+  register: none
+
 - date: 2024.06.06
   topics:
     - Rust
