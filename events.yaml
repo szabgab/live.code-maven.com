@@ -1,12 +1,147 @@
+- date: 2016.08.23
+  topics:
+    - CMOS
+  title: "CMOS #0: Introduction"
+  link: https://code-maven.com/cmos-0
+  speakers: Gabor Szabo
+  register: none
+- date: 2016.08.23
+  topics:
+    - CMOS
+  title: "CMOS #1: Perl Dancer 2"
+  link: https://code-maven.com/cmos-1-jason-crome-perl-dancer2
+  speakers: Jason Crome
+  register: none
+- date: 2016.08.24
+  topics:
+    - CMOS
+    - Perl
+  title: "CMOS #2: Perl 5"
+  link: https://code-maven.com/cmos-2-sawyer-perl5
+  speakers: Sawyer X
+  register: none
+- date: 2016.09.01
+  topics:
+    - CMOS
+    - Perl
+  title: "CMOS #3: Mojolicious"
+  link: https://code-maven.com/cmos-3-joel-berger-mojolicious
+  speakers: Joel Berger
+  register: none
+- date: 2016.09.06
+  topics:
+    - CMOS
+  title: "CMOS #4: gron for making JSON greppable"
+  link: https://code-maven.com/cmos-4-tom-hudson-gron
+  speakers: Tom Hudson
+  register: none
+- date: 2016.09.08
+  topics:
+    - CMOS
+  title: "CMOS #5 DictationBridge - helping the visually impaired"
+  link: https://code-maven.com/cmos-5-lucy-greco-dictationbridge
+  speakers: Lucy Greco
+  register: none
+- date: 2016.09.10
+  topics:
+    - CMOS
+  title: "CMOS #6: GraphQL"
+  link: https://code-maven.com/cmos-6-tally-barak-graphql
+  speakers: Tally Barak
+  register: none
+- date: 2016.09.17
+  topics:
+    - CMOS
+    - JavaScript
+  title: "CMOS #7: RestiveJS"
+  link: https://code-maven.com/cmos-7-obinwanne-hill-restivejs
+  speakers: Obinwanne Hill
+  register: none
+- date: 2016.09.19
+  topics:
+    - CMOS
+    - Ruby
+  title: "CMOS #8: Bundler, RubyGems and Ruby Together"
+  link: https://code-maven.com/cmos-8-lynn-cyrin-bundler-rubygems
+  speakers: Lynn 'Cyrin' Conway
+  register: none
+- date: 2016.09.21
+  topics:
+    - CMOS
+  title: "CMOS #9: Khaled Bot, Can I Use Embed, Formhack"
+  link: https://code-maven.com/cmos-9-ire-aderinokun
+  speakers: Ire Aderinokun
+  register: none
+- date: 2016.09.23
+  topics:
+    - CMOS
+    - Python
+  title: "CMOS #10: Talk Python To Me"
+  link: https://code-maven.com/cmos-10-michael-kennedy
+  speakers: Michael Kennedy
+  register: none
+- date: 2016.09.26
+  topics:
+    - CMOS
+    - Perl
+  title: "CMOS #11: Contributing to CPAN every single day"
+  link: https://code-maven.com/cmos-11-mohammad-s-anwar
+  speakers: Mohammad S. Anwar
+  register: none
+- date: 2016.09.28
+  topics:
+    - CMOS
+  title: "CMOS #12: The host of FLOSS Weekly"
+  link: https://code-maven.com/cmos-12-randal-schwartz
+  speakers: Randal Schwartz
+  register: none
+- date: 2016.10.03
+  topics:
+    - CMOS
+  title: "CMOS #13: GitHub Explorer - a progressive web app"
+  link: https://code-maven.com/cmos-13-trung-dinh-quang
+  speakers: Trung Đinh Quang
+  register: none
+- date: 2016.10.06
+  topics:
+    - CMOS
+    - Python
+    - JavaScript
+  title: "CMOS #14: Mo - Django - VueJS"
+  link: https://code-maven.com/cmos-14-johnny-ray-austin
+  speakers: Johnny Ray Austin
+  register: none
+- date: 2016.10.07
+  topics:
+    - CMOS
+    - PHP
+  title: "CMOS #15: - Laravel"
+  link: https://code-maven.com/cmos-15-prosper-otemuyiwa
+  speakers: Prosper Otemuyiwa
+  register: none
+- date: 2016.10.14
+  topics:
+    - CMOS
+  title: "CMOS #16: About Convos, the web-based IRC client"
+  link: https://code-maven.com/cmos-16-jan-henning-thorsen-and-marcus-ramberg
+  speakers: Jan Henning Thorsen and Marcus Ramberg
+  register: none
+- date: 2016.10.21
+  topics:
+    - CMOS
+    - Android
+  title: "CMOS #17: Creating Android Watch in Yorùbá"
+  link: https://code-maven.com/cmos-17-moyinoluwa-adeyemi
+  speakers: Moyinoluwa Adeyemi
+  register: none
 - date: 2016.10.25
   topics:
     - CMOS
     - Ruby
-  title: "CMOS #18: Client Manager, Resque, Friendly ID and other Rails gems "
+  title: "CMOS #18: Client Manager, Resque, Friendly ID and other Rails gems"
   link: https://code-maven.com/cmos-18-timi-ajiboye
   speakers: Timi Ajiboye
   register: none
-
 - date: 2016.10.28
   topics:
     - CMOS
