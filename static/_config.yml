@@ -3,7 +3,7 @@ lang: en
 url: https://live.code-maven.com
 baseurl: ""
 title: "Code-Maven community online events"
-description: Virtual presentations, workshops, Zoominars, chat
+description: Virtual presentations, workshops, Zoominars, online conversations
 show_downloads: false
 
 plugins:
@@ -26,13 +26,13 @@ calendars:
      url: https://luma.com/rust-maven
    - label: Perl
      url: https://luma.com/perl-maven
-   - label: Git[Hub|Lab]
+   - label: Git
      url: https://luma.com/git-maven
    - label: Databases
      url: https://luma.com/db-maven
-   - label: AI Maven
+   - label: AI
      url: https://luma.com/ai-maven
-   - label: Code Maven
+   - label: Everything
      url: https://luma.com/code-maven
 
 telegram_links:
