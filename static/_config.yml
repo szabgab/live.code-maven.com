@@ -28,6 +28,8 @@ calendars:
      url: https://luma.com/perl-maven
    - label: Git
      url: https://luma.com/git-maven
+   - label: DevOps
+     url: https://luma.com/devops-maven
    - label: Databases
      url: https://luma.com/db-maven
    - label: AI
