@@ -26,6 +26,8 @@ calendars:
      url: https://luma.com/rust-maven
    - label: Perl
      url: https://luma.com/perl-maven
+   - label: PHP
+     url: https://luma.com/php-maven
    - label: Git
      url: https://luma.com/git-maven
    - label: DevOps
