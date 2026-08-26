@@ -816,6 +816,7 @@
   link: https://rust.code-maven.com/facts-curated-knowledge-for-humans-and-agents
   speakers: Al Newkirk
   register: https://luma.com/9lte7a58
+
 - date: 2026.09.07
   topics:
     - Perl
@@ -823,6 +824,7 @@
   link: https://perlmaven.com/async-type-safe-and-secure-perls-answer-to-fastapi
   speakers: Mohammad Sajid Anwar
   register: https://luma.com/obzvoiii
+
 - date: 2026.09.09
   topics:
     - Postgres
@@ -832,12 +834,22 @@
   link: https://db.code-maven.com/agents-and-mcp-for-postgres
   speakers:  Gleb Otochkin
   register: https://luma.com/adurpjg0
+
 - date: 2026.09.10
   topics: Rust
   title: 'Solving Real-World Planning Problems in Rust with SolverForge'
   link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
+
+- date: 2026.10.19
+  topics:
+    - PHP
+  title: 'Building WordPress Plugins with AI: Spec-Driven Development with PHP and Kiro'
+  link: https://php.code-maven.com/building-wordpress-plugins-with-ai
+  speakers: Haim Michael
+  register: https://luma.com/1usglot9
+
 - date: 2026.10.21
   topics:
     - Perl
@@ -847,6 +859,7 @@
   link: https://perlmaven.com/mcp-model-context-protocol-in-perl-from-web-app-to-ai-tools
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
+
 - date: 2026.11.16
   topics:
     - Perl
