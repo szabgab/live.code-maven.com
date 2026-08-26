@@ -16,6 +16,8 @@ nav_links:
      url: /telegram
    - label: LinkedIn
      url: /linkedin
+   - label: What Maven?
+     url: /maven
    - label: About
      url: /about
 
