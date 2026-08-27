@@ -11,8 +11,8 @@ as explained [here](https://en.wikipedia.org/wiki/Maven).
 
 When I heard it the first decade of the 21st century I immediately liked the word. Partially because [my sister is a Yiddish teacher](https://verele.com/).
 
-I started to use it first for my Perl-related content on th [Perl Maven](https://perlmaven.com/) site and then for everything else through the [Code Maven](https://code-maven.com/) site.
+I started to use it first for my Perl-related content on the [Perl Maven](https://perlmaven.com/) site and then for everything else through the [Code Maven](https://code-maven.com/) site.
 
 
-Welcome to the <h2>* Maven</h2>
+Welcome to the <b>* Maven</b>!
 
