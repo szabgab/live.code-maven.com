@@ -1,0 +1,50 @@
+<h1 class="title is-2 has-text-centered mb-5" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #0f766e;">
+  Calendars
+</h1>
+<p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="font-family: 'Source Sans 3', sans-serif;">
+  Since we moved the registration process to Luma we have a number of calendars. This allows you to follow the specific topics.
+</p>
+
+<div class="columns is-multiline">
+  {% for item in calendars %}
+    <div class="column is-12 is-6-tablet is-4-desktop">
+      <div class="box calendar-card p-5" style="height: 100%; border: 1px solid #e2edf5; border-radius: 1rem; box-shadow: 0 6px 16px rgba(11, 34, 53, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #fbfdfe 100%);">
+        <!-- Accent top border with a nice green/teal color -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0f766e 0%, #1366b0 100%);"></div>
+        
+        <div class="mb-4">
+          <div class="is-flex is-align-items-center mb-3">
+            <span class="image is-32x32 mr-3" style="display: flex; align-items: center; justify-content: center; background: #e6f2f1; border-radius: 50%; width: 36px; height: 36px;">
+              <span style="font-size: 1.2rem;">📅</span>
+            </span>
+            <h3 class="title is-5 mb-0" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1e293b;">
+              {{ item.label }}
+            </h3>
+          </div>
+          <p class="is-size-6 has-text-grey" style="font-family: 'Source Sans 3', sans-serif;">
+            Code-Maven {{ item.label }} events calendar.
+          </p>
+        </div>
+        
+        <div class="mt-auto">
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="button is-link is-outlined is-fullwidth is-rounded has-text-weight-bold" style="border-color: #0f766e; color: #0f766e; transition: all 0.2s ease;">
+            Subscribe / View
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .calendar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(11, 34, 53, 0.12) !important;
+    border-color: #bcd0e0 !important;
+  }
+  .calendar-card:hover .button.is-link {
+    background-color: #0f766e !important;
+    color: #ffffff !important;
+    border-color: #0f766e !important;
+  }
+</style>

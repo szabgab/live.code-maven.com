@@ -12,6 +12,8 @@ plugins:
 nav_links:
    - label: Upcoming and Recordings
      url: /
+   - label: Calendars
+     url: /calendars
    - label: Telegram
      url: /telegram
    - label: LinkedIn

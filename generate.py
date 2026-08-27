@@ -284,6 +284,7 @@ def rebuild():
     index_template = env.get_template("index.html")
     linkedin_template = env.get_template("linkedin.html")
     telegram_template = env.get_template("telegram.html")
+    calendars_template = env.get_template("calendars.html")
 
     md = MarkdownIt("gfm-like")
 
@@ -366,6 +367,18 @@ def rebuild():
     with open(telegram_html_path, "w", encoding="utf-8") as f:
         f.write(telegram_html)
 
+    # Render site/calendars.html
+    calendars_links = site_config.get("calendars", [])
+    calendars_html_content = calendars_template.render(calendars=calendars_links)
+    calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
+    calendars_html = layout_template.render(
+        site=site_config, page=calendars_page_meta, content=calendars_html_content
+    )
+
+    calendars_html_path = "site/calendars.html"
+    with open(calendars_html_path, "w", encoding="utf-8") as f:
+        f.write(calendars_html)
+
     # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
     scss_path = "static/assets/css/style.scss"
     if os.path.exists(scss_path):
@@ -411,7 +424,7 @@ def rebuild():
     generate_future_events(events)
 
     print(
-        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, site/future.md, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
     )
 
 
