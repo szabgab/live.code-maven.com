@@ -844,6 +844,8 @@
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
 
+# --------------------------
+
 - date: 2026.10.19
   topics:
     - PHP
@@ -861,6 +863,14 @@
   link: https://perlmaven.com/mcp-model-context-protocol-in-perl-from-web-app-to-ai-tools
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
+
+- date: 2026.10.29
+  topics:
+   - Rust
+  title: 'Creating a hexadecimal editor in Rust'
+  link: https://rust.code-maven.com/creating-a-hexadecimal-editor-in-rust
+  speakers: Fernando Mercês
+  register: https://luma.com/q8i3385k
 
 - date: 2026.11.16
   topics:
