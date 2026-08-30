@@ -844,7 +844,7 @@
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
 
-# --------------------------
+# -------------------------- 2026 October
 
 - date: 2026.10.19
   topics:
@@ -871,6 +871,16 @@
   link: https://rust.code-maven.com/creating-a-hexadecimal-editor-in-rust
   speakers: Fernando Mercês
   register: https://luma.com/q8i3385k
+
+# -------------------------- 2026 November
+
+- date: 2026.11.01
+  topics:
+   - Rust
+  title: 'Cursed Rust'
+  link: https://rust.code-maven.com/cursed-rust
+  speakers: Milan Šedivý
+  register: https://luma.com/omlooqv8
 
 - date: 2026.11.16
   topics:
