@@ -882,6 +882,14 @@
   speakers: Milan Šedivý
   register: https://luma.com/omlooqv8
 
+- date: 2026.11.02
+  topics:
+   - DevOps
+  title: 'Cloud Optional: Container Operations with Quadlet and Systemd'
+  link: https://devops.code-maven.com/cloud-optional-container-operations-with-suadlet-and-systemd
+  speakers: Arne Blankerts
+  register: https://luma.com/b37ej9tz
+
 - date: 2026.11.16
   topics:
     - Perl
