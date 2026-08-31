@@ -19,6 +19,7 @@ VALID_TOPICS = {
     "Android",
     "CMOS",
     "Databases",
+    "DevOps",
     "FalkorDB",
     "Git",
     "GitHub",
