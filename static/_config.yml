@@ -20,6 +20,8 @@ nav_links:
      url: /linkedin
    - label: What Maven?
      url: /maven
+   - label: CFP
+     url: /cfp
    - label: About
      url: /about
 
