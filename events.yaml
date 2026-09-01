@@ -864,6 +864,14 @@
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
+- date: 2026.10.25
+  topics:
+   - Python
+  title: 'Coding Best Practices Spotlight - My Top Selections'
+  link: https://python.code-maven.com/coding-best-practices-spotlight-my-top-selections
+  speakers: Nadav Mary
+  register: https://luma.com/4w6ahs0s
+
 - date: 2026.10.29
   topics:
    - Rust
