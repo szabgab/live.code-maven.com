@@ -226,6 +226,19 @@ def generate_facebook_page(template, layout_template, site_config):
         f.write(facebook_html)
 
 
+def generate_telegram_page(template, layout_template, site_config):
+    telegram_links = site_config.get("telegram_links", [])
+    telegram_html_content = template.render(telegram_links=telegram_links)
+    telegram_page_meta = {"title": "Code-Maven Telegram Groups", "url": "/telegram"}
+    telegram_html = layout_template.render(
+        site=site_config, page=telegram_page_meta, content=telegram_html_content
+    )
+
+    telegram_html_path = "site/telegram.html"
+    with open(telegram_html_path, "w", encoding="utf-8") as f:
+        f.write(telegram_html)
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -378,16 +391,11 @@ def rebuild():
     )
 
     # Render site/telegram.html
-    telegram_links = site_config.get("telegram_links", [])
-    telegram_html_content = telegram_template.render(telegram_links=telegram_links)
-    telegram_page_meta = {"title": "Code-Maven Telegram Groups", "url": "/telegram"}
-    telegram_html = layout_template.render(
-        site=site_config, page=telegram_page_meta, content=telegram_html_content
+    generate_telegram_page(
+        template=telegram_template,
+        layout_template=layout_template,
+        site_config=site_config,
     )
-
-    telegram_html_path = "site/telegram.html"
-    with open(telegram_html_path, "w", encoding="utf-8") as f:
-        f.write(telegram_html)
 
     # Render site/calendars.html
     calendars_links = site_config.get("calendars", [])
