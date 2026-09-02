@@ -213,6 +213,19 @@ def generate_future_events(events):
         fh.write("\n".join(future_text_lines) + "\n")
 
 
+def generate_linkedin_page(template, layout_template, site_config):
+    linkedin_links = site_config.get("linkedin", [])
+    linkedin_html_content = template.render(linkedin_links=linkedin_links)
+    linkedin_page_meta = {"title": "Code-Maven LinkedIn Channels", "url": "/linkedin"}
+    linkedin_html = layout_template.render(
+        site=site_config, page=linkedin_page_meta, content=linkedin_html_content
+    )
+
+    linkedin_html_path = "site/linkedin.html"
+    with open(linkedin_html_path, "w", encoding="utf-8") as f:
+        f.write(linkedin_html)
+
+
 def generate_facebook_page(template, layout_template, site_config):
     facebook_links = site_config.get("facebook", [])
     facebook_html_content = template.render(facebook_links=facebook_links)
@@ -372,16 +385,11 @@ def rebuild():
                 generated_pages.append(html_path)
 
     # Render site/linkedin.html
-    linkedin_links = site_config.get("linkedin", [])
-    linkedin_html_content = linkedin_template.render(linkedin_links=linkedin_links)
-    linkedin_page_meta = {"title": "Code-Maven LinkedIn Channels", "url": "/linkedin"}
-    linkedin_html = layout_template.render(
-        site=site_config, page=linkedin_page_meta, content=linkedin_html_content
+    generate_linkedin_page(
+        template=linkedin_template,
+        layout_template=layout_template,
+        site_config=site_config,
     )
-
-    linkedin_html_path = "site/linkedin.html"
-    with open(linkedin_html_path, "w", encoding="utf-8") as f:
-        f.write(linkedin_html)
 
     # Render site/facebook.html
     generate_facebook_page(
