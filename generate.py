@@ -240,7 +240,7 @@ def generate_facebook_page(template, layout_template, site_config):
 
 
 def generate_telegram_page(template, layout_template, site_config):
-    telegram_links = site_config.get("telegram_links", [])
+    telegram_links = site_config.get("telegram", [])
     telegram_html_content = template.render(telegram_links=telegram_links)
     telegram_page_meta = {"title": "Code-Maven Telegram Groups", "url": "/telegram"}
     telegram_html = layout_template.render(

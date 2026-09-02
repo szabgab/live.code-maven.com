@@ -47,7 +47,7 @@ calendars:
    - label: Everything
      url: https://luma.com/code-maven
 
-telegram_links:
+telegram:
    - label: Python Maven
      url: https://t.me/PythonMaven
    - label: Rust Maven
