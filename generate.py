@@ -252,6 +252,19 @@ def generate_telegram_page(template, layout_template, site_config):
         f.write(telegram_html)
 
 
+def generate_calendars_page(template, layout_template, site_config):
+    calendars_links = site_config.get("calendars", [])
+    calendars_html_content = template.render(calendars=calendars_links)
+    calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
+    calendars_html = layout_template.render(
+        site=site_config, page=calendars_page_meta, content=calendars_html_content
+    )
+
+    calendars_html_path = "site/calendars.html"
+    with open(calendars_html_path, "w", encoding="utf-8") as f:
+        f.write(calendars_html)
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -406,16 +419,11 @@ def rebuild():
     )
 
     # Render site/calendars.html
-    calendars_links = site_config.get("calendars", [])
-    calendars_html_content = calendars_template.render(calendars=calendars_links)
-    calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
-    calendars_html = layout_template.render(
-        site=site_config, page=calendars_page_meta, content=calendars_html_content
+    generate_calendars_page(
+        template=calendars_template,
+        layout_template=layout_template,
+        site_config=site_config,
     )
-
-    calendars_html_path = "site/calendars.html"
-    with open(calendars_html_path, "w", encoding="utf-8") as f:
-        f.write(calendars_html)
 
     # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
     scss_path = "static/assets/css/style.scss"
