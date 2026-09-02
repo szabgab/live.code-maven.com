@@ -213,6 +213,19 @@ def generate_future_events(events):
         fh.write("\n".join(future_text_lines) + "\n")
 
 
+def generate_facebook_page(template, layout_template, site_config):
+    facebook_links = site_config.get("facebook", [])
+    facebook_html_content = template.render(facebook_links=facebook_links)
+    facebook_page_meta = {"title": "Code-Maven Facebook Groups", "url": "/facebook"}
+    facebook_html = layout_template.render(
+        site=site_config, page=facebook_page_meta, content=facebook_html_content
+    )
+
+    facebook_html_path = "site/facebook.html"
+    with open(facebook_html_path, "w", encoding="utf-8") as f:
+        f.write(facebook_html)
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -358,16 +371,11 @@ def rebuild():
         f.write(linkedin_html)
 
     # Render site/facebook.html
-    facebook_links = site_config.get("facebook", [])
-    facebook_html_content = facebook_template.render(facebook_links=facebook_links)
-    facebook_page_meta = {"title": "Code-Maven Facebook Groups", "url": "/facebook"}
-    facebook_html = layout_template.render(
-        site=site_config, page=facebook_page_meta, content=facebook_html_content
+    generate_facebook_page(
+        template=facebook_template,
+        layout_template=layout_template,
+        site_config=site_config,
     )
-
-    facebook_html_path = "site/facebook.html"
-    with open(facebook_html_path, "w", encoding="utf-8") as f:
-        f.write(facebook_html)
 
     # Render site/telegram.html
     telegram_links = site_config.get("telegram_links", [])
