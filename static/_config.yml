@@ -54,7 +54,7 @@ telegram:
      url: https://t.me/RustMaven
    - label: Perl Maven
      url: https://t.me/PerlMaven
-   - label: Code Maven community
+   - label: Code Maven
      url: https://t.me/Code_Mavens
 
 linkedin:
