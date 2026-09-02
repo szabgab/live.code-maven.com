@@ -284,6 +284,7 @@ def rebuild():
     layout_template = env.get_template("layout.html")
     index_template = env.get_template("index.html")
     linkedin_template = env.get_template("linkedin.html")
+    facebook_template = env.get_template("facebook.html")
     telegram_template = env.get_template("telegram.html")
     calendars_template = env.get_template("calendars.html")
 
@@ -356,6 +357,18 @@ def rebuild():
     with open(linkedin_html_path, "w", encoding="utf-8") as f:
         f.write(linkedin_html)
 
+    # Render site/facebook.html
+    facebook_links = site_config.get("facebook", [])
+    facebook_html_content = facebook_template.render(facebook_links=facebook_links)
+    facebook_page_meta = {"title": "Code-Maven Facebook Groups", "url": "/facebook"}
+    facebook_html = layout_template.render(
+        site=site_config, page=facebook_page_meta, content=facebook_html_content
+    )
+
+    facebook_html_path = "site/facebook.html"
+    with open(facebook_html_path, "w", encoding="utf-8") as f:
+        f.write(facebook_html)
+
     # Render site/telegram.html
     telegram_links = site_config.get("telegram_links", [])
     telegram_html_content = telegram_template.render(telegram_links=telegram_links)
@@ -425,7 +438,7 @@ def rebuild():
     generate_future_events(events)
 
     print(
-        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/facebook.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
     )
 
 

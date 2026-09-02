@@ -1,0 +1,52 @@
+<h1 class="title is-2 has-text-centered mb-5" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #0f766e;">
+  Facebook Groups & Pages
+</h1>
+<p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="font-family: 'Source Sans 3', sans-serif;">
+  Join our Facebook groups and follow our pages to stay connected with the Code-Maven community.
+</p>
+
+<div class="columns is-multiline">
+  {% for item in facebook_links %}
+    <div class="column is-12 is-6-tablet is-4-desktop">
+      <div class="box facebook-card p-5" style="height: 100%; border: 1px solid #e2edf5; border-radius: 1rem; box-shadow: 0 6px 16px rgba(11, 34, 53, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #fbfdfe 100%);">
+        <!-- Accent top border with Facebook blue -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1877f2 0%, #3b5998 100%);"></div>
+        
+        <div class="mb-4">
+          <div class="is-flex is-align-items-center mb-3">
+            <span class="image is-32x32 mr-3" style="display: flex; align-items: center; justify-content: center; background: #e7f3ff; border-radius: 50%; width: 36px; height: 36px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877f2" width="20" height="20">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </span>
+            <h3 class="title is-5 mb-0" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1e293b;">
+              {{ item.label }}
+            </h3>
+          </div>
+          <p class="is-size-6 has-text-grey" style="font-family: 'Source Sans 3', sans-serif;">
+            Official Facebook group for {{ item.label }}.
+          </p>
+        </div>
+        
+        <div class="mt-auto">
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="button is-link is-outlined is-fullwidth is-rounded has-text-weight-bold" style="border-color: #1877f2; color: #1877f2; transition: all 0.2s ease;">
+            Visit Group
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .facebook-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(11, 34, 53, 0.12) !important;
+    border-color: #bcd0e0 !important;
+  }
+  .facebook-card:hover .button.is-link {
+    background-color: #1877f2 !important;
+    color: #ffffff !important;
+    border-color: #1877f2 !important;
+  }
+</style>

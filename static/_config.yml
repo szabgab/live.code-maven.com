@@ -18,6 +18,8 @@ nav_links:
      url: /telegram
    - label: LinkedIn
      url: /linkedin
+   - label: Facebook
+     url: /facebook
    - label: What Maven?
      url: /maven
    - label: CFP
@@ -70,6 +72,16 @@ linkedin:
       url: https://www.linkedin.com/showcase/go-maven/about/?viewAsMember=true
     - label: Rust Maven
       url: https://www.linkedin.com/showcase/rust-maven/?viewAsMember=true
+
+facebook:
+   - label: Perl Maven
+     url: https://www.facebook.com/PerlMaven/
+   - label: Python Maven
+     url: https://www.facebook.com/PythonMaven
+   - label: Rust Maven
+     url: https://www.facebook.com/RustMaven/
+   - label: Code Maven
+     url: https://www.facebook.com/CodeMavens/
 
 github:
    is_project_page: false
