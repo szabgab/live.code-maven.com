@@ -827,6 +827,22 @@
   speakers: Mohammad Sajid Anwar
   register: https://luma.com/obzvoiii
 
+ date: 2026.09.08
+  topics:
+   - Rust
+  title: 'Informal discussion about Rust, AI, NoAI etc.'
+  link: null
+  speakers: ""
+  register: https://luma.com/j4mrlvzy
+
+- date: 2026.09.09
+  topics:
+   - Python
+  title: 'Informal discussion about Python, AI, NoAI etc.'
+  link: null
+  speakers: ""
+  register: https://luma.com/v95sia9a
+
 - date: 2026.09.09
   topics:
     - Postgres
