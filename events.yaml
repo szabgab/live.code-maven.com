@@ -888,6 +888,14 @@
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
+- date: 2026.10.22
+  topics:
+   - Rust
+  title: 'Rust and the GPU from Native to Web: An Introduction to `wgpu`'
+  link: https://rust.code-maven.com/rust-and-the-gpu-from-native-to-web-an-introduction-to-wgpu
+  speakers: Liam Rust
+  register: https://luma.com/k1978ath
+
 - date: 2026.10.25
   topics:
    - Python
