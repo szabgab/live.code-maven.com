@@ -870,6 +870,14 @@
   speakers: Haim Michael
   register: https://luma.com/1usglot9
 
+- date: 2026.10.20
+  topics:
+   - Go
+  title: 'CLI Design for Humans and AI: Building Dual-Audience Tools in Go'
+  link: https://go.code-maven.com/cli-design-for-humans-and-ai-building-dual-audience-tools-in-go
+  speakers: Miki Tebeka
+  register: https://luma.com/8yrcaydg
+
 - date: 2026.10.21
   topics:
     - Perl
@@ -922,6 +930,7 @@
   speakers: Robert Acock (LNATION)
   register: https://luma.com/o4k2uute
 
+# -------------------------- 2026 December
 
 # - date:
 #   topics:
