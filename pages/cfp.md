@@ -8,11 +8,19 @@ We are looking for presentation primarily in the topics for which we have [calen
 ## What is needed?
 
 * A title.
-* A few lines of teaser (description) about the topic. (Markdown is fine.)
+* A few lines of description (teaser) about the topic. (Markdown and links are fine)
+* Expected length in minutes. (usually 20-60 min, but we can discuss longer sessions)
 * The name of the guest speaker(s).
-* A few lines of bio of the speaker(s).
-* LinkedIn profile links (an/or homepage links).
-* Image of the guest speaker(s). We can usually take this from the LinkedIn profile.
+* A few lines of bio of the speaker(s). (Markdown and links are fine)
+* LinkedIn profile links and/or homepage links.
+* Picture of the guest speaker(s). We can usually take this from the LinkedIn profile, but if that's not available or there is a preference to another one then provide that. (aspect ratio: 1:1)
+
+
+## Format
+
+* 30 min of mingling in which people can introduce themselves. No recording.
+* 20-60 min of presentation. People can ask questions via chat. Either the speaker can read or I can read for the speaker. This is recorded.
+* When we are done recording the presentation we have another open mic session with more mingling and informal discussion. No recording.
 
 
 ## Introducing your project
