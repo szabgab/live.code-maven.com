@@ -38,6 +38,8 @@ calendars:
      url: https://luma.com/go-maven
    - label: PHP
      url: https://luma.com/php-maven
+   - label: Zig
+     url: https://luma.com/zig-maven
    - label: Git
      url: https://luma.com/git-maven
    - label: DevOps

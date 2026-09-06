@@ -36,7 +36,7 @@ VALID_TOPICS = {
     "Zig",
 }
 
-TOPIC_SPECIFIC_PAGES = {"Perl", "Python", "Rust", "PHP", "Go", "DevOps", "AI"}
+TOPIC_SPECIFIC_PAGES = {"AI", "DevOps", "Go", "Perl", "PHP", "Python", "Rust", "Zig"}
 
 
 def format_table(headers, rows):
