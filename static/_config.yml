@@ -34,6 +34,8 @@ calendars:
      url: https://luma.com/rust-maven
    - label: Perl
      url: https://luma.com/perl-maven
+   - label: Go
+     url: https://luma.com/go-maven
    - label: PHP
      url: https://luma.com/php-maven
    - label: Git
