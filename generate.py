@@ -33,6 +33,7 @@ VALID_TOPICS = {
     "Python",
     "Ruby",
     "Rust",
+    "Zig",
 }
 
 TOPIC_SPECIFIC_PAGES = {"Perl", "Python", "Rust", "PHP", "Go", "DevOps", "AI"}

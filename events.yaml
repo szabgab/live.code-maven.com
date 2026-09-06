@@ -904,6 +904,14 @@
   speakers: Nadav Mary
   register: https://luma.com/4w6ahs0s
 
+- date: 2026.10.28
+  topics:
+   - Zig
+  title: 'Zig: From Beginner to Slightly Less Beginner'
+  link: https://zig.code-maven.com/zig-from-beginner-to-slightly-less-beginner
+  speakers: Sawyer X
+  register: https://luma.com/ad4e9uv9
+
 - date: 2026.10.29
   topics:
    - Rust
