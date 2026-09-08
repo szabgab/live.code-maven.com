@@ -904,6 +904,15 @@
   speakers: Nadav Mary
   register: https://luma.com/4w6ahs0s
 
+- date: 2026.10.26
+  topics:
+   - Python
+   - Rust
+  title: 'No Python was harmed: teaching a tiny MCU to learn as it goes'
+  link: https://rust.code-maven.com/no-python-was-harmed-teaching-a-tiny-mcu-to-learn-as-it-goes
+  speakers: Leon Vak
+  register: https://luma.com/1byfc495
+
 - date: 2026.10.28
   topics:
    - Zig
