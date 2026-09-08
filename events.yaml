@@ -933,10 +933,19 @@
 - date: 2026.11.02
   topics:
    - DevOps
+   - PHP
   title: 'Cloud Optional: Container Operations with Quadlet and Systemd'
   link: https://devops.code-maven.com/cloud-optional-container-operations-with-suadlet-and-systemd
   speakers: Arne Blankerts
   register: https://luma.com/b37ej9tz
+
+- date: 2026.11.09
+  topics:
+   - Python
+  title: 'Unit testing in the age of AI'
+  link: https://python.code-maven.com/unit-testing-in-the-age-of-ai
+  speakers: Jason Elbaum
+  register: https://luma.com/6yvo3kya
 
 - date: 2026.11.16
   topics:
@@ -950,9 +959,15 @@
 
 # - date:
 #   topics:
+#    - AI
+#    - DevOps
+#    - Go
+#    - JavaScript
 #    - Perl
 #    - Python
 #    - Rust
+#    - PHP
+#    - Zig
 #   title: ''
 #   link:
 #   speakers:
