@@ -853,13 +853,6 @@
   speakers:  Gleb Otochkin
   register: https://luma.com/adurpjg0
 
-- date: 2026.09.10
-  topics: Rust
-  title: 'Solving Real-World Planning Problems in Rust with SolverForge'
-  link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
-  speakers: Vittorio Distefano
-  register: https://luma.com/rfbzk3ae
-
 # -------------------------- 2026 October
 
 - date: 2026.10.19
@@ -947,6 +940,13 @@
   link: https://devops.code-maven.com/cloud-optional-container-operations-with-suadlet-and-systemd
   speakers: Arne Blankerts
   register: https://luma.com/b37ej9tz
+
+- date: 2026.09.03
+  topics: Rust
+  title: 'Solving Real-World Planning Problems in Rust with SolverForge'
+  link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
+  speakers: Vittorio Distefano
+  register: https://luma.com/rfbzk3ae
 
 - date: 2026.11.09
   topics:
