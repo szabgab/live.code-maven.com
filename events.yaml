@@ -941,7 +941,7 @@
   speakers: Arne Blankerts
   register: https://luma.com/b37ej9tz
 
-- date: 2026.09.03
+- date: 2026.11.03
   topics: Rust
   title: 'Solving Real-World Planning Problems in Rust with SolverForge'
   link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
