@@ -942,7 +942,8 @@
   register: https://luma.com/b37ej9tz
 
 - date: 2026.11.03
-  topics: Rust
+  topics:
+   - Rust
   title: 'Solving Real-World Planning Problems in Rust with SolverForge'
   link: https://rust.code-maven.com/solving-real-world-planning-problems-in-rust-with-solverforge
   speakers: Vittorio Distefano
@@ -966,11 +967,19 @@
 
 - date: 2026.11.16
   topics:
-    - Perl
+   - Perl
   title: 'Punk: Perl MVC, compiled at boot'
   link: https://perlmaven.com/punk-perl-mvc-compiled-at-boot
   speakers: Robert Acock (LNATION)
   register: https://luma.com/o4k2uute
+
+- date: 2026.11.17
+  topics:
+   - Rust
+  title: 'Miscompilation in Rust 1.97'
+  link: https://rust.code-maven.com/miscompilation-in-rust-1-97
+  speakers: Yoni Peleg
+  register: https://luma.com/2qfai4a8
 
 # -------------------------- 2026 December
 
