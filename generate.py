@@ -307,6 +307,16 @@ def copy_static_files():
                 shutil.copy(src_file, os.path.join("site", filename))
 
 
+# Load config from config.yml
+def load_config():
+    config_path = "config.yml"
+    site_config = {}
+    if os.path.exists(config_path):
+        with open(config_path, "r", encoding="utf-8") as f:
+            site_config = yaml.safe_load(f)
+    return site_config
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -364,13 +374,7 @@ def rebuild():
                         f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(VALID_TOPICS))}"
                     )
 
-    # Load config from config.yml
-    config_path = "config.yml"
-    if os.path.exists(config_path):
-        with open(config_path, "r", encoding="utf-8") as f:
-            site_config = yaml.safe_load(f)
-    else:
-        site_config = {}
+    site_config = load_config()
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
