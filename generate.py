@@ -317,19 +317,7 @@ def load_config():
     return site_config
 
 
-def rebuild():
-    # Load events
-    yaml_path = "events.yaml"
-    if not os.path.exists(yaml_path):
-        raise FileNotFoundError(f"YAML file not found at {yaml_path}")
-
-    with open(yaml_path, "r", encoding="utf-8") as f:
-        events = yaml.safe_load(f)
-
-    if not events:
-        events = []
-
-    # Verify chronological order of event dates
+def verify_chronological_order_of_event_dates(events):
     prev_date = None
     for idx, event in enumerate(events):
         if not event:
@@ -373,6 +361,21 @@ def rebuild():
                     raise ValueError(
                         f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(VALID_TOPICS))}"
                     )
+
+
+def rebuild():
+    # Load events
+    yaml_path = "events.yaml"
+    if not os.path.exists(yaml_path):
+        raise FileNotFoundError(f"YAML file not found at {yaml_path}")
+
+    with open(yaml_path, "r", encoding="utf-8") as f:
+        events = yaml.safe_load(f)
+
+    if not events:
+        events = []
+
+    verify_chronological_order_of_event_dates(events)
 
     site_config = load_config()
 
