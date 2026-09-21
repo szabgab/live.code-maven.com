@@ -266,6 +266,32 @@ def generate_calendars_page(template, layout_template, site_config):
         f.write(calendars_html)
 
 
+def compile_style_scss():
+    # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
+    scss_path = "static/assets/css/style.scss"
+    if os.path.exists(scss_path):
+        with open(scss_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        css_lines = []
+        in_front_matter = False
+        front_matter_count = 0
+        for line in lines:
+            if line.strip() == "---":
+                front_matter_count += 1
+                if front_matter_count <= 2:
+                    in_front_matter = front_matter_count == 1
+                    continue
+            if not in_front_matter:
+                css_lines.append(line)
+
+        # Ensure site/assets/css/ directory exists
+        os.makedirs("site/assets/css", exist_ok=True)
+        css_path = "site/assets/css/style.css"
+        with open(css_path, "w", encoding="utf-8") as f:
+            f.writelines(css_lines)
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -426,29 +452,7 @@ def rebuild():
         site_config=site_config,
     )
 
-    # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
-    scss_path = "static/assets/css/style.scss"
-    if os.path.exists(scss_path):
-        with open(scss_path, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-
-        css_lines = []
-        in_front_matter = False
-        front_matter_count = 0
-        for line in lines:
-            if line.strip() == "---":
-                front_matter_count += 1
-                if front_matter_count <= 2:
-                    in_front_matter = front_matter_count == 1
-                    continue
-            if not in_front_matter:
-                css_lines.append(line)
-
-        # Ensure site/assets/css/ directory exists
-        os.makedirs("site/assets/css", exist_ok=True)
-        css_path = "site/assets/css/style.css"
-        with open(css_path, "w", encoding="utf-8") as f:
-            f.writelines(css_lines)
+    compile_style_scss()
 
     # Copy static/img directory to site/img
     static_img_dir = "static/img"
