@@ -323,8 +323,8 @@ def rebuild():
                         f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(VALID_TOPICS))}"
                     )
 
-    # Load config from static/_config.yml
-    config_path = "static/_config.yml"
+    # Load config from config.yml
+    config_path = "config.yml"
     if os.path.exists(config_path):
         with open(config_path, "r", encoding="utf-8") as f:
             site_config = yaml.safe_load(f)
