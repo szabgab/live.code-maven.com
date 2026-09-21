@@ -363,6 +363,41 @@ def verify_chronological_order_of_event_dates(events):
                     )
 
 
+def render_all_markdown_files_in_pages(md, site_config, layout_template):
+    pages_dir = "pages"
+    generated_pages = []
+    if os.path.exists(pages_dir):
+        for filename in os.listdir(pages_dir):
+            if filename.endswith(".md"):
+                md_path = os.path.join(pages_dir, filename)
+                name_without_ext = os.path.splitext(filename)[0]
+
+                with open(md_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+
+                # Extract the title from the first '# ' header
+                title = ""
+                for line in content.splitlines():
+                    if line.startswith("# "):
+                        title = line[2:].strip()
+                        break
+
+                if not title:
+                    title = name_without_ext.replace("-", " ").replace("_", " ").title()
+
+                html_content = format_html_tables(md.render(content))
+                page_meta = {"title": title, "url": f"/{name_without_ext}"}
+                page_html = layout_template.render(
+                    site=site_config, page=page_meta, content=html_content
+                )
+
+                html_path = os.path.join("site", f"{name_without_ext}.html")
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(page_html)
+                generated_pages.append(html_path)
+    return generated_pages
+
+
 def rebuild():
     # Load events
     yaml_path = "events.yaml"
@@ -413,38 +448,9 @@ def rebuild():
             topic_filter=topic,
         )
 
-    # Render all markdown files in pages/
-    pages_dir = "pages"
-    generated_pages = []
-    if os.path.exists(pages_dir):
-        for filename in os.listdir(pages_dir):
-            if filename.endswith(".md"):
-                md_path = os.path.join(pages_dir, filename)
-                name_without_ext = os.path.splitext(filename)[0]
-
-                with open(md_path, "r", encoding="utf-8") as f:
-                    content = f.read()
-
-                # Extract the title from the first '# ' header
-                title = ""
-                for line in content.splitlines():
-                    if line.startswith("# "):
-                        title = line[2:].strip()
-                        break
-
-                if not title:
-                    title = name_without_ext.replace("-", " ").replace("_", " ").title()
-
-                html_content = format_html_tables(md.render(content))
-                page_meta = {"title": title, "url": f"/{name_without_ext}"}
-                page_html = layout_template.render(
-                    site=site_config, page=page_meta, content=html_content
-                )
-
-                html_path = os.path.join("site", f"{name_without_ext}.html")
-                with open(html_path, "w", encoding="utf-8") as f:
-                    f.write(page_html)
-                generated_pages.append(html_path)
+    generated_pages = render_all_markdown_files_in_pages(
+        md, site_config, layout_template
+    )
 
     # Render site/linkedin.html
     generate_linkedin_page(
