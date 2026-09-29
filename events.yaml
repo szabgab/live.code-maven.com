@@ -865,6 +865,14 @@
 
 - date: 2026.10.20
   topics:
+   - Zig
+  title: 'Informal online discussion about Zig'
+  link: null
+  speakers: You
+  register: https://luma.com/qegk1on9
+
+- date: 2026.10.20
+  topics:
    - Go
   title: 'CLI Design for Humans and AI: Building Dual-Audience Tools in Go'
   link: https://go.code-maven.com/cli-design-for-humans-and-ai-building-dual-audience-tools-in-go
