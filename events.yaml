@@ -957,6 +957,14 @@
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
 
+- date: 2026.11.04
+  topics:
+   - Zig
+  title: 'A Developer-First Shell Built in Zig'
+  link: https://zig.code-maven.com/a-developer-first-shell-built-in-zig
+  speakers: Damilare Osibanjo
+  register: https://luma.com/3bg1uf62
+
 - date: 2026.11.09
   topics:
    - Python
