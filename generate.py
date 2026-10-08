@@ -36,8 +36,6 @@ VALID_TOPICS = {
     "Zig",
 }
 
-TOPIC_SPECIFIC_PAGES = {"AI", "DevOps", "Go", "Perl", "PHP", "Python", "Rust", "Zig"}
-
 
 def format_table(headers, rows):
     """
@@ -439,7 +437,7 @@ def rebuild():
     )
 
     # Render topic-specific pages
-    for topic in TOPIC_SPECIFIC_PAGES:
+    for topic in VALID_TOPICS:
         build_page(
             events=events,
             template=index_template,
