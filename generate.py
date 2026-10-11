@@ -396,8 +396,7 @@ def render_all_markdown_files_in_pages(md, site_config, layout_template):
     return generated_pages
 
 
-def rebuild():
-    # Load events
+def load_events():
     yaml_path = "events.yaml"
     if not os.path.exists(yaml_path):
         raise FileNotFoundError(f"YAML file not found at {yaml_path}")
@@ -407,6 +406,12 @@ def rebuild():
 
     if not events:
         events = []
+
+    return events
+
+
+def rebuild():
+    events = load_events()
 
     verify_chronological_order_of_event_dates(events)
 
