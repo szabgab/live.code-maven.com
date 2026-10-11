@@ -14,28 +14,6 @@ import yaml
 from markdown_it import MarkdownIt
 from jinja2 import FileSystemLoader, Environment
 
-VALID_TOPICS = {
-    "AI",
-    "Android",
-    "CMOS",
-    "Databases",
-    "DevOps",
-    "FalkorDB",
-    "Git",
-    "GitHub",
-    "Go",
-    "JavaScript",
-    "MCP",
-    "Open Source",
-    "Perl",
-    "PHP",
-    "Postgres",
-    "Python",
-    "Ruby",
-    "Rust",
-    "Zig",
-}
-
 
 def format_table(headers, rows):
     """
@@ -348,16 +326,18 @@ def verify_chronological_order_of_event_dates(site_config, events):
             topics_list = [str(topics_val)]
 
         for topic in topics_list:
-            if topic not in VALID_TOPICS:
+            if topic not in site_config["topics"]:
                 # Check case-insensitively
-                matching = [t for t in VALID_TOPICS if t.lower() == topic.lower()]
+                matching = [
+                    t for t in site_config["topics"] if t.lower() == topic.lower()
+                ]
                 if matching:
                     raise ValueError(
                         f"Topic '{topic}' at index {idx} has incorrect casing. Expected '{matching[0]}'"
                     )
                 else:
                     raise ValueError(
-                        f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(VALID_TOPICS))}"
+                        f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(site_config['topics']))}"
                     )
 
 
@@ -441,7 +421,7 @@ def rebuild():
     )
 
     # Render topic-specific pages
-    for topic in VALID_TOPICS:
+    for topic in site_config["topics"]:
         build_page(
             events=events,
             template=index_template,

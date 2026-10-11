@@ -87,5 +87,28 @@ facebook:
    - label: Code Maven
      url: https://www.facebook.com/CodeMavens/
 
+topics:
+  - AI
+  - Android
+  - CMOS
+  - Databases
+  - DevOps
+  - FalkorDB
+  - Git
+  - GitHub
+  - Go
+  - JavaScript
+  - MCP
+  - Open Source
+  - Perl
+  - PHP
+  - Postgres
+  - Python
+  - Ruby
+  - Rust
+  - Zig
+
+
+
 github:
    is_project_page: false
