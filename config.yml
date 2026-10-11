@@ -27,29 +27,9 @@ nav_links:
    - label: About
      url: /about
 
-calendars:
-   - label: Python
-     url: https://luma.com/python-maven
-   - label: Rust
-     url: https://luma.com/rust-maven
-   - label: Perl
-     url: https://luma.com/perl-maven
-   - label: Go
-     url: https://luma.com/go-maven
-   - label: PHP
-     url: https://luma.com/php-maven
-   - label: Zig
-     url: https://luma.com/zig-maven
-   - label: Git
-     url: https://luma.com/git-maven
-   - label: DevOps
-     url: https://luma.com/devops-maven
-   - label: Databases
-     url: https://luma.com/db-maven
-   - label: AI
-     url: https://luma.com/ai-maven
-   - label: Everything
-     url: https://luma.com/code-maven
+#calendars:
+#   - label: Everything
+#     url: https://luma.com/code-maven
 
 telegram:
    - label: Python Maven
@@ -88,27 +68,60 @@ facebook:
      url: https://www.facebook.com/CodeMavens/
 
 topics:
-  - AI
-  - Android
-  - CMOS
-  - Databases
-  - DevOps
-  - FalkorDB
-  - Git
-  - GitHub
-  - Go
-  - JavaScript
-  - MCP
-  - Open Source
-  - Perl
-  - PHP
-  - Postgres
-  - Python
-  - Ruby
-  - Rust
-  - Zig
-
-
+  AI:
+      calendar:
+        url: https://luma.com/ai-maven
+  Android:
+  CMOS:
+  Databases:
+      calendar:
+        url: https://luma.com/db-maven
+  DevOps:
+      calendar:
+        url: https://luma.com/devops-maven
+  FalkorDB:
+      calendar:
+        tile: Databases
+        url: https://luma.com/db-maven
+  Git:
+      calendar:
+        url: https://luma.com/git-maven
+  GitHub:
+      calendar:
+        url: https://luma.com/git-maven
+  Go:
+      calendar:
+        url: https://luma.com/go-maven
+  JavaScript:
+      calendar:
+        url: https://luma.com/js-maven
+  MCP:
+      calendar:
+        label: AI
+        url: https://luma.com/ai-maven
+  Open Source:
+  Perl:
+      calendar:
+        url: https://luma.com/perl-maven
+  PHP:
+      calendar:
+        url: https://luma.com/php-maven
+  Postgres:
+      calendar:
+        tile: Databases
+        url: https://luma.com/db-maven
+  Python:
+      calendar:
+        url: https://luma.com/python-maven
+  Ruby:
+      calendar:
+        url: https://luma.com/ruby-maven
+  Rust:
+      calendar:
+        url: https://luma.com/rust-maven
+  Zig:
+      calendar:
+        url: https://luma.com/zig-maven
 
 github:
    is_project_page: false

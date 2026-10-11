@@ -230,7 +230,20 @@ def generate_telegram_page(template, layout_template, site_config):
 
 
 def generate_calendars_page(template, layout_template, site_config):
-    calendars_links = site_config.get("calendars", [])
+    links = set()
+    calendars = []
+    for topic, data in site_config.get("topics").items():
+        if data is None:
+            continue
+        calendar = data.get("calendar")
+        if calendar is None:
+            continue
+        if calendar["url"] in links:
+            continue
+        links.add(calendar["url"])
+        calendars.append(calendar)
+
+    calendars_links = list(calendars)
     calendars_html_content = template.render(calendars=calendars_links)
     calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
     calendars_html = layout_template.render(
@@ -290,6 +303,15 @@ def load_config():
     if os.path.exists(config_path):
         with open(config_path, "r", encoding="utf-8") as f:
             site_config = yaml.safe_load(f)
+
+    for topic, data in site_config["topics"].items():
+        if data is not None and "calendar" in data:
+            if "label" not in data["calendar"]:
+                data["calendar"]["label"] = topic
+        else:
+            print(f"No calendar in {topic}")
+            pass
+
     return site_config
 
 
@@ -325,19 +347,18 @@ def verify_chronological_order_of_event_dates(site_config, events):
         else:
             topics_list = [str(topics_val)]
 
+        topics = list(site_config["topics"].keys())
         for topic in topics_list:
-            if topic not in site_config["topics"]:
+            if topic not in topics:
                 # Check case-insensitively
-                matching = [
-                    t for t in site_config["topics"] if t.lower() == topic.lower()
-                ]
+                matching = [t for t in topics if t.lower() == topic.lower()]
                 if matching:
                     raise ValueError(
                         f"Topic '{topic}' at index {idx} has incorrect casing. Expected '{matching[0]}'"
                     )
                 else:
                     raise ValueError(
-                        f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(list(site_config['topics']))}"
+                        f"Topic '{topic}' at index {idx} is not in the list of valid topics: {sorted(topics)}"
                     )
 
 
@@ -421,7 +442,7 @@ def rebuild():
     )
 
     # Render topic-specific pages
-    for topic in site_config["topics"]:
+    for topic in site_config["topics"].keys():
         build_page(
             events=events,
             template=index_template,
