@@ -315,7 +315,7 @@ def load_config():
     return site_config
 
 
-def verify_chronological_order_of_event_dates(events):
+def verify_chronological_order_of_event_dates(site_config, events):
     prev_date = None
     for idx, event in enumerate(events):
         if not event:
@@ -412,10 +412,9 @@ def load_events():
 
 def rebuild():
     events = load_events()
-
-    verify_chronological_order_of_event_dates(events)
-
     site_config = load_config()
+
+    verify_chronological_order_of_event_dates(site_config, events)
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
