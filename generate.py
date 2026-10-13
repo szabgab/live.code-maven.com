@@ -221,8 +221,9 @@ def generate_linkedin_page(template, layout_template, site_config):
 
 
 def generate_facebook_page(template, layout_template, site_config):
-    facebook_links = site_config.get("facebook", [])
-    facebook_html_content = template.render(facebook_links=facebook_links)
+    items = get_items(site_config, "facebook")
+
+    facebook_html_content = template.render(facebook_links=items)
     facebook_page_meta = {"title": "Code-Maven Facebook Groups", "url": "/facebook"}
     facebook_html = layout_template.render(
         site=site_config, page=facebook_page_meta, content=facebook_html_content
@@ -320,15 +321,21 @@ def load_config():
         else:
             print(f"No calendar for topic '{topic}'")
 
-        if "linkedin" in data:
-            if "label" not in data["linkedin"]:
-                data["linkedin"]["label"] = f"{topic} Maven"
-        else:
-            print(f"No linkedin for topic '{topic}'")
-            data["linkedin"] = {
-                "label": "Code Maven",
-                "url": "https://www.linkedin.com/company/code-maven-world/",
-            }
+        DEFAULTS = {
+            "linkedin": "https://www.linkedin.com/company/code-maven-world/",
+            "facebook": "https://www.facebook.com/CodeMavens/",
+        }
+
+        for field, value in DEFAULTS.items():
+            if field in data:
+                if "label" not in data[field]:
+                    data[field]["label"] = f"{topic} Maven"
+            else:
+                print(f"No {field} for topic '{topic}'")
+                data[field] = {
+                    "label": "Code Maven",
+                    "url": value,
+                }
 
     return site_config
 

@@ -47,15 +47,6 @@ telegram:
 #    - label: Code Maven
 #      url: https://www.linkedin.com/company/code-maven-world/?viewAsMember=true
 
-facebook:
-   - label: Perl Maven
-     url: https://www.facebook.com/PerlMaven/
-   - label: Python Maven
-     url: https://www.facebook.com/PythonMaven
-   - label: Rust Maven
-     url: https://www.facebook.com/RustMaven/
-   - label: Code Maven
-     url: https://www.facebook.com/CodeMavens/
 
 topics:
   AI:
@@ -101,6 +92,8 @@ topics:
   Perl:
       calendar:
         url: https://luma.com/perl-maven
+      facebook:
+        url: https://www.facebook.com/PerlMaven/
       linkedin:
         url: https://www.linkedin.com/showcase/perl-maven/
   PHP:
@@ -113,6 +106,8 @@ topics:
   Python:
       calendar:
         url: https://luma.com/python-maven
+      facebook:
+        url: https://www.facebook.com/PythonMaven
       linkedin:
         url: https://www.linkedin.com/showcase/python-maven/
   Ruby:
@@ -121,6 +116,8 @@ topics:
   Rust:
       calendar:
         url: https://luma.com/rust-maven
+      facebook:
+        url: https://www.facebook.com/RustMaven/
       linkedin:
         url: https://www.linkedin.com/showcase/rust-maven/
   Zig:
