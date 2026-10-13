@@ -235,8 +235,9 @@ def generate_facebook_page(template, layout_template, site_config):
 
 
 def generate_telegram_page(template, layout_template, site_config):
-    telegram_links = site_config.get("telegram", [])
-    telegram_html_content = template.render(telegram_links=telegram_links)
+    items = get_items(site_config, "telegram")
+
+    telegram_html_content = template.render(telegram_links=items)
     telegram_page_meta = {"title": "Code-Maven Telegram Groups", "url": "/telegram"}
     telegram_html = layout_template.render(
         site=site_config, page=telegram_page_meta, content=telegram_html_content
@@ -319,6 +320,7 @@ def load_config():
             "calendar": "https://luma.com/code-maven",
             "facebook": "https://www.facebook.com/CodeMavens/",
             "linkedin": "https://www.linkedin.com/company/code-maven-world/",
+            "telegram": "https://t.me/Code_Mavens",
         }
 
         for field, value in DEFAULTS.items():

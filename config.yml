@@ -28,15 +28,6 @@ nav_links:
      url: /about
 
 
-telegram:
-   - label: Python Maven
-     url: https://t.me/PythonMaven
-   - label: Rust Maven
-     url: https://t.me/RustMaven
-   - label: Perl Maven
-     url: https://t.me/PerlMaven
-   - label: Code Maven
-     url: https://t.me/Code_Mavens
 
 topics:
   AI:
@@ -86,6 +77,8 @@ topics:
         url: https://www.facebook.com/PerlMaven/
       linkedin:
         url: https://www.linkedin.com/showcase/perl-maven/
+      telegram:
+        url: https://t.me/PerlMaven
   PHP:
       calendar:
         url: https://luma.com/php-maven
@@ -100,6 +93,8 @@ topics:
         url: https://www.facebook.com/PythonMaven
       linkedin:
         url: https://www.linkedin.com/showcase/python-maven/
+      telegram:
+        url: https://t.me/PythonMaven
   Ruby:
       calendar:
         url: https://luma.com/ruby-maven
@@ -110,6 +105,8 @@ topics:
         url: https://www.facebook.com/RustMaven/
       linkedin:
         url: https://www.linkedin.com/showcase/rust-maven/
+      telegram:
+        url: https://t.me/RustMaven
   Zig:
       calendar:
         url: https://luma.com/zig-maven
