@@ -315,15 +315,10 @@ def load_config():
             print(f"No data for topic '{topic}'")
             continue
 
-        if "calendar" in data:
-            if "label" not in data["calendar"]:
-                data["calendar"]["label"] = topic
-        else:
-            print(f"No calendar for topic '{topic}'")
-
         DEFAULTS = {
-            "linkedin": "https://www.linkedin.com/company/code-maven-world/",
+            "calendar": "https://luma.com/code-maven",
             "facebook": "https://www.facebook.com/CodeMavens/",
+            "linkedin": "https://www.linkedin.com/company/code-maven-world/",
         }
 
         for field, value in DEFAULTS.items():

@@ -27,9 +27,6 @@ nav_links:
    - label: About
      url: /about
 
-#calendars:
-#   - label: Everything
-#     url: https://luma.com/code-maven
 
 telegram:
    - label: Python Maven
@@ -40,13 +37,6 @@ telegram:
      url: https://t.me/PerlMaven
    - label: Code Maven
      url: https://t.me/Code_Mavens
-
-#linkedin:
-#    - label: Gabor Szabo
-#      url: https://www.linkedin.com/in/szabgab/
-#    - label: Code Maven
-#      url: https://www.linkedin.com/company/code-maven-world/?viewAsMember=true
-
 
 topics:
   AI:
