@@ -190,9 +190,26 @@ def generate_future_events(events):
         fh.write("\n".join(future_text_lines) + "\n")
 
 
+def get_items(site_config, field):
+    links = set()
+    items = []
+    for topic, data in site_config.get("topics").items():
+        if data is None:
+            continue
+        item = data.get(field)
+        if item is None:
+            continue
+        if item["url"] in links:
+            continue
+        links.add(item["url"])
+        items.append(item)
+    return items
+
+
 def generate_linkedin_page(template, layout_template, site_config):
-    linkedin_links = site_config.get("linkedin", [])
-    linkedin_html_content = template.render(linkedin_links=linkedin_links)
+    items = get_items(site_config, "linkedin")
+
+    linkedin_html_content = template.render(linkedin_links=items)
     linkedin_page_meta = {"title": "Code-Maven LinkedIn Channels", "url": "/linkedin"}
     linkedin_html = layout_template.render(
         site=site_config, page=linkedin_page_meta, content=linkedin_html_content
@@ -305,12 +322,25 @@ def load_config():
             site_config = yaml.safe_load(f)
 
     for topic, data in site_config["topics"].items():
-        if data is not None and "calendar" in data:
+        if data is None:
+            print(f"No data for topic '{topic}'")
+            continue
+
+        if "calendar" in data:
             if "label" not in data["calendar"]:
                 data["calendar"]["label"] = topic
         else:
-            print(f"No calendar in {topic}")
-            pass
+            print(f"No calendar for topic '{topic}'")
+
+        if "linkedin" in data:
+            if "label" not in data["linkedin"]:
+                data["linkedin"]["label"] = f"{topic} Maven"
+        else:
+            print(f"No linkedin for topic '{topic}'")
+            data["linkedin"] = {
+                "label": "Code Maven",
+                "url": "https://www.linkedin.com/company/code-maven-world/",
+            }
 
     return site_config
 

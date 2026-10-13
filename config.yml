@@ -41,21 +41,11 @@ telegram:
    - label: Code Maven
      url: https://t.me/Code_Mavens
 
-linkedin:
-    - label: Gabor Szabo
-      url: https://www.linkedin.com/in/szabgab/
-    - label: Python Maven
-      url: https://www.linkedin.com/showcase/python-maven/?viewAsMember=true
-    - label: Perl Maven
-      url: https://www.linkedin.com/showcase/perl-maven/?viewAsMember=true
-    - label: Code Maven
-      url: https://www.linkedin.com/company/code-maven-world/?viewAsMember=true
-    - label: DevOps Maven
-      url: https://www.linkedin.com/showcase/devops-maven/?viewAsMember=true
-    - label: Go Maven
-      url: https://www.linkedin.com/showcase/go-maven/about/?viewAsMember=true
-    - label: Rust Maven
-      url: https://www.linkedin.com/showcase/rust-maven/?viewAsMember=true
+#linkedin:
+#    - label: Gabor Szabo
+#      url: https://www.linkedin.com/in/szabgab/
+#    - label: Code Maven
+#      url: https://www.linkedin.com/company/code-maven-world/?viewAsMember=true
 
 facebook:
    - label: Perl Maven
@@ -79,6 +69,8 @@ topics:
   DevOps:
       calendar:
         url: https://luma.com/devops-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/devops-maven/
   FalkorDB:
       calendar:
         tile: Databases
@@ -86,12 +78,18 @@ topics:
   Git:
       calendar:
         url: https://luma.com/git-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/devops-maven/
   GitHub:
       calendar:
         url: https://luma.com/git-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/devops-maven/
   Go:
       calendar:
         url: https://luma.com/go-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/go-maven/about/
   JavaScript:
       calendar:
         url: https://luma.com/js-maven
@@ -103,6 +101,8 @@ topics:
   Perl:
       calendar:
         url: https://luma.com/perl-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/perl-maven/
   PHP:
       calendar:
         url: https://luma.com/php-maven
@@ -113,12 +113,16 @@ topics:
   Python:
       calendar:
         url: https://luma.com/python-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/python-maven/
   Ruby:
       calendar:
         url: https://luma.com/ruby-maven
   Rust:
       calendar:
         url: https://luma.com/rust-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/rust-maven/
   Zig:
       calendar:
         url: https://luma.com/zig-maven
