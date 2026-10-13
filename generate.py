@@ -247,21 +247,9 @@ def generate_telegram_page(template, layout_template, site_config):
 
 
 def generate_calendars_page(template, layout_template, site_config):
-    links = set()
-    calendars = []
-    for topic, data in site_config.get("topics").items():
-        if data is None:
-            continue
-        calendar = data.get("calendar")
-        if calendar is None:
-            continue
-        if calendar["url"] in links:
-            continue
-        links.add(calendar["url"])
-        calendars.append(calendar)
+    items = get_items(site_config, "calendar")
 
-    calendars_links = list(calendars)
-    calendars_html_content = template.render(calendars=calendars_links)
+    calendars_html_content = template.render(calendars=items)
     calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
     calendars_html = layout_template.render(
         site=site_config, page=calendars_page_meta, content=calendars_html_content
