@@ -997,6 +997,14 @@
   speakers: Yoni Peleg
   register: https://luma.com/2qfai4a8
 
+- date: 2026.11.23
+  topics:
+   - AI
+  title: 'Synthetic Scars: Giving Autonomous AI Agents the Battle-Tested Memory of a Senior Engineer'
+  link: https://code-maven.com/synthetic-scars-giving-autonomous-ai-agents-the-battle-tested-memory-of-a-senior-engineer
+  speakers: Randal Schwartz
+  register: https://luma.com/8chl540w
+
 # -------------------------- 2026 December
 
 # - date:
