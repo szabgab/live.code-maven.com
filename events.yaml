@@ -981,6 +981,15 @@
   speakers: Ron Shabi
   register: https://luma.com/xznf1drl
 
+- date: 2026.11.12
+  topics:
+   - Databases
+   - Postgres
+  title: 'How does PostgreSQL get made?'
+  link: https://db.code-maven.com/how-does-postgresql-get-made
+  speakers: David Christensen and Elizabeth Christensen
+  register: https://luma.com/hi1k6u49
+
 - date: 2026.11.16
   topics:
    - Perl
@@ -1010,10 +1019,12 @@
 # - date:
 #   topics:
 #    - AI
+#    - Databases
 #    - DevOps
 #    - Go
 #    - JavaScript
 #    - Perl
+#    - Postgres
 #    - Python
 #    - Rust
 #    - PHP
