@@ -390,6 +390,7 @@ def load_config():
 
 
 def verify_chronological_order_of_event_dates(site_config, events):
+    current_date = date.today()
     prev_date = None
     for idx, event in enumerate(events):
         if not event:
@@ -398,11 +399,16 @@ def verify_chronological_order_of_event_dates(site_config, events):
         if not date_val:
             raise ValueError(f"Event at index {idx} is missing a date field")
         try:
-            event_date, _ = parse_event_date(date_val)
+            event_date, event_dt = parse_event_date(date_val)
         except ValueError as e:
             raise ValueError(
                 f"Event at index {idx} has an invalid date format: '{date_val}'"
             ) from e
+
+        if event_date >= current_date and event_dt is None:
+            raise ValueError(
+                f"Future event at index {idx} with date '{date_val}' must use the 'YYYY.MM.DDTHH:MM:SS+HH:MM' format"
+            )
 
         if prev_date is not None and event_date < prev_date:
             raise ValueError(
