@@ -17,7 +17,7 @@
           <td style="white-space: nowrap;">{{ event.date }}</td>
           <td>
             {% for t in event.topics %}
-              {{ t }}{% if not loop.last %}<br>{% endif %}
+              {% if t == topic_filter %}{{ t }}{% else %}<a href="/{{ t.lower() }}">{{ t }}</a>{% endif %}{% if not loop.last %}<br>{% endif %}
             {% endfor %}
           </td>
           <td>
@@ -45,7 +45,7 @@
         <span class="tag is-grey is-light has-text-weight-bold">{{ event.date }}</span>
         <div class="tags">
           {% for t in event.topics %}
-            <span class="tag is-info is-light">{{ t }}</span>
+            <span class="tag is-info is-light">{% if t == topic_filter %}{{ t }}{% else %}<a href="/{{ t.lower() }}">{{ t }}</a>{% endif %}</span>
           {% endfor %}
         </div>
       </div>
