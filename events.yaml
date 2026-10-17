@@ -855,7 +855,7 @@
 
 # -------------------------- 2026 October
 
-- date: 2026.10.19
+- date: 2026.10.19T20:00:00+03:00
   topics:
     - PHP
   title: 'Building WordPress Plugins with AI: Spec-Driven Development with PHP and Kiro'
