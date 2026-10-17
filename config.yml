@@ -68,6 +68,7 @@ topics:
       calendar:
         url: https://luma.com/js-maven
   MCP:
+      title: AI
       calendar:
         label: AI
         url: https://luma.com/ai-maven
