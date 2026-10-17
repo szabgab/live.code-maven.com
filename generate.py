@@ -121,20 +121,30 @@ def build_page(
         else:
             earlier_events.append(event_data)
 
+    if topic_filter:
+        topic_data = site_config["topics"].get(topic_filter) or {}
+        topic_title = topic_data.get("title", topic_filter)
+        maven_name = f"{topic_title} Maven"
+    else:
+        maven_name = "Code-Maven"
+
     html_content = template.render(
         schedule_events=schedule_events,
         earlier_events=earlier_events if topic_filter else [],
         topic_filter=topic_filter,
+        maven_name=maven_name,
     )
 
     if topic_filter:
-        page_title = f"Code-Maven community online {topic_filter} events"
+        page_title = f"{maven_name} community online events"
         page_url = f"/{topic_filter.lower()}.html"
         out_filename = f"site/{topic_filter.lower()}.html"
+        render_site_config = {**site_config, "title": page_title}
     else:
         page_title = "Code-Maven community online events"
         page_url = "/"
         out_filename = "site/index.html"
+        render_site_config = site_config
 
         if past_template is not None:
             past_html_content = past_template.render(
@@ -152,7 +162,7 @@ def build_page(
 
     page_meta = {"title": page_title, "url": page_url}
     html_output = layout_template.render(
-        site=site_config, page=page_meta, content=html_content
+        site=render_site_config, page=page_meta, content=html_content
     )
 
     with open(out_filename, "w", encoding="utf-8") as f:
