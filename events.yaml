@@ -973,7 +973,7 @@
   speakers: Ron Shabi
   register: https://luma.com/xznf1drl
 
-- date: 2026.11.12
+- date: 2026.11.12T20:00:00+02:00
   topics:
    - Databases
    - Postgres
@@ -982,7 +982,7 @@
   speakers: David Christensen and Elizabeth Christensen
   register: https://luma.com/hi1k6u49
 
-- date: 2026.11.15
+- date: 2026.11.15T20:00:00+02:00
   topics:
    - Rust
   title: 'Cursed Rust'
@@ -990,7 +990,7 @@
   speakers: Milan Šedivý
   register: https://luma.com/omlooqv8
 
-- date: 2026.11.16
+- date: 2026.11.16T20:00:00+02:00
   topics:
    - Perl
   title: 'Punk: Perl MVC, compiled at boot'
@@ -998,7 +998,7 @@
   speakers: Robert Acock (LNATION)
   register: https://luma.com/o4k2uute
 
-- date: 2026.11.17
+- date: 2026.11.17T20:00:00+02:00
   topics:
    - Rust
   title: 'Miscompilation in Rust 1.97'
@@ -1006,7 +1006,7 @@
   speakers: Yoni Peleg
   register: https://luma.com/2qfai4a8
 
-- date: 2026.11.23
+- date: 2026.11.23T20:00:00+02:00
   topics:
    - AI
   title: 'Synthetic Scars: Giving Autonomous AI Agents the Battle-Tested Memory of a Senior Engineer'
