@@ -863,7 +863,7 @@
   speakers: Haim Michael
   register: https://luma.com/1usglot9
 
-- date: 2026.10.20
+- date: 2026.10.20T10:00:00+03:00
   topics:
    - Zig
   title: 'Informal online discussion about Zig'
@@ -871,7 +871,7 @@
   speakers: You
   register: https://luma.com/qegk1on9
 
-- date: 2026.10.20
+- date: 2026.10.20T20:00:00+03:00
   topics:
    - Go
   title: 'CLI Design for Humans and AI: Building Dual-Audience Tools in Go'
@@ -879,7 +879,7 @@
   speakers: Miki Tebeka
   register: https://luma.com/8yrcaydg
 
-- date: 2026.10.21
+- date: 2026.10.21T20:00:00+03:00
   topics:
     - Perl
     - MCP
@@ -889,7 +889,7 @@
   speakers: Dave Cross
   register: https://luma.com/6qqyscbm
 
-- date: 2026.10.22
+- date: 2026.10.22T18:30:00+03:00
   topics:
    - Rust
   title: 'Rust and the GPU from Native to Web: An Introduction to `wgpu`'
@@ -897,7 +897,7 @@
   speakers: Liam Rust
   register: https://luma.com/k1978ath
 
-- date: 2026.10.25
+- date: 2026.10.25T20:00:00+02:00
   topics:
    - Python
   title: 'Coding Best Practices Spotlight - My Top Selections'
@@ -905,7 +905,7 @@
   speakers: Nadav Mary
   register: https://luma.com/4w6ahs0s
 
-- date: 2026.10.26
+- date: 2026.10.26T18:00:00+02:00
   topics:
    - Python
    - Rust
@@ -914,7 +914,7 @@
   speakers: Leon Vak
   register: https://luma.com/1byfc495
 
-- date: 2026.10.28
+- date: 2026.10.28T20:00:00+02:00
   topics:
    - Zig
   title: 'Zig: From Beginner to Slightly Less Beginner'
@@ -922,7 +922,7 @@
   speakers: Sawyer X
   register: https://luma.com/ad4e9uv9
 
-- date: 2026.10.29
+- date: 2026.10.29T20:00:00+02:00
   topics:
    - Rust
   title: 'Creating a hexadecimal editor in Rust'
@@ -932,7 +932,7 @@
 
 # -------------------------- 2026 November
 
-- date: 2026.11.02
+- date: 2026.11.02T20:00:00+02:00
   topics:
    - DevOps
    - PHP
@@ -941,7 +941,7 @@
   speakers: Arne Blankerts
   register: https://luma.com/b37ej9tz
 
-- date: 2026.11.03
+- date: 2026.11.03T10:00:00+02:00
   topics:
    - Rust
   title: 'Solving Real-World Planning Problems in Rust with SolverForge'
@@ -949,7 +949,7 @@
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
 
-- date: 2026.11.04
+- date: 2026.11.04T10:00:00+02:00
   topics:
    - Zig
   title: 'A Developer-First Shell Built in Zig'
@@ -957,7 +957,7 @@
   speakers: Damilare Osibanjo
   register: https://luma.com/3bg1uf62
 
-- date: 2026.11.09
+- date: 2026.11.09T20:00:00+02:00
   topics:
    - Python
   title: 'Unit testing in the age of AI'
@@ -965,7 +965,7 @@
   speakers: Jason Elbaum
   register: https://luma.com/6yvo3kya
 
-- date: 2026.11.10
+- date: 2026.11.10T20:00:00+02:00
   topics:
    - Python
   title: "Python's Achilles Heel: C++ and Python Interop for Audio Processing"
