@@ -10,8 +10,10 @@ plugins:
    - jekyll-seo-tag
 
 nav_links:
-   - label: Upcoming and Recordings
+   - label: Upcoming
      url: /
+   - label: Past
+     url: /past
    - label: Calendars
      url: /calendars
    - label: Telegram

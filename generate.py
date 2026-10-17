@@ -69,6 +69,7 @@ def build_page(
     layout_template,
     site_config,
     topic_filter=None,
+    past_template=None,
 ):
     # Separate events into schedule and earlier
     schedule_events = []
@@ -122,7 +123,7 @@ def build_page(
 
     html_content = template.render(
         schedule_events=schedule_events,
-        earlier_events=earlier_events,
+        earlier_events=earlier_events if topic_filter else [],
         topic_filter=topic_filter,
     )
 
@@ -134,6 +135,20 @@ def build_page(
         page_title = "Code-Maven community online events"
         page_url = "/"
         out_filename = "site/index.html"
+
+        if past_template is not None:
+            past_html_content = past_template.render(
+                earlier_events=earlier_events,
+            )
+            past_page_meta = {
+                "title": "Code-Maven community online past events",
+                "url": "/past",
+            }
+            past_html_output = layout_template.render(
+                site=site_config, page=past_page_meta, content=past_html_content
+            )
+            with open("site/past.html", "w", encoding="utf-8") as f:
+                f.write(past_html_output)
 
     page_meta = {"title": page_title, "url": page_url}
     html_output = layout_template.render(
@@ -444,6 +459,7 @@ def rebuild():
     env = Environment(loader=loader)
     layout_template = env.get_template("layout.html")
     index_template = env.get_template("index.html")
+    past_template = env.get_template("past.html")
     linkedin_template = env.get_template("linkedin.html")
     facebook_template = env.get_template("facebook.html")
     telegram_template = env.get_template("telegram.html")
@@ -454,13 +470,14 @@ def rebuild():
     # Ensure site/ directory exists
     os.makedirs("site", exist_ok=True)
 
-    # Render main index.html page
+    # Render main index.html and past.html pages
     build_page(
         events=events,
         template=index_template,
         layout_template=layout_template,
         site_config=site_config,
         topic_filter=None,
+        past_template=past_template,
     )
 
     # Render topic-specific pages
@@ -517,7 +534,7 @@ def rebuild():
     generate_future_events(events)
 
     print(
-        f"Successfully rebuilt site/index.html, {', '.join(generated_pages)}, site/linkedin.html, site/facebook.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, site/past.html, {', '.join(generated_pages)}, site/linkedin.html, site/facebook.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
     )
 
 
