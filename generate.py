@@ -63,6 +63,17 @@ def format_html_tables(html):
     ).replace("</table>", "</table></div>")
 
 
+def parse_event_date(date_val):
+    date_str = str(date_val).strip()
+    try:
+        dt = datetime.strptime(date_str, "%Y.%m.%d")
+        return dt.date(), None
+    except ValueError:
+        pass
+    dt = datetime.strptime(date_str, "%Y.%m.%dT%H:%M:%S%z")
+    return dt.date(), dt
+
+
 def build_page(
     events,
     template,
@@ -97,18 +108,34 @@ def build_page(
 
         date_val = event.get("date", "")
         try:
-            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+            event_date, event_dt = parse_event_date(date_val)
         except ValueError:
             # Fallback for malformed dates: classify as past
-            event_date = date.min
+            event_date, event_dt = date.min, None
 
         title = event.get("title", "")
         link = event.get("link")
         speakers = event.get("speakers", "")
         register = event.get("register")
 
+        if event_date >= current_date:
+            display_date = (
+                event_dt.strftime("%Y.%m.%d %H:%M%z")
+                if event_dt is not None
+                else event_date.strftime("%Y.%m.%d")
+            )
+            iso_date = event_dt.isoformat() if event_dt is not None else None
+        else:
+            display_date = (
+                event_date.strftime("%Y.%m.%d")
+                if event_date != date.min
+                else str(date_val)
+            )
+            iso_date = None
+
         event_data = {
-            "date": str(date_val),
+            "date": display_date,
+            "iso_date": iso_date,
             "topics": topics,
             "title": title,
             "link": link,
@@ -178,7 +205,7 @@ def generate_future_events(events):
             continue
         date_val = event.get("date", "")
         try:
-            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+            event_date, _ = parse_event_date(date_val)
         except ValueError:
             event_date = date.min
         if event_date >= current_date:
@@ -371,7 +398,7 @@ def verify_chronological_order_of_event_dates(site_config, events):
         if not date_val:
             raise ValueError(f"Event at index {idx} is missing a date field")
         try:
-            event_date = datetime.strptime(str(date_val).strip(), "%Y.%m.%d").date()
+            event_date, _ = parse_event_date(date_val)
         except ValueError as e:
             raise ValueError(
                 f"Event at index {idx} has an invalid date format: '{date_val}'"

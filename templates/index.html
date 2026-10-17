@@ -28,7 +28,7 @@ Off the record.
     <tbody>
       {% for event in schedule_events %}
         <tr>
-          <td style="white-space: nowrap;">{{ event.date }}</td>
+          <td style="white-space: nowrap;">{% if event.iso_date %}<span class="local-datetime" data-iso="{{ event.iso_date }}">{{ event.date }}</span>{% else %}{{ event.date }}{% endif %}</td>
           <td>
             {% for t in event.topics %}
               {% if t == topic_filter %}{{ t }}{% else %}<a href="/{{ t.lower() }}">{{ t }}</a>{% endif %}{% if not loop.last %}<br>{% endif %}
@@ -65,7 +65,7 @@ Off the record.
   {% for event in schedule_events %}
     <div class="box mb-4 p-4" style="border: 1px solid #e2edf5; box-shadow: 0 4px 10px rgba(11, 34, 53, 0.04); background-color: #fafcfe;">
       <div class="is-flex is-justify-content-between is-align-items-center mb-3">
-        <span class="tag is-primary is-light has-text-weight-bold">{{ event.date }}</span>
+        <span class="tag is-primary is-light has-text-weight-bold">{% if event.iso_date %}<span class="local-datetime" data-iso="{{ event.iso_date }}">{{ event.date }}</span>{% else %}{{ event.date }}{% endif %}</span>
         <div class="tags">
           {% for t in event.topics %}
             <span class="tag is-info is-light">{% if t == topic_filter %}{{ t }}{% else %}<a href="/{{ t.lower() }}">{{ t }}</a>{% endif %}</span>
@@ -96,3 +96,20 @@ Off the record.
 {% if topic_filter %}
   {% include "past.html" %}
 {% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".local-datetime").forEach(function (el) {
+      var iso = el.getAttribute("data-iso");
+      if (!iso) return;
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return;
+      var year = d.getFullYear();
+      var month = String(d.getMonth() + 1).padStart(2, "0");
+      var day = String(d.getDate()).padStart(2, "0");
+      var hours = String(d.getHours()).padStart(2, "0");
+      var minutes = String(d.getMinutes()).padStart(2, "0");
+      el.textContent = year + "." + month + "." + day + " " + hours + ":" + minutes;
+    });
+  });
+</script>
