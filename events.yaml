@@ -932,14 +932,6 @@
 
 # -------------------------- 2026 November
 
-- date: 2026.11.01
-  topics:
-   - Rust
-  title: 'Cursed Rust'
-  link: https://rust.code-maven.com/cursed-rust
-  speakers: Milan Šedivý
-  register: https://luma.com/omlooqv8
-
 - date: 2026.11.02
   topics:
    - DevOps
@@ -989,6 +981,14 @@
   link: https://db.code-maven.com/how-does-postgresql-get-made
   speakers: David Christensen and Elizabeth Christensen
   register: https://luma.com/hi1k6u49
+
+- date: 2026.11.15
+  topics:
+   - Rust
+  title: 'Cursed Rust'
+  link: https://rust.code-maven.com/cursed-rust
+  speakers: Milan Šedivý
+  register: https://luma.com/omlooqv8
 
 - date: 2026.11.16
   topics:
