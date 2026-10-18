@@ -1,11 +1,11 @@
 <h1 class="title">Topics</h1>
 
 <div class="table-container">
-  <table class="table is-striped is-hoverable is-fullwidth">
+  <table id="topics-table" class="table is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
-        <th>Topic</th>
-        <th>Entries</th>
+        <th data-sort="string" style="cursor: pointer; user-select: none;">Topic <span class="sort-indicator">▲</span></th>
+        <th data-sort="number" style="cursor: pointer; user-select: none;">Entries <span class="sort-indicator"></span></th>
       </tr>
     </thead>
     <tbody>
@@ -18,3 +18,50 @@
     </tbody>
   </table>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var table = document.getElementById("topics-table");
+    if (!table) return;
+    var headers = table.querySelectorAll("thead th");
+    var tbody = table.querySelector("tbody");
+    var currentCol = 0;
+    var ascending = true;
+
+    headers.forEach(function (th, colIdx) {
+      th.addEventListener("click", function () {
+        var sortType = th.getAttribute("data-sort");
+        if (currentCol === colIdx) {
+          ascending = !ascending;
+        } else {
+          currentCol = colIdx;
+          ascending = sortType !== "number";
+        }
+
+        var rows = Array.from(tbody.querySelectorAll("tr"));
+        rows.sort(function (a, b) {
+          var aText = a.children[colIdx].textContent.trim();
+          var bText = b.children[colIdx].textContent.trim();
+          var cmp = 0;
+          if (sortType === "number") {
+            cmp = parseFloat(aText) - parseFloat(bText);
+          } else {
+            cmp = aText.localeCompare(bText, undefined, { sensitivity: "base" });
+          }
+          return ascending ? cmp : -cmp;
+        });
+
+        rows.forEach(function (row) {
+          tbody.appendChild(row);
+        });
+
+        headers.forEach(function (h, idx) {
+          var indicator = h.querySelector(".sort-indicator");
+          if (indicator) {
+            indicator.textContent = idx === currentCol ? (ascending ? "▲" : "▼") : "";
+          }
+        });
+      });
+    });
+  });
+</script>
