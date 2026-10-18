@@ -11,6 +11,31 @@ During the presentation we encourage the audience to ask questions to challenge 
 After every presentation, when we stop the recording, there is ample opportunity to meet the speaker and to have free-form chat among all the participants.
 Off the record.
 
+{% if topic_data %}
+  <div class="buttons mt-4">
+    {% if topic_data.calendar %}
+      <a class="button is-rounded is-link is-outlined" href="{{ topic_data.calendar.url }}" target="_blank" rel="noopener noreferrer">
+        📅 Calendar: {{ topic_data.calendar.label }}
+      </a>
+    {% endif %}
+    {% if topic_data.linkedin %}
+      <a class="button is-rounded is-link is-outlined" href="{{ topic_data.linkedin.url }}" target="_blank" rel="noopener noreferrer">
+        LinkedIn: {{ topic_data.linkedin.label }}
+      </a>
+    {% endif %}
+    {% if topic_data.facebook %}
+      <a class="button is-rounded is-link is-outlined" href="{{ topic_data.facebook.url }}" target="_blank" rel="noopener noreferrer">
+        Facebook: {{ topic_data.facebook.label }}
+      </a>
+    {% endif %}
+    {% if topic_data.telegram %}
+      <a class="button is-rounded is-link is-outlined" href="{{ topic_data.telegram.url }}" target="_blank" rel="noopener noreferrer">
+        Telegram: {{ topic_data.telegram.label }}
+      </a>
+    {% endif %}
+  </div>
+{% endif %}
+
 <h2 class="title is-4 mt-5">Schedule:</h2>
 
 <!-- Desktop/Tablet Table view -->

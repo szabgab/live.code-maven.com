@@ -153,6 +153,7 @@ def build_page(
         topic_title = topic_data.get("title", topic_filter)
         maven_name = f"{topic_title} Maven"
     else:
+        topic_data = None
         maven_name = "Code-Maven"
 
     html_content = template.render(
@@ -160,6 +161,7 @@ def build_page(
         earlier_events=earlier_events if topic_filter else [],
         topic_filter=topic_filter,
         maven_name=maven_name,
+        topic_data=topic_data,
     )
 
     if topic_filter:
