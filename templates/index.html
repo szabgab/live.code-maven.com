@@ -51,6 +51,7 @@ Off the record.
 
 <h2 class="title is-4 mt-5">Schedule</h2>
 
+{% if schedule_events %}
 <!-- Desktop/Tablet Table view -->
 <div class="table-container is-hidden-mobile">
   <table class="table is-striped is-hoverable is-fullwidth">
@@ -97,9 +98,6 @@ Off the record.
 
 <!-- Mobile Card list view (No horizontal scrolling) -->
 <div class="is-hidden-tablet mb-5">
-  {% if not schedule_events %}
-    <p class="has-text-grey-light">No upcoming events scheduled.</p>
-  {% endif %}
   {% for event in schedule_events %}
     <div class="box mb-4 p-4" style="border: 1px solid #e2edf5; box-shadow: 0 4px 10px rgba(11, 34, 53, 0.04); background-color: #fafcfe;">
       <div class="is-flex is-justify-content-between is-align-items-center mb-3">
@@ -130,6 +128,9 @@ Off the record.
     </div>
   {% endfor %}
 </div>
+{% else %}
+<p>Currently there are no planned events in this topic. If you'd like to give a presentation look at the <a href="/cfp">CFP</a> to understand what is needed and discuss it with Gabor.</p>
+{% endif %}
 
 {% if topic_filter %}
   {% include "past.html" %}
