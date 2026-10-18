@@ -855,14 +855,6 @@
 
 # -------------------------- 2026 October
 
-- date: 2026.10.19T20:00:00+03:00
-  topics:
-    - PHP
-  title: 'Building WordPress Plugins with AI: Spec-Driven Development with PHP and Kiro'
-  link: https://php.code-maven.com/building-wordpress-plugins-with-ai
-  speakers: Haim Michael
-  register: https://luma.com/1usglot9
-
 - date: 2026.10.20T10:00:00+03:00
   topics:
    - Zig
@@ -1013,6 +1005,15 @@
   link: https://code-maven.com/synthetic-scars-giving-autonomous-ai-agents-the-battle-tested-memory-of-a-senior-engineer
   speakers: Randal Schwartz
   register: https://luma.com/8chl540w
+
+- date: 2026.11.30T20:00:00+03:00
+  topics:
+    - PHP
+  title: 'Building WordPress Plugins with AI: Spec-Driven Development with PHP and Kiro'
+  link: https://php.code-maven.com/building-wordpress-plugins-with-ai
+  speakers: Haim Michael
+  register: https://luma.com/1usglot9
+
 
 # -------------------------- 2026 December
 
