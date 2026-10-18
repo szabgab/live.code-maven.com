@@ -16,16 +16,18 @@ nav_links:
      url: /past
    - label: Calendars
      url: /calendars
-   - label: Telegram
-     url: /telegram
-   - label: LinkedIn
-     url: /linkedin
-   - label: Facebook
-     url: /facebook
+#   - label: Telegram
+#     url: /telegram
+#   - label: LinkedIn
+#     url: /linkedin
+#   - label: Facebook
+#     url: /facebook
    - label: What Maven?
      url: /maven
    - label: CFP
      url: /cfp
+   - label: Topics
+     url: /topics
    - label: About
      url: /about
 
