@@ -316,6 +316,40 @@ def generate_calendars_page(template, layout_template, site_config):
         f.write(calendars_html)
 
 
+def generate_topics_page(template, layout_template, site_config, events):
+    topic_counts = {topic: 0 for topic in site_config["topics"].keys()}
+    for event in events:
+        if not event:
+            continue
+        topics_val = event.get("topics")
+        if isinstance(topics_val, list):
+            event_topics = topics_val
+        elif isinstance(topics_val, str):
+            event_topics = [topics_val] if topics_val else []
+        elif topics_val is None:
+            event_topics = []
+        else:
+            event_topics = [str(topics_val)]
+
+        for t in event_topics:
+            if t in topic_counts:
+                topic_counts[t] += 1
+
+    topics_list = [
+        {"name": topic, "count": count} for topic, count in topic_counts.items()
+    ]
+
+    topics_html_content = template.render(topics=topics_list)
+    topics_page_meta = {"title": "Code-Maven Topics", "url": "/topics"}
+    topics_html = layout_template.render(
+        site=site_config, page=topics_page_meta, content=topics_html_content
+    )
+
+    topics_html_path = "site/topics.html"
+    with open(topics_html_path, "w", encoding="utf-8") as f:
+        f.write(topics_html)
+
+
 def compile_style_scss():
     # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
     scss_path = "static/assets/css/style.scss"
@@ -509,6 +543,7 @@ def rebuild():
     facebook_template = env.get_template("facebook.html")
     telegram_template = env.get_template("telegram.html")
     calendars_template = env.get_template("calendars.html")
+    topics_template = env.get_template("topics.html")
 
     md = MarkdownIt("gfm-like")
 
@@ -567,6 +602,14 @@ def rebuild():
         site_config=site_config,
     )
 
+    # Render site/topics.html
+    generate_topics_page(
+        template=topics_template,
+        layout_template=layout_template,
+        site_config=site_config,
+        events=events,
+    )
+
     compile_style_scss()
 
     copy_static_files()
@@ -579,7 +622,7 @@ def rebuild():
     generate_future_events(events)
 
     print(
-        f"Successfully rebuilt site/index.html, site/past.html, {', '.join(generated_pages)}, site/linkedin.html, site/facebook.html, site/telegram.html, site/calendars.html, site/future.md, and site/assets/css/style.css"
+        f"Successfully rebuilt site/index.html, site/past.html, {', '.join(generated_pages)}, site/linkedin.html, site/facebook.html, site/telegram.html, site/calendars.html, site/topics.html, site/future.md, and site/assets/css/style.css"
     )
 
 

@@ -1,0 +1,20 @@
+<h1 class="title">Topics</h1>
+
+<div class="table-container">
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Entries</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in topics %}
+        <tr>
+          <td><a href="/{{ item.name.lower() }}">{{ item.name }}</a></td>
+          <td>{{ item.count }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
