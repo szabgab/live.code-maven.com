@@ -37,6 +37,7 @@ topics:
         url: https://luma.com/ai-maven
   Android:
   CMOS:
+    text: CMOS, the Code-Maven Open Source podcast was a series of interviews with Open Source developers conducted in 2016.
   Databases:
       calendar:
         url: https://luma.com/db-maven
