@@ -79,6 +79,7 @@ def build_page(
     template,
     layout_template,
     site_config,
+    md,
     topic_filter=None,
     past_template=None,
 ):
@@ -152,9 +153,12 @@ def build_page(
         topic_data = site_config["topics"].get(topic_filter) or {}
         topic_title = topic_data.get("title", topic_filter)
         maven_name = f"{topic_title} Maven"
+        raw_text = topic_data.get("text")
+        topic_text = format_html_tables(md.render(str(raw_text))) if raw_text else None
     else:
         topic_data = None
         maven_name = "Code-Maven"
+        topic_text = None
 
     html_content = template.render(
         schedule_events=schedule_events,
@@ -162,6 +166,7 @@ def build_page(
         topic_filter=topic_filter,
         maven_name=maven_name,
         topic_data=topic_data,
+        topic_text=topic_text,
     )
 
     if topic_filter:
@@ -561,6 +566,7 @@ def rebuild():
         template=index_template,
         layout_template=layout_template,
         site_config=site_config,
+        md=md,
         topic_filter=None,
         past_template=past_template,
     )
@@ -572,6 +578,7 @@ def rebuild():
             template=index_template,
             layout_template=layout_template,
             site_config=site_config,
+            md=md,
             topic_filter=topic,
         )
 

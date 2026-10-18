@@ -6,10 +6,14 @@
   {% endif %}
 </h1>
 
+{% if topic_text %}
+  {{ topic_text | safe }}
+{% else %}
 The {{ maven_name if topic_filter else 'Code Maven' }} community provides a space for people around the world to share their technology-related presentations.
 During the presentation we encourage the audience to ask questions to challenge the speaker and to create a conversation.
 After every presentation, when we stop the recording, there is ample opportunity to meet the speaker and to have free-form chat among all the participants.
 Off the record.
+{% endif %}
 
 {% if topic_data %}
   <div class="buttons mt-4">
