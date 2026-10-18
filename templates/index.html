@@ -132,18 +132,5 @@ Off the record.
 {% endif %}
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".local-datetime").forEach(function (el) {
-      var iso = el.getAttribute("data-iso");
-      if (!iso) return;
-      var d = new Date(iso);
-      if (isNaN(d.getTime())) return;
-      var year = d.getFullYear();
-      var month = String(d.getMonth() + 1).padStart(2, "0");
-      var day = String(d.getDate()).padStart(2, "0");
-      var hours = String(d.getHours()).padStart(2, "0");
-      var minutes = String(d.getMinutes()).padStart(2, "0");
-      el.textContent = year + "." + month + "." + day + " " + hours + ":" + minutes;
-    });
-  });
+  convertLocalDatetimes();
 </script>

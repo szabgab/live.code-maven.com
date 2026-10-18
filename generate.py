@@ -382,6 +382,11 @@ def copy_static_files():
     if os.path.exists(static_img_dir):
         shutil.copytree(static_img_dir, "site/img", dirs_exist_ok=True)
 
+    # Copy static/js directory to site/js
+    static_js_dir = "static/js"
+    if os.path.exists(static_js_dir):
+        shutil.copytree(static_js_dir, "site/js", dirs_exist_ok=True)
+
     # Copy static/favicon directory contents to site/ root
     static_favicon_dir = "static/favicon"
     if os.path.exists(static_favicon_dir):
