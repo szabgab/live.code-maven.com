@@ -1006,6 +1006,14 @@
   speakers: Randal Schwartz
   register: https://luma.com/8chl540w
 
+- date: 2026.11.29T20:00:00+02:00
+  topics:
+   - Perl
+  title: 'Everyday date and time handling in Perl with T'
+  link: https://perlmaven.com/everyday-date-and-time-handling-in-perl-with-t
+  speakers: Eugen Konkov
+  register: https://luma.com/2d09kkk4
+
 - date: 2026.11.30T20:00:00+03:00
   topics:
     - PHP
