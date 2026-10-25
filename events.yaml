@@ -957,13 +957,14 @@
   speakers: Jason Elbaum
   register: https://luma.com/6yvo3kya
 
-- date: 2026.11.10T20:00:00+02:00
-  topics:
-   - Python
-  title: "Python's Achilles Heel: C++ and Python Interop for Audio Processing"
-  link: https://python.code-maven.com/pythons-achilles-heel-cpp-andpython-interop-for-audio-processing
-  speakers: Ron Shabi
-  register: https://luma.com/xznf1drl
+#- date: 2026.11.10T20:00:00+02:00
+#  topics:
+#   - Python
+#  title: "Python's Achilles Heel: C++ and Python Interop for Audio Processing"
+#  link: https://python.code-maven.com/pythons-achilles-heel-cpp-andpython-interop-for-audio-processing
+#  speakers: Ron Shabi
+#  register: https://luma.com/xznf1drl
+#  cancelled
 
 - date: 2026.11.12T20:00:00+02:00
   topics:
