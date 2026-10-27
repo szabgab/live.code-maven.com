@@ -1026,6 +1026,16 @@
 
 # -------------------------- 2026 December
 
+- date: 2026.12.03T20:00:00+02:00
+  topics:
+   - Python
+  title: 'Testing invariants, not just examples: Property-based testing with Hypothesis'
+  link: https://python.code-maven.com/testing-invariants-not-just-examples-property-based-testing-with-hypothesis
+  speakers: Marlene Marchena
+  register: https://luma.com/7d30pgma
+
+# -------------------------- 2027 January
+
 # - date: 2026.11.23T20:00:00+02:00
 #   topics:
 #    - AI
