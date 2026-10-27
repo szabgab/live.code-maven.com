@@ -91,6 +91,8 @@ topics:
   PHP:
       calendar:
         url: https://luma.com/php-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/php-maven/
   Postgres:
       calendar:
         tile: Databases
@@ -119,4 +121,6 @@ topics:
   Zig:
       calendar:
         url: https://luma.com/zig-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/zig-maven/
 
