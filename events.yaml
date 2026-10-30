@@ -1007,15 +1007,6 @@
   speakers: Randal Schwartz
   register: https://luma.com/8chl540w
 
-- date: 2026.11.24T19:00:00+02:00
-  topics:
-   - AI
-   - Rust
-  title: 'Clean Code in Rust in the agentic age'
-  link: https://rust.code-maven.com/clean-code-in-rust-in-the-agentic-age
-  speakers: Marianne L. Goldin
-  register: https://luma.com/dzlcsihv
-
 - date: 2026.11.29T20:00:00+02:00
   topics:
    - Perl
@@ -1042,6 +1033,16 @@
   link: https://python.code-maven.com/testing-invariants-not-just-examples-property-based-testing-with-hypothesis
   speakers: Marlene Marchena
   register: https://luma.com/7d30pgma
+
+- date: 2026.12.17T18:00:00+02:00
+  topics:
+   - AI
+   - Rust
+  title: 'Clean Code in Rust in the agentic age'
+  link: https://rust.code-maven.com/clean-code-in-rust-in-the-agentic-age
+  speakers: Marianne L. Goldin
+  register: https://luma.com/dzlcsihv
+
 
 # -------------------------- 2027 January
 
