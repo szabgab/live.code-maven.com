@@ -991,6 +991,14 @@
   speakers: Robert Acock (LNATION)
   register: https://luma.com/o4k2uute
 
+- date: 2026.11.17T10:00:00+02:00
+  topics:
+   - AI
+  title: 'Securing the AI Harness: Security in the Agentic Lifecycle'
+  link: https://code-maven.com/securing-the-ai-harness-security-in-the-agentic-lifecycle
+  speakers: Ido Goldstein
+  register: https://luma.com/5hwm0xf2
+
 - date: 2026.11.17T20:00:00+02:00
   topics:
    - Rust
