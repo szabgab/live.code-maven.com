@@ -2,7 +2,7 @@
 
 ## Schedule
 
-* Mingling 30 min
+* Mingling 30 min.
     * We start with a little online mingling. Tell us about yourself and meet the other attendees.
 * Presentation
 * Informal conversation.
