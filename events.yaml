@@ -1015,6 +1015,14 @@
   speakers: Randal Schwartz
   register: https://luma.com/8chl540w
 
+- date: 2026.11.26T18:00:00+02:00
+  topics:
+   - Zig
+  title: 'MicroZig'
+  link: https://zig.code-maven.com/microzig
+  speakers: Matthew Knight
+  register: https://luma.com/zknev1e7
+
 - date: 2026.11.29T20:00:00+02:00
   topics:
    - Perl
