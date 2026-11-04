@@ -941,14 +941,6 @@
   speakers: Vittorio Distefano
   register: https://luma.com/rfbzk3ae
 
-- date: 2026.11.04T10:00:00+02:00
-  topics:
-   - Zig
-  title: 'A Developer-First Shell Built in Zig'
-  link: https://zig.code-maven.com/a-developer-first-shell-built-in-zig
-  speakers: Damilare Osibanjo
-  register: https://luma.com/3bg1uf62
-
 - date: 2026.11.09T20:00:00+02:00
   topics:
    - Python
@@ -1067,6 +1059,14 @@
   link: https://rust.code-maven.com/clean-code-in-rust-in-the-agentic-age
   speakers: Marianne L. Goldin
   register: https://luma.com/dzlcsihv
+
+- date: 2026.12.29T10:00:00+02:00
+  topics:
+   - Zig
+  title: 'A Developer-First Shell Built in Zig'
+  link: https://zig.code-maven.com/a-developer-first-shell-built-in-zig
+  speakers: Damilare Osibanjo
+  register: https://luma.com/3bg1uf62
 
 
 # -------------------------- 2027 January
