@@ -1,5 +1,18 @@
 # Help for speakers
 
+## Ideas for sessions
+
+* Implement a feature or fix a bug in an open source project. (of the guest or some other project)
+* Write a (small?) web application in one of the frameworks.
+* Build a TUI, a Terminal User Interface
+* Build a GUI, a Graphical User Interface
+* Use a 3rd party library (crate in Rust). Any library. (What is the problems to solve? What might be the alternatives?)
+* Use a certain database from Rust/Python/Perl. (e.g. SurrealDB, MongoDB, SQLite, etc.
+* Build a game.
+* How to do Machine Learning?
+* How to use LLMs?
+
+
 ## Introducing your project
 
 If you are introducing a project of you, here are some questions you might want to answer in your presentation.
