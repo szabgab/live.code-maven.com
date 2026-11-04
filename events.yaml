@@ -1007,6 +1007,14 @@
   speakers: Randal Schwartz
   register: https://luma.com/8chl540w
 
+- date: 2026.11.25T20:00:00+02:00
+  topics:
+   - PHP
+  title: 'Building static websites with Sculpin'
+  link: https://php.code-maven.com/building-static-websites-with-sculpin
+  speakers: Oliver Davies
+  register: https://luma.com/kfqbswi4
+
 - date: 2026.11.26T18:00:00+02:00
   topics:
    - Zig
