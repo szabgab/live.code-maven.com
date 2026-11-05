@@ -1059,6 +1059,15 @@
   speakers: Maximilian Maischein aka Corion
   register: https://luma.com/is9ow917
 
+- date: 2026.12.10T20:00:00+02:00
+  topics:
+   - Databases
+   - Postgres
+  title: 'Global Replication with Postgres'
+  link: https://db.code-maven.com/global-replication-with-postgres
+  speakers: Sanketh Balakrishna, Maxim Briskin
+  register: https://luma.com/i9to1xc3
+
 - date: 2026.12.17T18:00:00+02:00
   topics:
    - AI
@@ -1078,6 +1087,7 @@
 
 
 # -------------------------- 2027 January
+
 
 # - date: 2026.11.23T20:00:00+02:00
 #   topics:
