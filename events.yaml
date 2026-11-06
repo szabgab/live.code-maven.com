@@ -1018,8 +1018,8 @@
 - date: 2026.11.26T18:00:00+02:00
   topics:
    - Zig
-  title: 'MicroZig'
-  link: https://zig.code-maven.com/microzig
+  title: 'Compiling for tiny computers with Zig'
+  link: https://zig.code-maven.com/compiling-for-tiny-computers-with-zig
   speakers: Matthew Knight
   register: https://luma.com/zknev1e7
 
