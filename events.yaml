@@ -694,7 +694,7 @@
 - date: 2026.05.18
   topics:
     - FalkorDB
-    - Databases
+    - Database
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
@@ -716,7 +716,7 @@
 - date: 2026.06.04
   topics:
     - FalkorDB
-    - Databases
+    - Database
   title: 'Exploring FalkorDB - Learning to use a Graph Database in Rust'
   link: null
   speakers: Gabor Szabo
@@ -846,7 +846,7 @@
 - date: 2026.09.09
   topics:
     - Postgres
-    - Databases
+    - Database
     - AI
   title: 'Agents and MCP for Postgres'
   link: https://db.code-maven.com/agents-and-mcp-for-postgres
@@ -960,7 +960,7 @@
 
 - date: 2026.11.12T20:00:00+02:00
   topics:
-   - Databases
+   - Database
    - Postgres
   title: 'How does PostgreSQL get made?'
   link: https://db.code-maven.com/how-does-postgresql-get-made
@@ -1061,7 +1061,7 @@
 
 - date: 2026.12.10T20:00:00+02:00
   topics:
-   - Databases
+   - Database
    - Postgres
   title: 'Global Replication with Postgres'
   link: https://db.code-maven.com/global-replication-with-postgres
@@ -1109,7 +1109,7 @@
 # - date: 2026.11.23T20:00:00+02:00
 #   topics:
 #    - AI
-#    - Databases
+#    - Database
 #    - DevOps
 #    - Go
 #    - JavaScript

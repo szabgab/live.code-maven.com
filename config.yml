@@ -40,7 +40,7 @@ topics:
   Android:
   CMOS:
     text: CMOS, the Code-Maven Open Source podcast was a series of interviews with Open Source developers conducted in 2016.
-  Databases:
+  Database:
       calendar:
         url: https://luma.com/db-maven
   DevOps:
@@ -50,7 +50,7 @@ topics:
         url: https://www.linkedin.com/showcase/devops-maven/
   FalkorDB:
       calendar:
-        tile: Databases
+        tile: Database
         url: https://luma.com/db-maven
   Git:
       calendar:
