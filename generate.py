@@ -355,6 +355,31 @@ def generate_topics_page(template, layout_template, site_config, events):
         f.write(topics_html)
 
 
+def generate_redirects(site_config):
+    redirects = site_config.get("redirect") or {}
+    for source, target in redirects.items():
+        target_url = (
+            target if target.startswith(("http://", "https://", "/")) else f"/{target}"
+        )
+        html = f"""<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <link rel="canonical" href="{target_url}">
+    <meta http-equiv="refresh" content="0; url={target_url}">
+    <script>window.location.href = "{target_url}";</script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="{target_url}">{target}</a>...</p>
+  </body>
+</html>
+"""
+        out_path = os.path.join("site", f"{source}.html")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(html)
+
+
 def compile_style_scss():
     # Compile static/assets/css/style.scss to site/assets/css/style.css by removing front matter
     scss_path = "static/assets/css/style.scss"
@@ -621,6 +646,8 @@ def rebuild():
         site_config=site_config,
         events=events,
     )
+
+    generate_redirects(site_config)
 
     compile_style_scss()
 

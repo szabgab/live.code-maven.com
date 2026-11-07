@@ -124,3 +124,5 @@ topics:
       linkedin:
         url: https://www.linkedin.com/showcase/zig-maven/
 
+redirect:
+  databases: database
