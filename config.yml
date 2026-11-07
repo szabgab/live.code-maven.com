@@ -43,6 +43,8 @@ topics:
   Database:
       calendar:
         url: https://luma.com/db-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/db-maven/
   DevOps:
       calendar:
         url: https://luma.com/devops-maven
@@ -52,6 +54,8 @@ topics:
       calendar:
         tile: Database
         url: https://luma.com/db-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/db-maven/
   Git:
       calendar:
         url: https://luma.com/git-maven
@@ -97,6 +101,8 @@ topics:
       calendar:
         tile: Databases
         url: https://luma.com/db-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/db-maven/
   Python:
       calendar:
         url: https://luma.com/python-maven
