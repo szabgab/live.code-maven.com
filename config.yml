@@ -115,6 +115,8 @@ topics:
   Ruby:
       calendar:
         url: https://luma.com/ruby-maven
+      linkedin:
+        url: https://www.linkedin.com/showcase/ruby-maven/
   Rust:
       calendar:
         url: https://luma.com/rust-maven
