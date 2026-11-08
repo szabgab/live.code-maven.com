@@ -1042,6 +1042,15 @@
 
 # -------------------------- 2026 December
 
+- date: 2026.12.03T10:00:00+02:00
+  topics:
+   - AI
+   - Perl
+  title: 'Poking AI, Finding a 20 years old RCE'
+  link: https://code-maven.com/poking-ai-finding-a-20-years-old-rce
+  speakers: Imre Rad
+  register: https://luma.com/8h4kzkwo
+
 - date: 2026.12.03T20:00:00+02:00
   topics:
    - Python
