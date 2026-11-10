@@ -458,7 +458,7 @@ def verify_config_calendars(site_config):
         )
 
 
-def verify_chronological_order_of_event_dates(site_config, events):
+def verify_chronological_order_of_event_dates(events):
     current_date = date.today()
     prev_date = None
     for idx, event in enumerate(events):
@@ -485,10 +485,13 @@ def verify_chronological_order_of_event_dates(site_config, events):
             )
         prev_date = event_date
 
-        # Verify topics and their casing
-        topics_list = get_event_topics(event)
 
-        topics = list(site_config["topics"].keys())
+def verify_topics_and_their_casings(site_config, events):
+    topics = list(site_config["topics"].keys())
+    for idx, event in enumerate(events):
+        if not event:
+            continue
+        topics_list = get_event_topics(event)
         for topic in topics_list:
             if topic not in topics:
                 # Check case-insensitively
@@ -697,7 +700,8 @@ def rebuild():
     site_config = load_config()
 
     verify_config_calendars(site_config)
-    verify_chronological_order_of_event_dates(site_config, events)
+    verify_chronological_order_of_event_dates(events)
+    verify_topics_and_their_casings(site_config, events)
     verify_luma_calendar(events, "code-maven", "cal-HdYbTQFG0qbnA4h")
     verify_luma_calendar(
         events, "code-maven-east", "cal-RuSzE7lTx5303F9", start_hour=8, end_hour=12
