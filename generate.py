@@ -579,12 +579,7 @@ def fetch_luma_events(calendar_id, current_date):
     return luma_events
 
 
-def verify_luma_calendar(
-    events, calendar_name, calendar_id, start_hour=None, end_hour=None
-):
-    current_date = date.today()
-    luma_events = fetch_luma_events(calendar_id, current_date)
-
+def get_future_local_events(events, current_date, start_hour=None, end_hour=None):
     local_events = {}
     for event in events:
         if not event:
@@ -605,6 +600,15 @@ def verify_luma_calendar(
             "date_str": str(date_val),
             "title": title,
         }
+    return local_events
+
+
+def verify_luma_calendar(
+    events, calendar_name, calendar_id, start_hour=None, end_hour=None
+):
+    current_date = date.today()
+    luma_events = fetch_luma_events(calendar_id, current_date)
+    local_events = get_future_local_events(events, current_date, start_hour, end_hour)
 
     errors = []
 
@@ -651,22 +655,7 @@ def verify_luma_calendar(
 
 def verify_topic_calendars(site_config, events):
     current_date = date.today()
-    local_events = {}
-    for event in events:
-        if not event:
-            continue
-        date_val = event.get("date", "")
-        event_date, event_dt = parse_event_date(date_val)
-        if event_date < current_date:
-            continue
-        register = event.get("register")
-        title = event.get("title", "")
-        local_events[register] = {
-            "dt": event_dt,
-            "date": event_date,
-            "date_str": str(date_val),
-            "title": title,
-        }
+    local_events = get_future_local_events(events, current_date)
 
     calendars = {}
     for topic, data in site_config.get("topics", {}).items():
