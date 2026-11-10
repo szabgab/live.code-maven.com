@@ -37,43 +37,51 @@ topics:
   AI:
       calendar:
         url: https://luma.com/ai-maven
+        id: cal-EyAXvTbOlm2ncMS
   Android:
   CMOS:
     text: CMOS, the Code-Maven Open Source podcast was a series of interviews with Open Source developers conducted in 2016.
   Database:
       calendar:
         url: https://luma.com/db-maven
+        id: cal-cY3EXm0pIZxdRvf
       linkedin:
         url: https://www.linkedin.com/showcase/db-maven/
   DevOps:
       calendar:
         url: https://luma.com/devops-maven
+        id: cal-fujK2cfUPymZ0y0
       linkedin:
         url: https://www.linkedin.com/showcase/devops-maven/
   FalkorDB:
       calendar:
         tile: Database
         url: https://luma.com/db-maven
+        id: cal-cY3EXm0pIZxdRvf
       linkedin:
         url: https://www.linkedin.com/showcase/db-maven/
   Git:
       calendar:
         url: https://luma.com/git-maven
+        id: cal-4CKXudubwaBMaAF
       linkedin:
         url: https://www.linkedin.com/showcase/devops-maven/
   GitHub:
       calendar:
         url: https://luma.com/git-maven
+        id: cal-4CKXudubwaBMaAF
       linkedin:
         url: https://www.linkedin.com/showcase/devops-maven/
   Go:
       calendar:
         url: https://luma.com/go-maven
+        id: cal-r1Q7oce4GHA0Koh
       linkedin:
         url: https://www.linkedin.com/showcase/go-maven/about/
   JavaScript:
       calendar:
         url: https://luma.com/js-maven
+        id: cal-7411P9An6QcqRqq
   MCP:
       text: |
         MCP, the Model Context Protocol is an open standard and open-source framework introduced by Anthropic in November 2024 to standardize the way artificial intelligence systems like large language models integrate and share data with external tools, systems, and data sources.
@@ -82,10 +90,12 @@ topics:
       calendar:
         label: AI
         url: https://luma.com/ai-maven
+        id: cal-EyAXvTbOlm2ncMS
   Open Source:
   Perl:
       calendar:
         url: https://luma.com/perl-maven
+        id: cal-UNH0oAmFbIkHi7E
       facebook:
         url: https://www.facebook.com/PerlMaven/
       linkedin:
@@ -95,17 +105,20 @@ topics:
   PHP:
       calendar:
         url: https://luma.com/php-maven
+        id: cal-aNa7kVFMfcFM19f
       linkedin:
         url: https://www.linkedin.com/showcase/php-maven/
   Postgres:
       calendar:
         tile: Databases
         url: https://luma.com/db-maven
+        id: cal-cY3EXm0pIZxdRvf
       linkedin:
         url: https://www.linkedin.com/showcase/db-maven/
   Python:
       calendar:
         url: https://luma.com/python-maven
+        id: cal-mE2HYF9yq7V5crP
       facebook:
         url: https://www.facebook.com/PythonMaven
       linkedin:
@@ -115,11 +128,13 @@ topics:
   Ruby:
       calendar:
         url: https://luma.com/ruby-maven
+        id: cal-RWyGQdjm3E1oLK4
       linkedin:
         url: https://www.linkedin.com/showcase/ruby-maven/
   Rust:
       calendar:
         url: https://luma.com/rust-maven
+        id: cal-ThoZUSuwBbWLTKb
       facebook:
         url: https://www.facebook.com/RustMaven/
       linkedin:
@@ -129,6 +144,7 @@ topics:
   Zig:
       calendar:
         url: https://luma.com/zig-maven
+        id: cal-QdAfyrBbrKLhI98
       linkedin:
         url: https://www.linkedin.com/showcase/zig-maven/
 
