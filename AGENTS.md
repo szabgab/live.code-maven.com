@@ -2,7 +2,8 @@
 * Use `uv run generate.py` to build the static web site.
 * Embed the dependencies in the `generate.py` file.
 * Run `black` after making changes. `uv run --with black black generate.py`
-* Run `uv run --with ruff ruff check --select C901 --config "lint.mccabe.max-complexity=10" generate.py`
+* Run `uv run --with ruff ruff check --select C901 --config "lint.mccabe.max-complexity=10" generate.py` and make sure it passes.
+* Run `uv run --with radon radon cc -s -a generate.py`
 
 * JavaScript code is also in functions in the `static/js/live.js` file.
 
