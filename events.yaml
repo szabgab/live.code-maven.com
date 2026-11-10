@@ -967,14 +967,6 @@
   speakers: David Christensen and Elizabeth Christensen
   register: https://luma.com/hi1k6u49
 
-- date: 2026.11.15T20:00:00+02:00
-  topics:
-   - Rust
-  title: 'Cursed Rust'
-  link: https://rust.code-maven.com/cursed-rust
-  speakers: Milan Šedivý
-  register: https://luma.com/omlooqv8
-
 - date: 2026.11.16T20:00:00+02:00
   topics:
    - Perl
@@ -1026,12 +1018,12 @@
 - date: 2026.11.29T20:00:00+02:00
   topics:
    - Perl
-  title: 'Everyday date and time handling in Perl with T'
+  title: 'Everyday date and time handling in Perl with T::'
   link: https://perlmaven.com/everyday-date-and-time-handling-in-perl-with-t
   speakers: Eugen Konkov
   register: https://luma.com/2d09kkk4
 
-- date: 2026.11.30T20:00:00+03:00
+- date: 2026.11.30T20:00:00+02:00
   topics:
     - PHP
   title: 'Building WordPress Plugins with AI: Spec-Driven Development with PHP and Kiro'
@@ -1041,6 +1033,15 @@
 
 
 # -------------------------- 2026 December
+
+- date: 2026.12.01T20:00:00+02:00
+  topics:
+   - Rust
+  title: 'Cursed Rust'
+  link: https://rust.code-maven.com/cursed-rust
+  speakers: Milan Šedivý
+  register: https://luma.com/omlooqv8
+
 
 - date: 2026.12.03T10:00:00+02:00
   topics:
@@ -1063,7 +1064,7 @@
   topics:
    - AI
    - Perl
-  title: 'Using LLMs as coding agents '
+  title: 'Using LLMs as coding agents'
   link: https://perlmaven.com/using-llms-as-coding-agents
   speakers: Maximilian Maischein aka Corion
   register: https://luma.com/is9ow917
@@ -1106,7 +1107,7 @@
 - date: 2026.12.29T10:00:00+02:00
   topics:
    - Zig
-  title: 'A Developer-First Shell Built in Zig'
+  title: 'Wolysh - A Developer-First Shell Built in Zig'
   link: https://zig.code-maven.com/a-developer-first-shell-built-in-zig
   speakers: Damilare Osibanjo
   register: https://luma.com/3bg1uf62
