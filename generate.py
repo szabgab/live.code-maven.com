@@ -549,16 +549,12 @@ def verify_chronological_order_of_event_dates(site_config, events):
                     )
 
 
-def verify_luma_calendar(
-    events, calendar_name, calendar_id, start_hour=None, end_hour=None
-):
+def fetch_luma_events(calendar_id, current_date):
     luma_ics_url = f"https://api.luma.com/ics/get?entity=calendar&id={calendar_id}"
     response = requests.get(luma_ics_url, timeout=30)
     response.raise_for_status()
 
     cal = icalendar.Calendar.from_ical(response.text)
-    current_date = date.today()
-
     luma_events = {}
     for component in cal.walk("VEVENT"):
         dtstart_prop = component.get("DTSTART")
@@ -580,6 +576,14 @@ def verify_luma_calendar(
             "date": event_date,
             "title": summary,
         }
+    return luma_events
+
+
+def verify_luma_calendar(
+    events, calendar_name, calendar_id, start_hour=None, end_hour=None
+):
+    current_date = date.today()
+    luma_events = fetch_luma_events(calendar_id, current_date)
 
     local_events = {}
     for event in events:
@@ -676,28 +680,13 @@ def verify_topic_calendars(site_config, events):
 
     errors = []
     for cal_id, cal_url in calendars.items():
-        luma_ics_url = f"https://api.luma.com/ics/get?entity=calendar&id={cal_id}"
-        response = requests.get(luma_ics_url, timeout=30)
-        response.raise_for_status()
-
-        cal = icalendar.Calendar.from_ical(response.text)
-        for component in cal.walk("VEVENT"):
-            dtstart_prop = component.get("DTSTART")
-            if not dtstart_prop:
-                continue
-            dtstart = dtstart_prop.dt
-            event_date = dtstart.date() if isinstance(dtstart, datetime) else dtstart
-            if event_date < current_date or event_date.year >= 2030:
-                continue
-
-            summary = str(component.get("SUMMARY", ""))
-            description = str(component.get("DESCRIPTION", ""))
-            match = re.search(r"https://luma\.com/[a-zA-Z0-9_-]+", description)
-            if not match:
-                continue
-            url = match.group(0)
-            luma_dt = dtstart if isinstance(dtstart, datetime) else None
-            luma_dt_str = luma_dt.isoformat() if luma_dt else event_date.isoformat()
+        luma_events = fetch_luma_events(cal_id, current_date)
+        for url, luma_ev in luma_events.items():
+            luma_dt = luma_ev["dt"]
+            luma_dt_str = (
+                luma_dt.isoformat() if luma_dt else luma_ev["date"].isoformat()
+            )
+            summary = luma_ev["title"]
 
             if url not in local_events:
                 errors.append(
