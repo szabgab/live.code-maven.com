@@ -4,12 +4,17 @@
 #   "markdown-it-py",
 #   "pyyaml",
 #   "linkify-it-py",
+#   "requests",
+#   "icalendar",
 # ]
 # ///
 
 import os
+import re
 import shutil
 from datetime import datetime, date
+import requests
+import icalendar
 import yaml
 from markdown_it import MarkdownIt
 from jinja2 import FileSystemLoader, Environment
@@ -513,6 +518,96 @@ def verify_chronological_order_of_event_dates(site_config, events):
                     )
 
 
+def verify_luma_calendar(events):
+    luma_ics_url = "https://api.luma.com/ics/get?entity=calendar&id=cal-HdYbTQFG0qbnA4h"
+    response = requests.get(luma_ics_url, timeout=30)
+    response.raise_for_status()
+
+    cal = icalendar.Calendar.from_ical(response.text)
+    current_date = date.today()
+
+    luma_events = {}
+    for component in cal.walk("VEVENT"):
+        dtstart_prop = component.get("DTSTART")
+        if not dtstart_prop:
+            continue
+        dtstart = dtstart_prop.dt
+        event_date = dtstart.date() if isinstance(dtstart, datetime) else dtstart
+        if event_date < current_date:
+            continue
+
+        summary = str(component.get("SUMMARY", ""))
+        description = str(component.get("DESCRIPTION", ""))
+        match = re.search(r"https://luma\.com/[a-zA-Z0-9_-]+", description)
+        if not match:
+            continue
+        url = match.group(0)
+        luma_events[url] = {
+            "dt": dtstart if isinstance(dtstart, datetime) else None,
+            "date": event_date,
+            "title": summary,
+        }
+
+    local_events = {}
+    for event in events:
+        if not event:
+            continue
+        date_val = event.get("date", "")
+        event_date, event_dt = parse_event_date(date_val)
+        if event_date < current_date:
+            continue
+        register = event.get("register")
+        title = event.get("title", "")
+        local_events[register] = {
+            "dt": event_dt,
+            "date": event_date,
+            "date_str": str(date_val),
+            "title": title,
+        }
+
+    errors = []
+
+    for url, local_ev in local_events.items():
+        if url not in luma_events:
+            errors.append(
+                f"Event in events.yaml is missing from Luma calendar: {url} ('{local_ev['title']}' on {local_ev['date_str']})"
+            )
+
+    for url, luma_ev in luma_events.items():
+        if url not in local_events:
+            luma_dt_str = (
+                luma_ev["dt"].isoformat()
+                if luma_ev["dt"]
+                else luma_ev["date"].isoformat()
+            )
+            errors.append(
+                f"Event in Luma calendar is missing from events.yaml: {url} ('{luma_ev['title']}' on {luma_dt_str})"
+            )
+
+    for url, local_ev in local_events.items():
+        if url in luma_events:
+            luma_ev = luma_events[url]
+            if local_ev["dt"] != luma_ev["dt"]:
+                luma_dt_str = (
+                    luma_ev["dt"].isoformat()
+                    if luma_ev["dt"]
+                    else luma_ev["date"].isoformat()
+                )
+                errors.append(
+                    f"Date/time mismatch for {url}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
+                )
+            if local_ev["title"] != luma_ev["title"]:
+                errors.append(
+                    f"Title mismatch for {url}: events.yaml has '{local_ev['title']}', Luma calendar has '{luma_ev['title']}'"
+                )
+
+    if errors:
+        raise ValueError(
+            "Luma calendar verification failed:\n"
+            + "\n".join(f"  - {err}" for err in errors)
+        )
+
+
 def render_all_markdown_files_in_pages(md, site_config, layout_template):
     pages_dir = "pages"
     generated_pages = []
@@ -567,6 +662,7 @@ def rebuild():
     site_config = load_config()
 
     verify_chronological_order_of_event_dates(site_config, events)
+    verify_luma_calendar(events)
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
