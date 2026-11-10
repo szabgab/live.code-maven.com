@@ -36,7 +36,7 @@ jobs:
         run: uv run --with ruff ruff check --select C901 --config "lint.mccabe.max-complexity=10" generate.py
 
       - name: Check cyclomatic complexity with xenon (radon)
-        run uv run --with xenon xenon --max-absolute C generate.py
+        run: uv run --with xenon xenon --max-absolute C generate.py
 
       - name: Run generation script with uv
         run: uv run generate.py
