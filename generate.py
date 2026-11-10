@@ -461,8 +461,59 @@ def load_config():
                     "label": "Code Maven",
                     "url": value,
                 }
+                if field == "calendar":
+                    data[field]["id"] = "cal-HdYbTQFG0qbnA4h"
 
     return site_config
+
+
+def verify_config_calendars(site_config):
+    errors = []
+    url_to_id = {}
+    id_to_url = {}
+
+    for topic, data in site_config.get("topics", {}).items():
+        if not data or "calendar" not in data:
+            continue
+        calendar = data["calendar"]
+        if not isinstance(calendar, dict):
+            errors.append(
+                f"Topic '{topic}' has an invalid 'calendar' entry in config.yml"
+            )
+            continue
+        cal_url = calendar.get("url")
+        cal_id = calendar.get("id")
+        if not cal_url:
+            errors.append(
+                f"Topic '{topic}' calendar entry in config.yml is missing 'url'"
+            )
+        if not cal_id:
+            errors.append(
+                f"Topic '{topic}' calendar entry in config.yml is missing 'id'"
+            )
+
+        if cal_url and cal_id:
+            if cal_url in url_to_id and url_to_id[cal_url][0] != cal_id:
+                prev_id, prev_topic = url_to_id[cal_url]
+                errors.append(
+                    f"Calendar URL '{cal_url}' has conflicting IDs: '{prev_id}' (in '{prev_topic}') and '{cal_id}' (in '{topic}')"
+                )
+            else:
+                url_to_id[cal_url] = (cal_id, topic)
+
+            if cal_id in id_to_url and id_to_url[cal_id][0] != cal_url:
+                prev_url, prev_topic = id_to_url[cal_id]
+                errors.append(
+                    f"Calendar ID '{cal_id}' has conflicting URLs: '{prev_url}' (in '{prev_topic}') and '{cal_url}' (in '{topic}')"
+                )
+            else:
+                id_to_url[cal_id] = (cal_url, topic)
+
+    if errors:
+        raise ValueError(
+            "Config calendar verification failed:\n"
+            + "\n".join(f"  - {err}" for err in errors)
+        )
 
 
 def verify_chronological_order_of_event_dates(site_config, events):
@@ -667,6 +718,7 @@ def rebuild():
     events = load_events()
     site_config = load_config()
 
+    verify_config_calendars(site_config)
     verify_chronological_order_of_event_dates(site_config, events)
     verify_luma_calendar(events, "code-maven", "cal-HdYbTQFG0qbnA4h")
     verify_luma_calendar(
