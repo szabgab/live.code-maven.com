@@ -252,60 +252,17 @@ def get_items(site_config, field):
     return items
 
 
-def generate_linkedin_page(template, layout_template, site_config):
-    items = get_items(site_config, "linkedin")
-
-    linkedin_html_content = template.render(linkedin_links=items)
-    linkedin_page_meta = {"title": "Code-Maven LinkedIn Channels", "url": "/linkedin"}
-    linkedin_html = layout_template.render(
-        site=site_config, page=linkedin_page_meta, content=linkedin_html_content
+def generate_links_page(
+    template, layout_template, site_config, field, context_key, title, url, out_path
+):
+    items = get_items(site_config, field)
+    html_content = template.render(**{context_key: items})
+    page_meta = {"title": title, "url": url}
+    html = layout_template.render(
+        site=site_config, page=page_meta, content=html_content
     )
-
-    linkedin_html_path = "site/linkedin.html"
-    with open(linkedin_html_path, "w", encoding="utf-8") as f:
-        f.write(linkedin_html)
-
-
-def generate_facebook_page(template, layout_template, site_config):
-    items = get_items(site_config, "facebook")
-
-    facebook_html_content = template.render(facebook_links=items)
-    facebook_page_meta = {"title": "Code-Maven Facebook Groups", "url": "/facebook"}
-    facebook_html = layout_template.render(
-        site=site_config, page=facebook_page_meta, content=facebook_html_content
-    )
-
-    facebook_html_path = "site/facebook.html"
-    with open(facebook_html_path, "w", encoding="utf-8") as f:
-        f.write(facebook_html)
-
-
-def generate_telegram_page(template, layout_template, site_config):
-    items = get_items(site_config, "telegram")
-
-    telegram_html_content = template.render(telegram_links=items)
-    telegram_page_meta = {"title": "Code-Maven Telegram Groups", "url": "/telegram"}
-    telegram_html = layout_template.render(
-        site=site_config, page=telegram_page_meta, content=telegram_html_content
-    )
-
-    telegram_html_path = "site/telegram.html"
-    with open(telegram_html_path, "w", encoding="utf-8") as f:
-        f.write(telegram_html)
-
-
-def generate_calendars_page(template, layout_template, site_config):
-    items = get_items(site_config, "calendar")
-
-    calendars_html_content = template.render(calendars=items)
-    calendars_page_meta = {"title": "Code-Maven Calendars", "url": "/calendars"}
-    calendars_html = layout_template.render(
-        site=site_config, page=calendars_page_meta, content=calendars_html_content
-    )
-
-    calendars_html_path = "site/calendars.html"
-    with open(calendars_html_path, "w", encoding="utf-8") as f:
-        f.write(calendars_html)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 def generate_topics_page(template, layout_template, site_config, events):
@@ -779,31 +736,51 @@ def rebuild():
     )
 
     # Render site/linkedin.html
-    generate_linkedin_page(
+    generate_links_page(
         template=linkedin_template,
         layout_template=layout_template,
         site_config=site_config,
+        field="linkedin",
+        context_key="linkedin_links",
+        title="Code-Maven LinkedIn Channels",
+        url="/linkedin",
+        out_path="site/linkedin.html",
     )
 
     # Render site/facebook.html
-    generate_facebook_page(
+    generate_links_page(
         template=facebook_template,
         layout_template=layout_template,
         site_config=site_config,
+        field="facebook",
+        context_key="facebook_links",
+        title="Code-Maven Facebook Groups",
+        url="/facebook",
+        out_path="site/facebook.html",
     )
 
     # Render site/telegram.html
-    generate_telegram_page(
+    generate_links_page(
         template=telegram_template,
         layout_template=layout_template,
         site_config=site_config,
+        field="telegram",
+        context_key="telegram_links",
+        title="Code-Maven Telegram Groups",
+        url="/telegram",
+        out_path="site/telegram.html",
     )
 
     # Render site/calendars.html
-    generate_calendars_page(
+    generate_links_page(
         template=calendars_template,
         layout_template=layout_template,
         site_config=site_config,
+        field="calendar",
+        context_key="calendars",
+        title="Code-Maven Calendars",
+        url="/calendars",
+        out_path="site/calendars.html",
     )
 
     # Render site/topics.html
