@@ -29,6 +29,9 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
+      - name: Check formatting with black
+        run: uv run --with black black --check generate.py
+
       - name: Check cyclomatic complexity with ruff
         run: uv run --with ruff ruff check --select C901 --config "lint.mccabe.max-complexity=10" generate.py
 
