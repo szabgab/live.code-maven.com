@@ -1078,6 +1078,14 @@
   speakers: Sanketh Balakrishna, Maxim Briskin
   register: https://luma.com/i9to1xc3
 
+- date: 2026.12.13T10:00:00+02:00
+  topics:
+   - Zig
+  title: 'Full-stack web development in Zig with Ziex!'
+  link: https://zig.code-maven.com/full-stack-web-development-in-zig-with-ziex
+  speakers: Nurul Huda
+  register: https://luma.com/bj74rati
+
 - date: 2026.12.13T20:00:00+02:00
   topics:
    - AI
