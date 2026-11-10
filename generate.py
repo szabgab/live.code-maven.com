@@ -586,7 +586,7 @@ def verify_luma_calendar(
             continue
         dtstart = dtstart_prop.dt
         event_date = dtstart.date() if isinstance(dtstart, datetime) else dtstart
-        if event_date < current_date:
+        if event_date < current_date or event_date.year >= 2030:
             continue
 
         summary = str(component.get("SUMMARY", ""))
@@ -665,6 +665,82 @@ def verify_luma_calendar(
         )
 
 
+def verify_topic_calendars(site_config, events):
+    current_date = date.today()
+    local_events = {}
+    for event in events:
+        if not event:
+            continue
+        date_val = event.get("date", "")
+        event_date, event_dt = parse_event_date(date_val)
+        if event_date < current_date:
+            continue
+        register = event.get("register")
+        title = event.get("title", "")
+        local_events[register] = {
+            "dt": event_dt,
+            "date": event_date,
+            "date_str": str(date_val),
+            "title": title,
+        }
+
+    calendars = {}
+    for topic, data in site_config.get("topics", {}).items():
+        if not data or "calendar" not in data:
+            continue
+        cal = data["calendar"]
+        cal_id = cal.get("id")
+        cal_url = cal.get("url")
+        if cal_id and cal_id not in calendars:
+            calendars[cal_id] = cal_url
+
+    errors = []
+    for cal_id, cal_url in calendars.items():
+        luma_ics_url = f"https://api.luma.com/ics/get?entity=calendar&id={cal_id}"
+        response = requests.get(luma_ics_url, timeout=30)
+        response.raise_for_status()
+
+        cal = icalendar.Calendar.from_ical(response.text)
+        for component in cal.walk("VEVENT"):
+            dtstart_prop = component.get("DTSTART")
+            if not dtstart_prop:
+                continue
+            dtstart = dtstart_prop.dt
+            event_date = dtstart.date() if isinstance(dtstart, datetime) else dtstart
+            if event_date < current_date or event_date.year >= 2030:
+                continue
+
+            summary = str(component.get("SUMMARY", ""))
+            description = str(component.get("DESCRIPTION", ""))
+            match = re.search(r"https://luma\.com/[a-zA-Z0-9_-]+", description)
+            if not match:
+                continue
+            url = match.group(0)
+            luma_dt = dtstart if isinstance(dtstart, datetime) else None
+            luma_dt_str = luma_dt.isoformat() if luma_dt else event_date.isoformat()
+
+            if url not in local_events:
+                errors.append(
+                    f"Event in Luma calendar ({cal_url}, {cal_id}) is missing from events.yaml: {url} ('{summary}' on {luma_dt_str})"
+                )
+            else:
+                local_ev = local_events[url]
+                if local_ev["dt"] != luma_dt:
+                    errors.append(
+                        f"Date/time mismatch for {url} in {cal_url}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
+                    )
+                if local_ev["title"] != summary:
+                    errors.append(
+                        f"Title mismatch for {url} in {cal_url}: events.yaml has '{local_ev['title']}', Luma calendar has '{summary}'"
+                    )
+
+    if errors:
+        raise ValueError(
+            "Topic calendars verification failed:\n"
+            + "\n".join(f"  - {err}" for err in errors)
+        )
+
+
 def render_all_markdown_files_in_pages(md, site_config, layout_template):
     pages_dir = "pages"
     generated_pages = []
@@ -724,6 +800,7 @@ def rebuild():
     verify_luma_calendar(
         events, "code-maven-east", "cal-RuSzE7lTx5303F9", start_hour=8, end_hour=12
     )
+    verify_topic_calendars(site_config, events)
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
