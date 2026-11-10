@@ -133,6 +133,15 @@ def partition_events(events, topic_filter=None):
     return schedule_events, earlier_events
 
 
+def render_and_write_page(layout_template, site_config, title, url, content, out_path):
+    page_meta = {"title": title, "url": url}
+    html_output = layout_template.render(
+        site=site_config, page=page_meta, content=content
+    )
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(html_output)
+
+
 def build_page(
     events,
     template,
@@ -179,23 +188,23 @@ def build_page(
             past_html_content = past_template.render(
                 earlier_events=earlier_events,
             )
-            past_page_meta = {
-                "title": "Code-Maven community online past events",
-                "url": "/past",
-            }
-            past_html_output = layout_template.render(
-                site=site_config, page=past_page_meta, content=past_html_content
+            render_and_write_page(
+                layout_template=layout_template,
+                site_config=site_config,
+                title="Code-Maven community online past events",
+                url="/past",
+                content=past_html_content,
+                out_path="site/past.html",
             )
-            with open("site/past.html", "w", encoding="utf-8") as f:
-                f.write(past_html_output)
 
-    page_meta = {"title": page_title, "url": page_url}
-    html_output = layout_template.render(
-        site=render_site_config, page=page_meta, content=html_content
+    render_and_write_page(
+        layout_template=layout_template,
+        site_config=render_site_config,
+        title=page_title,
+        url=page_url,
+        content=html_content,
+        out_path=out_filename,
     )
-
-    with open(out_filename, "w", encoding="utf-8") as f:
-        f.write(html_output)
 
 
 def generate_future_events(events):
@@ -257,12 +266,14 @@ def generate_links_page(
 ):
     items = get_items(site_config, field)
     html_content = template.render(**{context_key: items})
-    page_meta = {"title": title, "url": url}
-    html = layout_template.render(
-        site=site_config, page=page_meta, content=html_content
+    render_and_write_page(
+        layout_template=layout_template,
+        site_config=site_config,
+        title=title,
+        url=url,
+        content=html_content,
+        out_path=out_path,
     )
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(html)
 
 
 def generate_topics_page(template, layout_template, site_config, events):
@@ -281,14 +292,14 @@ def generate_topics_page(template, layout_template, site_config, events):
     ]
 
     topics_html_content = template.render(topics=topics_list)
-    topics_page_meta = {"title": "Code-Maven Topics", "url": "/topics"}
-    topics_html = layout_template.render(
-        site=site_config, page=topics_page_meta, content=topics_html_content
+    render_and_write_page(
+        layout_template=layout_template,
+        site_config=site_config,
+        title="Code-Maven Topics",
+        url="/topics",
+        content=topics_html_content,
+        out_path="site/topics.html",
     )
-
-    topics_html_path = "site/topics.html"
-    with open(topics_html_path, "w", encoding="utf-8") as f:
-        f.write(topics_html)
 
 
 def generate_redirects(site_config):
@@ -654,14 +665,15 @@ def render_all_markdown_files_in_pages(md, site_config, layout_template):
                     title = name_without_ext.replace("-", " ").replace("_", " ").title()
 
                 html_content = format_html_tables(md.render(content))
-                page_meta = {"title": title, "url": f"/{name_without_ext}"}
-                page_html = layout_template.render(
-                    site=site_config, page=page_meta, content=html_content
-                )
-
                 html_path = os.path.join("site", f"{name_without_ext}.html")
-                with open(html_path, "w", encoding="utf-8") as f:
-                    f.write(page_html)
+                render_and_write_page(
+                    layout_template=layout_template,
+                    site_config=site_config,
+                    title=title,
+                    url=f"/{name_without_ext}",
+                    content=html_content,
+                    out_path=html_path,
+                )
                 generated_pages.append(html_path)
     return generated_pages
 
