@@ -589,6 +589,35 @@ def get_future_local_events(events, current_date, start_hour=None, end_hour=None
     return local_events
 
 
+def compare_luma_to_local_events(luma_events, local_events, calendar_label):
+    errors = []
+    for url, luma_ev in luma_events.items():
+        luma_dt = luma_ev["dt"]
+        luma_dt_str = luma_dt.isoformat() if luma_dt else luma_ev["date"].isoformat()
+        summary = luma_ev["title"]
+
+        if url not in local_events:
+            errors.append(
+                f"Event in Luma calendar ({calendar_label}) is missing from events.yaml: {url} ('{summary}' on {luma_dt_str})"
+            )
+        else:
+            local_ev = local_events[url]
+            if local_ev["dt"] != luma_dt:
+                local_dt_str = (
+                    local_ev["dt"].isoformat()
+                    if local_ev["dt"]
+                    else local_ev["date"].isoformat()
+                )
+                errors.append(
+                    f"Date/time mismatch for {url} in {calendar_label}: events.yaml has '{local_ev['date_str']}' ({local_dt_str}), Luma calendar has '{luma_dt_str}'"
+                )
+            if local_ev["title"] != summary:
+                errors.append(
+                    f"Title mismatch for {url} in {calendar_label}: events.yaml has '{local_ev['title']}', Luma calendar has '{summary}'"
+                )
+    return errors
+
+
 def verify_luma_calendar(
     events, calendar_name, calendar_id, start_hour=None, end_hour=None
 ):
@@ -604,33 +633,9 @@ def verify_luma_calendar(
                 f"Event in events.yaml is missing from Luma calendar ({calendar_name}): {url} ('{local_ev['title']}' on {local_ev['date_str']})"
             )
 
-    for url, luma_ev in luma_events.items():
-        if url not in local_events:
-            luma_dt_str = (
-                luma_ev["dt"].isoformat()
-                if luma_ev["dt"]
-                else luma_ev["date"].isoformat()
-            )
-            errors.append(
-                f"Event in Luma calendar ({calendar_name}) is missing from events.yaml: {url} ('{luma_ev['title']}' on {luma_dt_str})"
-            )
-
-    for url, local_ev in local_events.items():
-        if url in luma_events:
-            luma_ev = luma_events[url]
-            if local_ev["dt"] != luma_ev["dt"]:
-                luma_dt_str = (
-                    luma_ev["dt"].isoformat()
-                    if luma_ev["dt"]
-                    else luma_ev["date"].isoformat()
-                )
-                errors.append(
-                    f"Date/time mismatch for {url} in {calendar_name}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
-                )
-            if local_ev["title"] != luma_ev["title"]:
-                errors.append(
-                    f"Title mismatch for {url} in {calendar_name}: events.yaml has '{local_ev['title']}', Luma calendar has '{luma_ev['title']}'"
-                )
+    errors.extend(
+        compare_luma_to_local_events(luma_events, local_events, calendar_name)
+    )
 
     if errors:
         raise ValueError(
@@ -656,27 +661,11 @@ def verify_topic_calendars(site_config, events):
     errors = []
     for cal_id, cal_url in calendars.items():
         luma_events = fetch_luma_events(cal_id, current_date)
-        for url, luma_ev in luma_events.items():
-            luma_dt = luma_ev["dt"]
-            luma_dt_str = (
-                luma_dt.isoformat() if luma_dt else luma_ev["date"].isoformat()
+        errors.extend(
+            compare_luma_to_local_events(
+                luma_events, local_events, f"{cal_url}, {cal_id}"
             )
-            summary = luma_ev["title"]
-
-            if url not in local_events:
-                errors.append(
-                    f"Event in Luma calendar ({cal_url}, {cal_id}) is missing from events.yaml: {url} ('{summary}' on {luma_dt_str})"
-                )
-            else:
-                local_ev = local_events[url]
-                if local_ev["dt"] != luma_dt:
-                    errors.append(
-                        f"Date/time mismatch for {url} in {cal_url}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
-                    )
-                if local_ev["title"] != summary:
-                    errors.append(
-                        f"Title mismatch for {url} in {cal_url}: events.yaml has '{local_ev['title']}', Luma calendar has '{summary}'"
-                    )
+        )
 
     if errors:
         raise ValueError(
