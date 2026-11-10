@@ -91,16 +91,7 @@ def get_event_topics(event):
         return [str(topics_val)]
 
 
-def build_page(
-    events,
-    template,
-    layout_template,
-    site_config,
-    md,
-    topic_filter=None,
-    past_template=None,
-):
-    # Separate events into schedule and earlier
+def partition_events(events, topic_filter=None):
     schedule_events = []
     earlier_events = []
 
@@ -112,51 +103,46 @@ def build_page(
 
         topics = get_event_topics(event)
 
-        if topic_filter:
-            if topic_filter.lower() not in [t.lower() for t in topics]:
-                continue
+        if topic_filter and topic_filter.lower() not in [t.lower() for t in topics]:
+            continue
 
         date_val = event.get("date", "")
-        try:
-            event_date, event_dt = parse_event_date(date_val)
-        except ValueError:
-            # Fallback for malformed dates: classify as past
-            event_date, event_dt = date.min, None
-
-        title = event.get("title", "")
-        link = event.get("link")
-        speakers = event.get("speakers", "")
-        register = event.get("register")
+        event_date, event_dt = parse_event_date(date_val)
 
         if event_date >= current_date:
-            display_date = (
-                event_dt.strftime("%Y.%m.%d %H:%M%z")
-                if event_dt is not None
-                else event_date.strftime("%Y.%m.%d")
-            )
-            iso_date = event_dt.isoformat() if event_dt is not None else None
+            display_date = event_dt.strftime("%Y.%m.%d %H:%M%z")
+            iso_date = event_dt.isoformat()
+            target_list = schedule_events
         else:
-            display_date = (
-                event_date.strftime("%Y.%m.%d")
-                if event_date != date.min
-                else str(date_val)
-            )
+            display_date = event_date.strftime("%Y.%m.%d")
             iso_date = None
+            target_list = earlier_events
 
-        event_data = {
-            "date": display_date,
-            "iso_date": iso_date,
-            "topics": topics,
-            "title": title,
-            "link": link,
-            "speakers": speakers,
-            "register": register,
-        }
+        target_list.append(
+            {
+                "date": display_date,
+                "iso_date": iso_date,
+                "topics": topics,
+                "title": event.get("title", ""),
+                "link": event.get("link"),
+                "speakers": event.get("speakers", ""),
+                "register": event.get("register"),
+            }
+        )
 
-        if event_date >= current_date:
-            schedule_events.append(event_data)
-        else:
-            earlier_events.append(event_data)
+    return schedule_events, earlier_events
+
+
+def build_page(
+    events,
+    template,
+    layout_template,
+    site_config,
+    md,
+    topic_filter=None,
+    past_template=None,
+):
+    schedule_events, earlier_events = partition_events(events, topic_filter)
 
     if topic_filter:
         topic_data = site_config["topics"].get(topic_filter) or {}
