@@ -79,6 +79,18 @@ def parse_event_date(date_val):
     return dt.date(), dt
 
 
+def get_event_topics(event):
+    topics_val = event.get("topics")
+    if isinstance(topics_val, list):
+        return topics_val
+    elif isinstance(topics_val, str):
+        return [topics_val] if topics_val else []
+    elif topics_val is None:
+        return []
+    else:
+        return [str(topics_val)]
+
+
 def build_page(
     events,
     template,
@@ -98,15 +110,7 @@ def build_page(
         if not event:
             continue
 
-        topics_val = event.get("topics")
-        if isinstance(topics_val, list):
-            topics = topics_val
-        elif isinstance(topics_val, str):
-            topics = [topics_val] if topics_val else []
-        elif topics_val is None:
-            topics = []
-        else:
-            topics = [str(topics_val)]
+        topics = get_event_topics(event)
 
         if topic_filter:
             if topic_filter.lower() not in [t.lower() for t in topics]:
@@ -221,15 +225,7 @@ def generate_future_events(events):
         except ValueError:
             event_date = date.min
         if event_date >= current_date:
-            topics_val = event.get("topics")
-            if isinstance(topics_val, list):
-                topics = topics_val
-            elif isinstance(topics_val, str):
-                topics = [topics_val] if topics_val else []
-            elif topics_val is None:
-                topics = []
-            else:
-                topics = [str(topics_val)]
+            topics = get_event_topics(event)
             topics_str = ", ".join(topics)
             title = event.get("title", "")
             register = event.get("register", "")
@@ -331,15 +327,7 @@ def generate_topics_page(template, layout_template, site_config, events):
     for event in events:
         if not event:
             continue
-        topics_val = event.get("topics")
-        if isinstance(topics_val, list):
-            event_topics = topics_val
-        elif isinstance(topics_val, str):
-            event_topics = [topics_val] if topics_val else []
-        elif topics_val is None:
-            event_topics = []
-        else:
-            event_topics = [str(topics_val)]
+        event_topics = get_event_topics(event)
 
         for t in event_topics:
             if t in topic_counts:
@@ -544,15 +532,7 @@ def verify_chronological_order_of_event_dates(site_config, events):
         prev_date = event_date
 
         # Verify topics and their casing
-        topics_val = event.get("topics")
-        if isinstance(topics_val, list):
-            topics_list = topics_val
-        elif isinstance(topics_val, str):
-            topics_list = [topics_val] if topics_val else []
-        elif topics_val is None:
-            topics_list = []
-        else:
-            topics_list = [str(topics_val)]
+        topics_list = get_event_topics(event)
 
         topics = list(site_config["topics"].keys())
         for topic in topics_list:
