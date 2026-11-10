@@ -518,8 +518,10 @@ def verify_chronological_order_of_event_dates(site_config, events):
                     )
 
 
-def verify_luma_calendar(events):
-    luma_ics_url = "https://api.luma.com/ics/get?entity=calendar&id=cal-HdYbTQFG0qbnA4h"
+def verify_luma_calendar(
+    events, calendar_name, calendar_id, start_hour=None, end_hour=None
+):
+    luma_ics_url = f"https://api.luma.com/ics/get?entity=calendar&id={calendar_id}"
     response = requests.get(luma_ics_url, timeout=30)
     response.raise_for_status()
 
@@ -556,6 +558,10 @@ def verify_luma_calendar(events):
         event_date, event_dt = parse_event_date(date_val)
         if event_date < current_date:
             continue
+        if start_hour is not None and (event_dt is None or event_dt.hour < start_hour):
+            continue
+        if end_hour is not None and (event_dt is None or event_dt.hour > end_hour):
+            continue
         register = event.get("register")
         title = event.get("title", "")
         local_events[register] = {
@@ -570,7 +576,7 @@ def verify_luma_calendar(events):
     for url, local_ev in local_events.items():
         if url not in luma_events:
             errors.append(
-                f"Event in events.yaml is missing from Luma calendar: {url} ('{local_ev['title']}' on {local_ev['date_str']})"
+                f"Event in events.yaml is missing from Luma calendar ({calendar_name}): {url} ('{local_ev['title']}' on {local_ev['date_str']})"
             )
 
     for url, luma_ev in luma_events.items():
@@ -581,7 +587,7 @@ def verify_luma_calendar(events):
                 else luma_ev["date"].isoformat()
             )
             errors.append(
-                f"Event in Luma calendar is missing from events.yaml: {url} ('{luma_ev['title']}' on {luma_dt_str})"
+                f"Event in Luma calendar ({calendar_name}) is missing from events.yaml: {url} ('{luma_ev['title']}' on {luma_dt_str})"
             )
 
     for url, local_ev in local_events.items():
@@ -594,16 +600,16 @@ def verify_luma_calendar(events):
                     else luma_ev["date"].isoformat()
                 )
                 errors.append(
-                    f"Date/time mismatch for {url}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
+                    f"Date/time mismatch for {url} in {calendar_name}: events.yaml has '{local_ev['date_str']}' ({local_ev['dt'].isoformat() if local_ev['dt'] else local_ev['date'].isoformat()}), Luma calendar has '{luma_dt_str}'"
                 )
             if local_ev["title"] != luma_ev["title"]:
                 errors.append(
-                    f"Title mismatch for {url}: events.yaml has '{local_ev['title']}', Luma calendar has '{luma_ev['title']}'"
+                    f"Title mismatch for {url} in {calendar_name}: events.yaml has '{local_ev['title']}', Luma calendar has '{luma_ev['title']}'"
                 )
 
     if errors:
         raise ValueError(
-            "Luma calendar verification failed:\n"
+            f"Luma calendar ({calendar_name}) verification failed:\n"
             + "\n".join(f"  - {err}" for err in errors)
         )
 
@@ -662,7 +668,10 @@ def rebuild():
     site_config = load_config()
 
     verify_chronological_order_of_event_dates(site_config, events)
-    verify_luma_calendar(events)
+    verify_luma_calendar(events, "code-maven", "cal-HdYbTQFG0qbnA4h")
+    verify_luma_calendar(
+        events, "code-maven-east", "cal-RuSzE7lTx5303F9", start_hour=8, end_hour=12
+    )
 
     # Setup Jinja2 environment
     loader = FileSystemLoader("templates")
