@@ -415,41 +415,33 @@ def verify_config_calendars(site_config):
     id_to_url = {}
 
     for topic, data in site_config.get("topics", {}).items():
-        if not data or "calendar" not in data:
+        if not data:
             continue
         calendar = data["calendar"]
-        if not isinstance(calendar, dict):
-            errors.append(
-                f"Topic '{topic}' has an invalid 'calendar' entry in config.yml"
-            )
-            continue
         cal_url = calendar.get("url")
         cal_id = calendar.get("id")
         if not cal_url:
             errors.append(
                 f"Topic '{topic}' calendar entry in config.yml is missing 'url'"
             )
+            continue
         if not cal_id:
             errors.append(
                 f"Topic '{topic}' calendar entry in config.yml is missing 'id'"
             )
+            continue
 
-        if cal_url and cal_id:
-            if cal_url in url_to_id and url_to_id[cal_url][0] != cal_id:
-                prev_id, prev_topic = url_to_id[cal_url]
-                errors.append(
-                    f"Calendar URL '{cal_url}' has conflicting IDs: '{prev_id}' (in '{prev_topic}') and '{cal_id}' (in '{topic}')"
-                )
-            else:
-                url_to_id[cal_url] = (cal_id, topic)
+        prev_id, prev_topic = url_to_id.setdefault(cal_url, (cal_id, topic))
+        if prev_id != cal_id:
+            errors.append(
+                f"Calendar URL '{cal_url}' has conflicting IDs: '{prev_id}' (in '{prev_topic}') and '{cal_id}' (in '{topic}')"
+            )
 
-            if cal_id in id_to_url and id_to_url[cal_id][0] != cal_url:
-                prev_url, prev_topic = id_to_url[cal_id]
-                errors.append(
-                    f"Calendar ID '{cal_id}' has conflicting URLs: '{prev_url}' (in '{prev_topic}') and '{cal_url}' (in '{topic}')"
-                )
-            else:
-                id_to_url[cal_id] = (cal_url, topic)
+        prev_url, prev_topic = id_to_url.setdefault(cal_id, (cal_url, topic))
+        if prev_url != cal_url:
+            errors.append(
+                f"Calendar ID '{cal_id}' has conflicting URLs: '{prev_url}' (in '{prev_topic}') and '{cal_url}' (in '{topic}')"
+            )
 
     if errors:
         raise ValueError(
