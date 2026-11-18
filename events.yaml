@@ -1069,8 +1069,7 @@
   speakers: Maximilian Maischein aka Corion
   register: https://luma.com/is9ow917
 
-
-- date: 2026.11.10T10:00:00+02:00
+- date: 2026.12.10T10:00:00+02:00
   topics:
    - Rust
   title: 'More actors with Tokio'
