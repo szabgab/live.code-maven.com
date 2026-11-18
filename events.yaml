@@ -1069,6 +1069,16 @@
   speakers: Maximilian Maischein aka Corion
   register: https://luma.com/is9ow917
 
+
+- date: 2026.11.10T10:00:00+02:00
+  topics:
+   - Rust
+  title: 'More actors with Tokio'
+  link: https://rust.code-maven.com/more-actors-with-tokio
+  speakers: Rafael Bachmann
+  register: https://luma.com/kt4bs294
+
+
 - date: 2026.12.10T20:00:00+02:00
   topics:
    - Database
