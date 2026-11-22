@@ -1104,6 +1104,14 @@
   register: https://luma.com/hw2bkl7x
 
 
+- date: 2026.12.15T20:00:00+02:00
+  topics:
+   - Rust
+  title: 'Self-Hosting Rust on A Custom Kernel'
+  link: https://rust.code-maven.com/self-hosting-rust-on-a-custom-kernel
+  speakers: Kirill Maksimov
+  register: https://luma.com/6idphg8e
+
 - date: 2026.12.16T18:00:00+02:00
   topics:
    - Perl
@@ -1133,7 +1141,7 @@
 # -------------------------- 2027 January
 
 
-# - date: 2026.11.23T20:00:00+02:00
+# - date: 2026.12.23T20:00:00+02:00
 #   topics:
 #    - AI
 #    - Database
