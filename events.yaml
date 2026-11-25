@@ -1129,6 +1129,14 @@
   speakers: Marianne L. Goldin
   register: https://luma.com/dzlcsihv
 
+- date: 2026.12.20T18:00:00+02:00
+  topics:
+   - AI
+  title: 'Accelerating Program Verification with Small Language Models'
+  link: https://ai.code-maven.com/accelerating-program-verification-with-small-language-models
+  speakers: Ido Pinto
+  register: https://luma.com/doaes6za
+
 - date: 2026.12.29T10:00:00+02:00
   topics:
    - Zig
