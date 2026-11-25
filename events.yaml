@@ -1129,6 +1129,15 @@
   speakers: Marianne L. Goldin
   register: https://luma.com/dzlcsihv
 
+- date: 2026.12.20T10:00:00+02:00
+  topics:
+   - AI
+   - Python
+  title: 'Powering up Django development with Claude Code'
+  link: https://python.code-maven.com/powering-up-django-development-with-claude-code
+  speakers: Sheena O'Connell
+  register: https://luma.com/4za6cdbr
+
 - date: 2026.12.20T18:00:00+02:00
   topics:
    - AI
