@@ -207,6 +207,15 @@ def build_page(
     )
 
 
+def get_event_speakers(event):
+    speakers = event.get("speakers", "")
+    if isinstance(speakers, str):
+        return speakers.strip()
+    if speakers is None:
+        return ""
+    return str(speakers).strip()
+
+
 def generate_future_events(events):
     current_date = date.today()
     future_md_lines = []
@@ -224,13 +233,7 @@ def generate_future_events(events):
             topics_str = ", ".join(topics)
             title = event.get("title", "")
             register = event.get("register", "")
-            speakers = event.get("speakers", "")
-            if isinstance(speakers, str):
-                speakers = speakers.strip()
-            elif speakers is None:
-                speakers = ""
-            else:
-                speakers = str(speakers).strip()
+            speakers = get_event_speakers(event)
             by_speakers = f" by {speakers}" if speakers else ""
 
             line = f"* {date_val} ({topics_str}) [{title}]({register}){by_speakers}"
@@ -548,6 +551,7 @@ def get_future_local_events(events, current_date, start_hour=None, end_hour=None
             "date": event_date,
             "date_str": str(date_val),
             "title": title,
+            "speakers": get_event_speakers(event),
         }
     return local_events
 
@@ -574,7 +578,10 @@ def compare_luma_to_local_events(luma_events, local_events, calendar_label):
                 errors.append(
                     f"Date/time mismatch for {url} in {calendar_label}: events.yaml has '{local_ev['date_str']}' ({local_dt_str}), Luma calendar has '{luma_dt_str}'"
                 )
-            if local_ev["title"] != summary:
+            expected_titles = {local_ev["title"]}
+            if local_ev["speakers"]:
+                expected_titles.add(f"{local_ev['title']} - {local_ev['speakers']}")
+            if summary not in expected_titles:
                 errors.append(
                     f"Title mismatch for {url} in {calendar_label}: events.yaml has '{local_ev['title']}', Luma calendar has '{summary}'"
                 )
