@@ -18,7 +18,7 @@ function convertLocalDatetimes() {
         var localHour = d.getHours();
         daytimeIndicator.classList.toggle(
           "is-hidden",
-          localHour < 8 || localHour >= 18,
+          localHour < 8 || localHour > 20,
         );
       }
     });
