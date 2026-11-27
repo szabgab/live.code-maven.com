@@ -1,5 +1,38 @@
+function getLocalTimeZoneLabel(d) {
+  try {
+    var parts = new Intl.DateTimeFormat(undefined, {
+      timeZoneName: "short",
+    }).formatToParts(d);
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].type === "timeZoneName" && parts[i].value) {
+        return parts[i].value;
+      }
+    }
+  } catch (e) {
+    // Fallback below if Intl.DateTimeFormat is unavailable
+  }
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz) {
+      return tz.split("/").pop().replace(/_/g, " ");
+    }
+  } catch (e) {
+    // Fallback below
+  }
+  return "";
+}
+
+function getLocalTimeZoneName() {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+  } catch (e) {
+    return "";
+  }
+}
+
 function convertLocalDatetimes() {
   document.addEventListener("DOMContentLoaded", function () {
+    var tzName = getLocalTimeZoneName();
     document.querySelectorAll(".local-datetime").forEach(function (el) {
       var iso = el.getAttribute("data-iso");
       if (!iso) return;
@@ -10,7 +43,21 @@ function convertLocalDatetimes() {
       var day = String(d.getDate()).padStart(2, "0");
       var hours = String(d.getHours()).padStart(2, "0");
       var minutes = String(d.getMinutes()).padStart(2, "0");
-      el.textContent = year + "." + month + "." + day + " " + hours + ":" + minutes;
+      var tzLabel = getLocalTimeZoneLabel(d);
+      el.textContent =
+        year +
+        "." +
+        month +
+        "." +
+        day +
+        " " +
+        hours +
+        ":" +
+        minutes +
+        (tzLabel ? " " + tzLabel : "");
+      if (tzName && !el.getAttribute("title")) {
+        el.setAttribute("title", tzName);
+      }
       var daytimeIndicator = el.parentElement.querySelector(
         ".local-daytime-indicator",
       );
