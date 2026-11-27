@@ -11,6 +11,16 @@ function convertLocalDatetimes() {
       var hours = String(d.getHours()).padStart(2, "0");
       var minutes = String(d.getMinutes()).padStart(2, "0");
       el.textContent = year + "." + month + "." + day + " " + hours + ":" + minutes;
+      var daytimeIndicator = el.parentElement.querySelector(
+        ".local-daytime-indicator",
+      );
+      if (daytimeIndicator) {
+        var localHour = d.getHours();
+        daytimeIndicator.classList.toggle(
+          "is-hidden",
+          localHour < 8 || localHour >= 18,
+        );
+      }
     });
   });
 }
